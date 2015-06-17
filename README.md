@@ -4,7 +4,7 @@
 
 Responsive and modern theme for OJS journals, styled particularly for journals hosted at George Mason University Libraries.
 
-hat-tip to [Carlton University Libraries](https://github.com/cu-library/OJS-Modern-Theme) for the example of creating OJS themes with template files
+hat-tip to [Carleton University Libraries](https://github.com/cu-library/OJS-Modern-Theme) for the example of creating OJS themes with template files
 
 ## PKP Software License:
 This software is released under the the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
