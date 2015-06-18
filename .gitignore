@@ -1,6 +1,7 @@
 .DS_Store
 vendor/
 .bundle/
+Gemfile.lock
 
 css/.sass*
 
