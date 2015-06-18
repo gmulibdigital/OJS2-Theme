@@ -26,10 +26,12 @@
 	<meta name="generator" content="{$applicationName} {$currentVersionString|escape}" />
 	{$metaCustomHeaders}
 	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
-	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
+ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Base Jquery -->
 	{if $allowCDN}<script type="text/javascript" src="//www.google.com/jsapi"></script>
@@ -52,14 +54,14 @@
 
 	{call_hook|assign:"leftSidebarCode" name="Templates::Common::LeftSidebar"}
 	{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
-	{if $leftSidebarCode || $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/sidebar.css" type="text/css" />{/if}
+	<!-- {if $leftSidebarCode || $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/sidebar.css" type="text/css" />{/if}
 	{if $leftSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/leftSidebar.css" type="text/css" />{/if}
 	{if $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/rightSidebar.css" type="text/css" />{/if}
-	{if $leftSidebarCode && $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/bothSidebars.css" type="text/css" />{/if}
+	{if $leftSidebarCode && $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/bothSidebars.css" type="text/css" />{/if} -->
 
-	{foreach from=$stylesheets item=cssUrl}
+	<!-- {foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach}
+	{/foreach} -->
 
 	<!-- Default global locale keys for JavaScript -->
 	{include file="common/jsLocaleKeys.tpl" }
@@ -118,16 +120,19 @@
 		</script>
 	{/if}{* hasSystemNotifications *}
 
+	<!-- Add fonts style sheet -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:700|PT+Sans:400,700,400italic|Droid+Serif:700' rel='stylesheet' type='text/css'>
+	
 	<!-- Add theme style sheet -->
-	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/style.css" type="text/css" />
+
+	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
 
 	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
 <div id="container">
-
+{include file="common/navbar.tpl"}
 <div id="header">
-	{include file="common/navbar.tpl"}
 <div id="headerTitle">
 <h1>
 {if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}

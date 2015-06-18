@@ -69,12 +69,15 @@
 		{include file="common/minifiedScripts.tpl"}
 	{/if}
 
+	<!-- Add theme style sheet -->
+	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/style.css" type="text/css" />
+
 	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
 
 <div id="container">
-
+{include file="common/navbar.tpl"}
 <div id="header">
 <div id="headerTitle">
 <h1>
@@ -114,8 +117,6 @@
 {/if}
 
 <div id="main">
-
-{include file="common/navbar.tpl"}
 
 <div id="breadcrumb">
 	<a href="{url page="index"}" target="_parent">{translate key="navigation.home"}</a> &gt;

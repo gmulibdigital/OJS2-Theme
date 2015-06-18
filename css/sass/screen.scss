@@ -1,0 +1,109 @@
+@import "compass/reset";
+@import "susy";
+@import "base";
+
+/* 
+
+Structure 
+============
+-- General HTML Elements
+---- Headings
+---- Links
+---- Form Elements
+-- Global Classes
+-- Navigation
+-- Header
+-- Sidebars
+-- Main
+-- Footer
+-- Issues
+-- Articles
+
+*/
+
+/* General HTML Elements 
+============================= */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#container {
+	@include span(12);
+	padding: 0 5%;
+}
+
+body {
+	font-family: "PT Sans", Helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+/* Headings */
+
+#{headings(1)} {
+	font-family: "Droid Serif", serif;
+	font-weight: 700;
+	font-size: 2.5em;
+	line-height: 2em;
+}
+#{headings(2,6)} {
+	font-family: Lato, Trebuchet, sans-serif;
+	line-height: 1.8em;
+}
+h2 {
+	font-size: 2em;
+	font-weight: 700;
+}
+h3 {
+	font-size: 1.75em;
+	font-weight: 700;
+}
+h4 {
+	font-size: 1.75em;
+	font-weight: 400;
+}
+
+/* Links */
+
+/* Forms */
+
+
+/* Navigation
+============================= */
+
+/* Header
+============================= */
+
+
+/* Sidebars 
+============================= */
+
+#leftSidebar {
+	@include span(first 3);
+}
+#rightSidebar {
+	@include span(last 3);
+}
+
+/* Main 
+============================ */
+
+#main {
+	@include span(8 of 12);
+}
+
+/* Footer 
+============================ */
+
+/* Issues
+============================ */
+
+
+/* Articles 
+============================ */
