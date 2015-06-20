@@ -8,7 +8,7 @@
  * Navigation Bar
  *
  *}
-<div id="navbar">
+<div id="navbar" role="navigation">
 	<ul class="menu">
 		<li id="home"><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
 		<li id="about"><a href="{url page="about"}">{translate key="navigation.about"}</a></li>

@@ -63,6 +63,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/*  Colors
+================== */
 /* 
 
 Structure 
@@ -84,34 +86,57 @@ Structure
 /* General HTML Elements 
 ============================= */
 /* apply a natural box layout model to all elements, but allowing components to change */
-/* line 29, sass/screen.scss */
+/* line 31, sass/screen.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 32, sass/screen.scss */
+/* line 34, sass/screen.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 36, sass/screen.scss */
-#container {
+/* line 38, sass/screen.scss */
+body {
+  font-family: "PT Sans", Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  background-color: #D1D3D5;
+}
+
+/* line 44, sass/screen.scss */
+#header, #body {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
   padding: 0 5%;
+  background-clip: content-box;
+  background-color: white;
 }
 
-/* line 41, sass/screen.scss */
-body {
-  font-family: "PT Sans", Helvetica, sans-serif;
-  font-size: 1em;
-  line-height: 1.4em;
+/* Skip to Content 
+from http://codepen.io/joe-watkins/pen/rjhiK
+*/
+/* line 55, sass/screen.scss */
+#skip-to-content {
+  padding: 1em;
+  position: absolute;
+  top: -40px;
+  left: 1em;
+  z-index: 1000;
+  color: white;
+}
+
+/* line 64, sass/screen.scss */
+#skip-to-content:focus {
+  position: absolute;
+  top: 0;
+  background: #4593ff;
 }
 
 /* Headings */
-/* line 49, sass/screen.scss */
+/* line 72, sass/screen.scss */
 h1 {
   font-family: "Droid Serif", serif;
   font-weight: 700;
@@ -119,25 +144,25 @@ h1 {
   line-height: 2em;
 }
 
-/* line 55, sass/screen.scss */
+/* line 78, sass/screen.scss */
 h2, h3, h4, h5, h6 {
   font-family: Lato, Trebuchet, sans-serif;
   line-height: 1.8em;
 }
 
-/* line 59, sass/screen.scss */
+/* line 82, sass/screen.scss */
 h2 {
   font-size: 2em;
   font-weight: 700;
 }
 
-/* line 63, sass/screen.scss */
+/* line 86, sass/screen.scss */
 h3 {
   font-size: 1.75em;
   font-weight: 700;
 }
 
-/* line 67, sass/screen.scss */
+/* line 90, sass/screen.scss */
 h4 {
   font-size: 1.75em;
   font-weight: 400;
@@ -147,18 +172,71 @@ h4 {
 /* Forms */
 /* Navigation
 ============================= */
+/* line 104, sass/screen.scss */
+#navbar {
+  width: 100%;
+  background-color: #616968;
+  overflow: auto;
+  padding: .5em 0;
+}
+
+/* line 111, sass/screen.scss */
+ul.menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 5%;
+}
+/* line 114, sass/screen.scss */
+ul.menu li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  float: left;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 49, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+ul.menu li:first-child {
+  padding-left: 0;
+}
+/* line 50, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+ul.menu li:last-child {
+  padding-right: 0;
+}
+/* line 52, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+ul.menu li.last {
+  padding-right: 0;
+}
+/* line 117, sass/screen.scss */
+ul.menu li a {
+  color: white;
+  text-decoration: none;
+}
+/* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
+ul.menu li a:hover, ul.menu li a:focus {
+  text-decoration: underline;
+}
+
 /* Header
 ============================= */
 /* Sidebars 
 ============================= */
-/* line 87, sass/screen.scss */
+/* line 134, sass/screen.scss */
 #leftSidebar {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 90, sass/screen.scss */
+/* line 137, sass/screen.scss */
 #rightSidebar {
   width: 23.72881%;
   float: right;
@@ -167,9 +245,9 @@ h4 {
 
 /* Main 
 ============================ */
-/* line 97, sass/screen.scss */
+/* line 144, sass/screen.scss */
 #main {
-  width: 66.10169%;
+  width: 74.57627%;
   float: left;
   margin-right: 1.69492%;
 }

@@ -1,4 +1,6 @@
 @import "compass/reset";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/typography/links";
 @import "susy";
 @import "base";
 
@@ -33,15 +35,36 @@ html {
   box-sizing: inherit;
 }
 
-#container {
-	@include span(12);
-	padding: 0 5%;
-}
-
 body {
 	font-family: "PT Sans", Helvetica, sans-serif;
 	font-size: 1em;
 	line-height: 1.4em;
+	background-color: $grey-light;
+}
+#header, #body {
+	@include span(12);
+	padding: 0 5%;
+	background-clip: content-box;
+	background-color: white;
+}
+
+/* Skip to Content 
+from http://codepen.io/joe-watkins/pen/rjhiK
+*/
+
+#skip-to-content {
+  padding: 1em;
+  position: absolute;
+  top: -40px;
+  left: 1em;
+  z-index: 1000;
+  color: white;
+}
+
+#skip-to-content:focus {
+  position: absolute;
+  top: 0;
+  background: #4593ff;
 }
 
 /* Headings */
@@ -71,11 +94,35 @@ h4 {
 
 /* Links */
 
+
 /* Forms */
 
 
 /* Navigation
 ============================= */
+
+#navbar {
+	width: 100%;
+	background-color: darken($grey-bold, 15%);
+	overflow: auto;
+	padding: .5em 0;
+}
+
+ul.menu {
+	@include horizontal-list-container;
+
+	li {
+		@include horizontal-list-item(1em, left);
+
+		a {
+			@include link-colors(white);
+			@include hover-link;
+		}
+	}
+
+	@include span(12);
+	padding: 0 5%;
+}
 
 /* Header
 ============================= */
@@ -95,7 +142,7 @@ h4 {
 ============================ */
 
 #main {
-	@include span(8 of 12);
+	@include span(9 of 12);
 }
 
 /* Footer 

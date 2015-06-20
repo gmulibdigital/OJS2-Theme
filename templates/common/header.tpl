@@ -131,8 +131,9 @@
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
 <div id="container">
+  <a id="skip-to-content" href="#main">Skip to Main Content</a>
 {include file="common/navbar.tpl"}
-<div id="header">
+<div id="header" role="banner">
 <div id="headerTitle">
 <h1>
 {if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
@@ -158,19 +159,19 @@
 {if $leftSidebarCode || $rightSidebarCode}
 	<div id="sidebar">
 		{if $leftSidebarCode}
-			<div id="leftSidebar">
+			<div id="leftSidebar" role="complementary">
 				{$leftSidebarCode}
 			</div>
 		{/if}
 		{if $rightSidebarCode}
-			<div id="rightSidebar">
+			<div id="rightSidebar" role="complementary">
 				{$rightSidebarCode}
 			</div>
 		{/if}
 	</div>
 {/if}
 
-<div id="main">
+<div id="main" role="main">
 
 {include file="common/breadcrumbs.tpl"}
 
