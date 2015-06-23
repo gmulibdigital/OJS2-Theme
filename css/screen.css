@@ -65,6 +65,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /*  Colors
 ================== */
+/* Rhythm
+=================== */
 /* 
 
 Structure 
@@ -86,39 +88,55 @@ Structure
 /* General HTML Elements 
 ============================= */
 /* apply a natural box layout model to all elements, but allowing components to change */
-/* line 31, sass/screen.scss */
+/* line 27, sass/screen.scss */
 html {
   box-sizing: border-box;
 }
+/* line 106, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+html html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
 
-/* line 34, sass/screen.scss */
+/* line 32, sass/screen.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 38, sass/screen.scss */
+/* line 36, sass/screen.scss */
 body {
   font-family: "PT Sans", Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
-  background-color: #D1D3D5;
+}
+
+/* line 41, sass/screen.scss */
+#container {
+  background-color: white;
 }
 
 /* line 44, sass/screen.scss */
-#header, #body {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0 5%;
-  background-clip: content-box;
-  background-color: white;
+#body {
+  overflow: auto;
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
+#body:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /* Skip to Content 
 from http://codepen.io/joe-watkins/pen/rjhiK
 */
-/* line 55, sass/screen.scss */
+/* line 54, sass/screen.scss */
 #skip-to-content {
   padding: 1em;
   position: absolute;
@@ -128,7 +146,7 @@ from http://codepen.io/joe-watkins/pen/rjhiK
   color: white;
 }
 
-/* line 64, sass/screen.scss */
+/* line 63, sass/screen.scss */
 #skip-to-content:focus {
   position: absolute;
   top: 0;
@@ -136,12 +154,16 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 }
 
 /* Headings */
-/* line 72, sass/screen.scss */
+/* line 71, sass/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, Trabuchet, sans-serif;
+}
+
+/* line 74, sass/screen.scss */
 h1 {
-  font-family: "Droid Serif", serif;
   font-weight: 700;
-  font-size: 2.5em;
-  line-height: 2em;
+  font-size: 2.625em;
+  line-height: 1.14286em;
 }
 
 /* line 78, sass/screen.scss */
@@ -170,30 +192,85 @@ h4 {
 
 /* Links */
 /* Forms */
-/* Navigation
-============================= */
-/* line 104, sass/screen.scss */
-#navbar {
+/* Tables */
+/* line 102, sass/screen.scss */
+table {
+  border: 1px solid #D1D3D5;
   width: 100%;
-  background-color: #616968;
-  overflow: auto;
-  padding: .5em 0;
+}
+/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+table thead th {
+  border-bottom: 1px solid #D1D3D5;
+}
+/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+table tfoot th, table tfoot td {
+  border-top: 1px solid #D1D3D5;
+}
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+table th:first-child {
+  border-right: 1px solid #D1D3D5;
+}
+/* line 2, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table th {
+  background-color: white;
+}
+/* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table th.even, table th:nth-child(2n) {
+  background-color: white;
+}
+/* line 8, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.odd td, table tr:nth-child(2n+1) td {
+  background-color: #ececed;
+}
+/* line 10, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.odd td.even, table tr.odd td:nth-child(2n), table tr:nth-child(2n+1) td.even, table tr:nth-child(2n+1) td:nth-child(2n) {
+  background-color: #ececed;
+}
+/* line 14, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.even td {
+  background-color: white;
+}
+/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tr.even td.even, table tr.even td:nth-child(2n) {
+  background-color: white;
+}
+/* line 19, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tfoot th, table tfoot td {
+  background-color: white;
+}
+/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
+table tfoot th.even, table tfoot th:nth-child(2n), table tfoot td.even, table tfoot td:nth-child(2n) {
+  background-color: white;
+}
+/* line 107, sass/screen.scss */
+table td {
+  padding: .5em .25em;
 }
 
-/* line 111, sass/screen.scss */
+/* Navigation
+============================= */
+/* line 117, sass/screen.scss */
+#navbar {
+  width: 100%;
+  background-color: #272822;
+  overflow: auto;
+  position: fixed;
+  padding: .25em 0;
+  height: 32px;
+}
+
+/* line 127, sass/screen.scss */
 ul.menu {
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0 5%;
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 114, sass/screen.scss */
+/* line 130, sass/screen.scss */
 ul.menu li {
   list-style-image: none;
   list-style-type: none;
@@ -202,6 +279,7 @@ ul.menu li {
   float: left;
   padding-left: 1em;
   padding-right: 1em;
+  border-right: 3px solid black;
 }
 /* line 49, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 ul.menu li:first-child {
@@ -215,45 +293,136 @@ ul.menu li:last-child {
 ul.menu li.last {
   padding-right: 0;
 }
-/* line 117, sass/screen.scss */
+/* line 133, sass/screen.scss */
+ul.menu li:last-child {
+  border: none;
+}
+/* line 138, sass/screen.scss */
 ul.menu li a {
   color: white;
   text-decoration: none;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  letter-spacing: .05em;
+}
+/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+ul.menu li a:visited {
+  color: white;
+}
+/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+ul.menu li a:focus {
+  color: #BCD631;
+}
+/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+ul.menu li a:hover {
+  color: #BCD631;
+}
+/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+ul.menu li a:active {
+  color: #9ab123;
 }
 /* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
 ul.menu li a:hover, ul.menu li a:focus {
   text-decoration: underline;
 }
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
+ul.menu:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 150, sass/screen.scss */
+#breadcrumb {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
 
 /* Header
 ============================= */
-/* Sidebars 
-============================= */
-/* line 134, sass/screen.scss */
-#leftSidebar {
-  width: 23.72881%;
-  float: left;
-  margin-right: 1.69492%;
+/* line 155, sass/screen.scss */
+#headerTitle {
+  padding-top: 32px;
+  min-height: 200px;
 }
 
-/* line 137, sass/screen.scss */
+/* line 160, sass/screen.scss */
+#header {
+  background-color: #00909E;
+  text-align: center;
+}
+/* line 163, sass/screen.scss */
+#header img, #header h1 {
+  display: inline-block;
+  margin: .5em;
+}
+/* line 167, sass/screen.scss */
+#header img {
+  vertical-align: middle;
+}
+/* line 171, sass/screen.scss */
+#header h1 {
+  vertical-align: middle;
+}
+
+/* Sidebars 
+============================= */
+/* line 180, sass/screen.scss */
+#leftSidebar {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+
+/* line 183, sass/screen.scss */
 #rightSidebar {
-  width: 23.72881%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
   float: right;
-  margin-right: 0;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
 }
 
 /* Main 
 ============================ */
-/* line 144, sass/screen.scss */
+/* line 190, sass/screen.scss */
 #main {
-  width: 74.57627%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 75%;
   float: left;
-  margin-right: 1.69492%;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
 }
 
 /* Footer 
 ============================ */
+/* line 197, sass/screen.scss */
+#pageFooter {
+  clear: both;
+  text-align: center;
+  border-top-width: 0.0625em;
+  border-top-style: solid;
+  padding-top: 1.4375em;
+  background-color: #D1D3D5;
+}
+
+/* line 203, sass/screen.scss */
+#standardFooter {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: .9em;
+}
+
 /* Issues
 ============================ */
 /* Articles 

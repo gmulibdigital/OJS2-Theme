@@ -1,3 +1,11 @@
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/typography/links";
+@import "compass/utilities/tables";
+@import "susy";
+
+
 $susy: (
   columns: 12,  // The number of columns in your grid
   gutters: 1/4, // The size of a gutter in relation to a single column
@@ -7,11 +15,18 @@ $susy: (
 /*  Colors
 ================== */
 
-$primary: #006633;
+$primary: #00909E;
 $accent_bold: #42517F;
-$accent_light: #C06816; 
+$accent_light: #BCD631; 
 
 $grey_bold: #87908F;
 $grey_light: #D1D3D5;
 
 $background: #E4E6D7;
+
+
+/* Rhythm
+=================== */
+
+$base-font-size: 16px;
+$base-line-height: 24px;

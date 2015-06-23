@@ -1,7 +1,3 @@
-@import "compass/reset";
-@import "compass/typography/lists/horizontal-list";
-@import "compass/typography/links";
-@import "susy";
 @import "base";
 
 /* 
@@ -30,6 +26,8 @@ Structure
 
 html {
   box-sizing: border-box;
+  @include establish-baseline;
+  @include layout($susy float inside);
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -39,13 +37,14 @@ body {
 	font-family: "PT Sans", Helvetica, sans-serif;
 	font-size: 1em;
 	line-height: 1.4em;
-	background-color: $grey-light;
 }
-#header, #body {
-	@include span(12);
-	padding: 0 5%;
-	background-clip: content-box;
+#container {
 	background-color: white;
+}
+#body{
+	overflow: auto;
+	@include container(70em);
+	@include rhythm();
 }
 
 /* Skip to Content 
@@ -69,11 +68,12 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 
 /* Headings */
 
+#{headings(1,6)} {
+	font-family: Lato, Trabuchet, sans-serif;
+}
 #{headings(1)} {
-	font-family: "Droid Serif", serif;
 	font-weight: 700;
-	font-size: 2.5em;
-	line-height: 2em;
+	@include adjust-font-size-to(42px);
 }
 #{headings(2,6)} {
 	font-family: Lato, Trebuchet, sans-serif;
@@ -98,14 +98,30 @@ h4 {
 /* Forms */
 
 
+/* Tables */
+table {
+	@include outer-table-borders(1px, $grey_light);
+	@include alternating-rows-and-columns( lighten($grey_light, 20%), lighten($grey_light, 10%), #000000);
+	width: 100%;
+
+	td {
+		padding: .5em .25em;
+	}
+
+}
+
+
 /* Navigation
 ============================= */
 
 #navbar {
 	width: 100%;
-	background-color: darken($grey-bold, 15%);
+	background-color: #272822;
 	overflow: auto;
-	padding: .5em 0;
+	position: fixed;
+	padding: .25em 0;
+	height: 32px;
+
 }
 
 ul.menu {
@@ -113,20 +129,50 @@ ul.menu {
 
 	li {
 		@include horizontal-list-item(1em, left);
+		border-right: 3px solid black;
+		&:last-child {
+			border: none;
+		}
+
 
 		a {
-			@include link-colors(white);
+			@include link-colors(white, $accent_light, darken($accent_light, 10%), white, $accent_light	);
 			@include hover-link;
+			font-family: Lato, sans-serif;
+			font-weight: 300;
+			letter-spacing: .05em;
 		}
 	}
+	@include container(70em);
 
-	@include span(12);
-	padding: 0 5%;
 }
 
+#breadcrumb {
+	@include adjust-font-size-to(14px);
+}
 /* Header
 ============================= */
+#headerTitle {
+	padding-top: 32px;
+	min-height: 200px;
+}
 
+#header {
+	background-color: $primary;
+	text-align: center;
+	img, h1 {
+		display:inline-block;
+		margin: .5em;
+	}
+	img {
+		vertical-align: middle;
+
+	}
+	h1 {
+		vertical-align: middle;
+	}
+
+}
 
 /* Sidebars 
 ============================= */
@@ -148,6 +194,18 @@ ul.menu {
 /* Footer 
 ============================ */
 
+#pageFooter {
+	clear: both;
+	text-align: center;
+	@include leading-border;
+	background-color: $grey_light;
+}
+#standardFooter {
+	@include rhythm-padding();
+	font-family: Lato;
+	font-weight: 400;
+	font-size: .9em;
+}
 /* Issues
 ============================ */
 

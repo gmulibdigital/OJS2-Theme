@@ -119,28 +119,32 @@
 			{rdelim});
 		</script>
 	{/if}{* hasSystemNotifications *}
+	<script type="text/javascript" src="{baseURL}/ojs/lib/pkp/js/lib/jquery/plugins/jquery.pnotify.js"></script>
+	<link rel="stylesheet" href="{baseURL}/ojs/lib/pkp/lib/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css">
 
 	<!-- Add fonts style sheet -->
-	<link href='http://fonts.googleapis.com/css?family=Lato:700|PT+Sans:400,700,400italic|Droid+Serif:700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 	
 	<!-- Add theme style sheet -->
-
 	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
 
 	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
-<div id="container">
-  <a id="skip-to-content" href="#main">Skip to Main Content</a>
+<a id="skip-to-content" href="#main">Skip to Main Content</a>
 {include file="common/navbar.tpl"}
+
+<div id="container">
 <div id="header" role="banner">
 <div id="headerTitle">
-<h1>
+
 {if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
 	<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogoAltText != ''}alt="{$displayPageHeaderLogoAltText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
 {/if}
+<h1>
 {if $displayPageHeaderTitle && is_array($displayPageHeaderTitle)}
 	<img src="{$publicFilesDir}/{$displayPageHeaderTitle.uploadName|escape:"url"}" width="{$displayPageHeaderTitle.width|escape}" height="{$displayPageHeaderTitle.height|escape}" {if $displayPageHeaderTitleAltText != ''}alt="{$displayPageHeaderTitleAltText|escape}"{else}alt="{translate key="common.pageHeader.altText"}"{/if} />
+
 {elseif $displayPageHeaderTitle}
 	{$displayPageHeaderTitle}
 {elseif $alternatePageHeader}

@@ -8,21 +8,35 @@
  * Common site footer.
  *
  *}
+
+</div><!-- content -->
+</div><!-- main -->
+</div><!-- body -->
+</div><!-- container -->
+{strip}
+{if $currentJournal && $currentJournal->getSetting('onlineIssn')}
+	{assign var=issn value=$currentJournal->getSetting('onlineIssn')}
+{elseif $currentJournal && $currentJournal->getSetting('printIssn')}
+	{assign var=issn value=$currentJournal->getSetting('printIssn')}
+{/if}
+
 {if $displayCreativeCommons}
 	{translate key="common.ccLicense"}
 {/if}
 {if $pageFooter}
-	<br /><br />
-	<div id="pageFooter">{$pageFooter}</div>
+	<div id="pageFooter">{$pageFooter}
 {/if}
 {call_hook name="Templates::Common::Footer::PageFooter"}
-</div><!-- content -->
-</div><!-- main -->
-</div><!-- body -->
+	<div id="standardFooter">
+		<p>ISSN: {$issn}</p>
+		<p>Hosted by <a href="http://publishing.gmu.edu">Mason Publishing</a>, part of the <a href="http://library.gmu.edu">George Mason University Libraries</a>.</p>
+	</div>
+</div>
+{/strip}
 
 {get_debug_info}
 {if $enableDebugStats}{include file=$pqpTemplate}{/if}
 
-</div><!-- container -->
+
 </body>
 </html>
