@@ -29,6 +29,7 @@
 {if !$currentJournal->getSetting('disableUserReg')}
 	<div id="onlineSubmissions">
 		<h3>{translate key="about.onlineSubmissions"}</h3>
+		<p class="callout">{translate key="about.onlineSubmissions.registrationRequired"}</p>
 		<p>
 			{translate key="about.onlineSubmissions.haveAccount" journalTitle=$siteTitle|escape}<br />
 			<a href="{url page="login"}" class="action">{translate key="about.onlineSubmissions.login"}</a>
@@ -37,7 +38,7 @@
 			{translate key="about.onlineSubmissions.needAccount"}<br />
 			<a href="{url page="user" op="register"}" class="action">{translate key="about.onlineSubmissions.registration"}</a>
 		</p>
-		<p>{translate key="about.onlineSubmissions.registrationRequired"}</p>
+
 	</div>
 {/if}
 

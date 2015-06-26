@@ -63,10 +63,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* line 21, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/language/susy/_box-sizing.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /*  Colors
 ================== */
 /* Rhythm
 =================== */
+/* Mixins
+==================== */
+/* line 43, sass/_base.scss */
+.roundedborder, input, select, textarea {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #D1D3D5;
+}
+
 /* 
 
 Structure 
@@ -88,39 +105,49 @@ Structure
 /* General HTML Elements 
 ============================= */
 /* apply a natural box layout model to all elements, but allowing components to change */
-/* line 27, sass/screen.scss */
-html {
-  box-sizing: border-box;
-}
 /* line 106, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html html {
   font-size: 100%;
   line-height: 1.5em;
 }
 
-/* line 32, sass/screen.scss */
+/* line 30, sass/screen.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 36, sass/screen.scss */
+/* line 34, sass/screen.scss */
 body {
   font-family: "PT Sans", Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
 }
+/* line 38, sass/screen.scss */
+body figure {
+  display: inline-block;
+}
 
-/* line 41, sass/screen.scss */
+/* line 42, sass/screen.scss */
 #container {
   background-color: white;
 }
 
-/* line 44, sass/screen.scss */
+/* line 45, sass/screen.scss */
 #body {
   overflow: auto;
-  max-width: 70em;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(80%, rgba(179, 179, 255, 0.25)), color-stop(80%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 50% 0%, 50% 1, color-stop(100%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-size: 8.47458%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
@@ -132,11 +159,21 @@ body {
   display: block;
   clear: both;
 }
+/* line 51, sass/screen.scss */
+#body p {
+  padding: .5em 0;
+}
+/* line 55, sass/screen.scss */
+#body ul, #body ol {
+  margin: 1em;
+  padding-left: 1em;
+  list-style-type: initial;
+}
 
 /* Skip to Content 
 from http://codepen.io/joe-watkins/pen/rjhiK
 */
-/* line 54, sass/screen.scss */
+/* line 67, sass/screen.scss */
 #skip-to-content {
   padding: 1em;
   position: absolute;
@@ -146,7 +183,7 @@ from http://codepen.io/joe-watkins/pen/rjhiK
   color: white;
 }
 
-/* line 63, sass/screen.scss */
+/* line 76, sass/screen.scss */
 #skip-to-content:focus {
   position: absolute;
   top: 0;
@@ -154,103 +191,115 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 }
 
 /* Headings */
-/* line 71, sass/screen.scss */
+/* line 84, sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: Lato, Trabuchet, sans-serif;
 }
 
-/* line 74, sass/screen.scss */
+/* line 87, sass/screen.scss */
 h1 {
   font-weight: 700;
   font-size: 2.625em;
   line-height: 1.14286em;
 }
 
-/* line 78, sass/screen.scss */
+/* line 91, sass/screen.scss */
 h2, h3, h4, h5, h6 {
   font-family: Lato, Trebuchet, sans-serif;
   line-height: 1.8em;
 }
 
-/* line 82, sass/screen.scss */
+/* line 95, sass/screen.scss */
 h2 {
   font-size: 2em;
   font-weight: 700;
 }
 
-/* line 86, sass/screen.scss */
+/* line 99, sass/screen.scss */
 h3 {
   font-size: 1.75em;
   font-weight: 700;
+  border-bottom: 1px solid #87908F;
 }
 
-/* line 90, sass/screen.scss */
+/* line 104, sass/screen.scss */
 h4 {
   font-size: 1.75em;
   font-weight: 400;
 }
 
 /* Links */
+/* line 111, sass/screen.scss */
+a {
+  color: #00909E;
+  text-decoration: none;
+}
+/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:visited {
+  color: #007985;
+}
+/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:focus {
+  color: #425195;
+}
+/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #425195;
+}
+/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:active {
+  color: #5667b4;
+}
+/* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
 /* Forms */
+/* line 118, sass/screen.scss */
+input, select, textarea {
+  font: "PT Sans", Helvetica, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 125, sass/screen.scss */
+.label {
+  width: auto;
+}
+
 /* Tables */
-/* line 102, sass/screen.scss */
+/* line 133, sass/screen.scss */
 table {
-  border: 1px solid #D1D3D5;
   width: 100%;
 }
-/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
-table thead th {
-  border-bottom: 1px solid #D1D3D5;
+/* line 138, sass/screen.scss */
+table tr {
+  margin: .5em 0;
 }
-/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
-table tfoot th, table tfoot td {
-  border-top: 1px solid #D1D3D5;
-}
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
-table th:first-child {
-  border-right: 1px solid #D1D3D5;
-}
-/* line 2, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table th {
-  background-color: white;
-}
-/* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table th.even, table th:nth-child(2n) {
-  background-color: white;
-}
-/* line 8, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tr.odd td, table tr:nth-child(2n+1) td {
-  background-color: #ececed;
-}
-/* line 10, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tr.odd td.even, table tr.odd td:nth-child(2n), table tr:nth-child(2n+1) td.even, table tr:nth-child(2n+1) td:nth-child(2n) {
-  background-color: #ececed;
-}
-/* line 14, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tr.even td {
-  background-color: white;
-}
-/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tr.even td.even, table tr.even td:nth-child(2n) {
-  background-color: white;
-}
-/* line 19, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tfoot th, table tfoot td {
-  background-color: white;
-}
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_alternating-rows-and-columns.scss */
-table tfoot th.even, table tfoot th:nth-child(2n), table tfoot td.even, table tfoot td:nth-child(2n) {
-  background-color: white;
-}
-/* line 107, sass/screen.scss */
+/* line 142, sass/screen.scss */
 table td {
   padding: .5em .25em;
+  vertical-align: top;
+}
+
+/* Global Classes 
+============================= */
+/* line 152, sass/screen.scss */
+.callout {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+  font-weight: 700;
 }
 
 /* Navigation
 ============================= */
-/* line 117, sass/screen.scss */
-#navbar {
+/* line 161, sass/screen.scss */
+nav {
   width: 100%;
   background-color: #272822;
   overflow: auto;
@@ -259,18 +308,31 @@ table td {
   height: 32px;
 }
 
-/* line 127, sass/screen.scss */
+/* line 169, sass/screen.scss */
+#navbar {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
+#navbar:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 173, sass/screen.scss */
 ul.menu {
+  width: 74.57627%;
+  float: left;
+  margin-right: 1.69492%;
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
-  max-width: 70em;
-  margin-left: auto;
-  margin-right: auto;
 }
-/* line 130, sass/screen.scss */
+/* line 177, sass/screen.scss */
 ul.menu li {
   list-style-image: none;
   list-style-type: none;
@@ -293,11 +355,11 @@ ul.menu li:last-child {
 ul.menu li.last {
   padding-right: 0;
 }
-/* line 133, sass/screen.scss */
+/* line 180, sass/screen.scss */
 ul.menu li:last-child {
   border: none;
 }
-/* line 138, sass/screen.scss */
+/* line 183, sass/screen.scss */
 ul.menu li a {
   color: white;
   text-decoration: none;
@@ -325,14 +387,16 @@ ul.menu li a:active {
 ul.menu li a:hover, ul.menu li a:focus {
   text-decoration: underline;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
-ul.menu:after {
-  content: " ";
-  display: block;
-  clear: both;
+
+/* line 195, sass/screen.scss */
+#searchbar {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
 }
 
-/* line 150, sass/screen.scss */
+/* line 200, sass/screen.scss */
 #breadcrumb {
   font-size: 0.875em;
   line-height: 1.71429em;
@@ -340,81 +404,83 @@ ul.menu:after {
 
 /* Header
 ============================= */
-/* line 155, sass/screen.scss */
-#headerTitle {
-  padding-top: 32px;
-  min-height: 200px;
-}
-
-/* line 160, sass/screen.scss */
+/* line 206, sass/screen.scss */
 #header {
-  background-color: #00909E;
+  padding-top: 40px;
+  min-height: 200px;
   text-align: center;
 }
-/* line 163, sass/screen.scss */
-#header img, #header h1 {
+/* line 210, sass/screen.scss */
+#header h1, #header img {
+  vertical-align: middle;
   display: inline-block;
-  margin: .5em;
 }
-/* line 167, sass/screen.scss */
-#header img {
-  vertical-align: middle;
+
+/* line 215, sass/screen.scss */
+#headerTitle {
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
 }
-/* line 171, sass/screen.scss */
-#header h1 {
-  vertical-align: middle;
+/* line 217, sass/screen.scss */
+#headerTitle figure {
+  max-width: 1080px;
+  margin: 1.69492%;
+}
+/* line 220, sass/screen.scss */
+#headerTitle figure img {
+  width: 100%;
+  height: auto;
 }
 
 /* Sidebars 
 ============================= */
-/* line 180, sass/screen.scss */
+/* line 229, sass/screen.scss */
 #leftSidebar {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 25%;
+  width: 23.72881%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
+  margin-right: 1.69492%;
+  margin-right: 1.69492%;
 }
 
-/* line 183, sass/screen.scss */
+/* line 233, sass/screen.scss */
 #rightSidebar {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 25%;
+  width: 23.72881%;
   float: right;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
+  margin-right: 0;
+  margin-left: 1.69492%;
+}
+
+/* line 238, sass/screen.scss */
+#sidebar .block {
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
 }
 
 /* Main 
 ============================ */
-/* line 190, sass/screen.scss */
+/* line 245, sass/screen.scss */
 #main {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 75%;
+  width: 74.57627%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
 }
 
 /* Footer 
 ============================ */
-/* line 197, sass/screen.scss */
+/* line 252, sass/screen.scss */
 #pageFooter {
   clear: both;
   text-align: center;
   border-top-width: 0.0625em;
   border-top-style: solid;
   padding-top: 1.4375em;
-  background-color: #D1D3D5;
+  background-color: #dee0e1;
 }
 
-/* line 203, sass/screen.scss */
+/* line 258, sass/screen.scss */
 #standardFooter {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -427,3 +493,12 @@ ul.menu:after {
 ============================ */
 /* Articles 
 ============================ */
+/* Admin Pages 
+============================ */
+/* line 274, sass/screen.scss */
+.sectionBlock {
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}

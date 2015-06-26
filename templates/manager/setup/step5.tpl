@@ -106,7 +106,7 @@ function prepBlockFields() {
 	</tr>
 </table>
 {/if}
-<div id="journalHomepageHeader">
+<div id="journalHomepageHeader" class="sectionBlock">
 <h3>5.1 {translate key="manager.setup.journalHomepageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageHeaderDescription"}</p>
@@ -199,7 +199,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalHomepageContent">
+<div id="journalHomepageContent" class="sectionBlock">
 <h3>5.2 {translate key="manager.setup.journalHomepageContent"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageContentDescription"}</p>
@@ -262,7 +262,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalPageHeaderInfo">
+<div id="journalPageHeaderInfo" class="sectionBlock">
 <h3>5.3 {translate key="manager.setup.journalPageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalPageHeaderDescription"}</p>
@@ -354,7 +354,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalPageFooterInfo">
+<div id="journalPageFooterInfo" class="sectionBlock">
 <h3>5.4 {translate key="manager.setup.journalPageFooter"}</h3>
 
 <p>{translate key="manager.setup.journalPageFooterDescription"}</p>
@@ -364,7 +364,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="navigationBar">
+<div id="navigationBar" class="sectionBlock">
 <h3>5.5 {translate key="manager.setup.navigationBar"}</h3>
 
 <p>{translate key="manager.setup.itemsDescription"}</p>
@@ -433,7 +433,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="journalLayout">
+<div id="journalLayout" class="sectionBlock">
 <h3>5.6 {translate key="manager.setup.journalLayout"}</h3>
 
 <p>{translate key="manager.setup.journalLayoutDescription"}</p>
@@ -517,7 +517,7 @@ function prepBlockFields() {
 <input type="hidden" name="blockUnselected" value="" />
 </div>
 <div class="separator"></div>
-<div id="setupInfo">
+<div id="setupInfo" class="sectionBlock">
 <h3>5.7 {translate key="manager.setup.information"}</h3>
 
 <p>{translate key="manager.setup.information.description"}</p>
@@ -537,7 +537,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="lists">
+<div id="lists" class="sectionBlock">
 <h3>5.8 {translate key="manager.setup.lists"}</h3>
 <p>{translate key="manager.setup.listsDescription"}</p>
 <table width="100%" class="data">

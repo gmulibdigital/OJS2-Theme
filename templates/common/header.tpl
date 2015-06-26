@@ -137,11 +137,13 @@
 <div id="container">
 <div id="header" role="banner">
 <div id="headerTitle">
-
+<figure>
 {if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
 	<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogoAltText != ''}alt="{$displayPageHeaderLogoAltText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
+</figure>
 {/if}
 <h1>
+	<figure>
 {if $displayPageHeaderTitle && is_array($displayPageHeaderTitle)}
 	<img src="{$publicFilesDir}/{$displayPageHeaderTitle.uploadName|escape:"url"}" width="{$displayPageHeaderTitle.width|escape}" height="{$displayPageHeaderTitle.height|escape}" {if $displayPageHeaderTitleAltText != ''}alt="{$displayPageHeaderTitleAltText|escape}"{else}alt="{translate key="common.pageHeader.altText"}"{/if} />
 
@@ -154,6 +156,7 @@
 {else}
 	{$applicationName}
 {/if}
+</figure>
 </h1>
 </div>
 </div>

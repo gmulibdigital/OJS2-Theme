@@ -8,13 +8,15 @@
  * Navigation Bar
  *
  *}
+
+<nav>
 <div id="navbar" role="navigation">
 	<ul class="menu">
 		<li id="home"><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
 		<li id="about"><a href="{url page="about"}">{translate key="navigation.about"}</a></li>
 
 		{if $isUserLoggedIn}
-			<li id="userHome"><a href="{url journal="index" page="user"}">{translate key="navigation.userHome"}</a></li>
+			<li id="userHome"><a href="{url page="user"}">{translate key="navigation.userHome"}</a></li>
 		{else}
 			<li id="login"><a href="{url page="login"}">{translate key="navigation.login"}</a></li>
 			{if !$hideRegisterLink}
@@ -39,6 +41,8 @@
 			<li id="announcements"><a href="{url page="announcement"}">{translate key="announcement.announcements"}</a></li>
 		{/if}{* enableAnnouncements *}
 
+			<li id="submitButton"><a href="{url page="about" op="submissions"}">Submit</a></li>
+
 		{call_hook name="Templates::Common::Header::Navbar::CurrentJournal"}
 
 		{foreach from=$navMenuItems item=navItem key=navItemKey}
@@ -47,4 +51,8 @@
 			{/if}
 		{/foreach}
 	</ul>
+
+{include file="common/search.tpl"}
+
 </div>
+</nav>

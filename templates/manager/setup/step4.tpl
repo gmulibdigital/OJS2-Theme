@@ -29,7 +29,7 @@
 </div><!-- locales -->
 {/if}
 
-<div id="securitySettings">
+<div id="securitySettings" class="sectionBlock">
 <h3>4.1 {translate key="manager.setup.securitySettings"}</h3>
 <div id="onlineAccessManagement">
 <h4>{translate key="manager.setup.onlineAccessManagement"}</h4>
@@ -119,7 +119,7 @@ function setRegAllowOpts(form) {
 {/literal}
 </script>
 
-<div id="siteAccess">
+<div id="siteAccess" >
 <h4>{translate key="manager.setup.siteAccess"}</h4>
 
 <table width="100%" class="data">
@@ -169,7 +169,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="publicationScheduling">
+<div id="publicationScheduling" class="sectionBlock">
 <h3>4.2 {translate key="manager.setup.publicationScheduling"}</h3>
 <div id="publicationSchedule">
 <h4>{translate key="manager.setup.publicationSchedule"}</h4>
@@ -238,7 +238,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="publicIdentifier">
+<div id="publicIdentifier" class="sectionBlock">
 <h3>4.3 {translate key="manager.setup.publicIdentifier"}</h3>
 <div id="uniqueIdentifier">
 <h4>{translate key="manager.setup.uniqueIdentifier"}</h4>
@@ -278,7 +278,7 @@ function setRegAllowOpts(form) {
 </div><!-- publicIdentifier -->
 <div class="separator"></div>
 
-<div id="announcementsSection">
+<div id="announcementsSection" class="sectionBlock">
 <h3>4.4 {translate key="manager.setup.announcements"}</h3>
 
 <p>{translate key="manager.setup.announcementsDescription"}</p>
@@ -319,7 +319,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="copyediting">
+<div id="copyediting" class="sectionBlock">
 <h3>4.5 {translate key="manager.setup.copyediting"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
@@ -348,7 +348,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="layoutAndGalleys">
+<div id="layoutAndGalleys" class="sectionBlock">
 <h3>4.6 {translate key="manager.setup.layoutAndGalleys"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
@@ -417,7 +417,7 @@ function setRegAllowOpts(form) {
 </div>
 <div class="separator"></div>
 
-<div id="proofreading">
+<div id="proofreading" class="sectionBlock">
 <h3>4.7 {translate key="manager.setup.proofreading"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>

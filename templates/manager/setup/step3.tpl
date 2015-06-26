@@ -14,7 +14,7 @@
 {include file="common/formErrors.tpl"}
 
 {if count($formLocales) > 1}
-<div id="locale">
+<div id="locale" class="sectionBlock">
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -28,7 +28,7 @@
 </div>
 {/if}
 
-<div id="authorGuidelinesInfo">
+<div id="authorGuidelinesInfo" class="sectionBlock">
 <h3>3.1 {translate key="manager.setup.authorGuidelines"}</h3>
 
 <p>{translate key="manager.setup.authorGuidelinesDescription"}</p>
@@ -39,7 +39,7 @@
 
 </div>
 
-<div id="submissionPreparationChecklist">
+<div id="submissionPreparationChecklist" class="sectionBlock">
 <h4>{translate key="manager.setup.submissionPreparationChecklist"}</h4>
 
 <p>{translate key="manager.setup.submissionPreparationChecklistDescription"}</p>
@@ -70,7 +70,7 @@
 
 <div class="separator"></div>
 
-<div id="permissions">
+<div id="permissions" class="sectionBlock">
 <h3>3.2 {translate key="submission.permissions"}</h3>
 
 <h4>{translate key="manager.setup.authorCopyrightNotice"}</h4>
@@ -156,7 +156,7 @@
 
 <div class="separator"></div>
 
-<div id="competingInterests">
+<div id="competingInterests" class="sectionBlock">
 <h3>3.3 {translate key="manager.setup.competingInterests"}</h3>
 
 <p>{translate key="manager.setup.competingInterests.description"}</p>
@@ -186,7 +186,7 @@
 
 <div class="separator"></div>
 
-<div id="forAuthorsToIndexTheirWork">
+<div id="forAuthorsToIndexTheirWork" class="sectionBlock">
 <h3>3.4 {translate key="manager.setup.forAuthorsToIndexTheirWork"}</h3>
 
 <p>{translate key="manager.setup.forAuthorsToIndexTheirWorkDescription"}</p>
@@ -334,7 +334,7 @@
 
 <div class="separator"></div>
 
-<div id="registerJournalForIndexing">
+<div id="registerJournalForIndexing" class="sectionBlock">
 <h3>3.5 {translate key="manager.setup.registerJournalForIndexing"}</h3>
 
 {url|assign:"oaiUrl" page="oai"}
@@ -343,7 +343,7 @@
 
 <div class="separator"></div>
 
-<div id="notifications">
+<div id="notifications" class="sectionBlock">
 <h3>3.6 {translate key="manager.setup.notifications"}</h3>
 
 <p>{translate key="manager.setup.notifications.description"}</p>
@@ -369,7 +369,7 @@
 
 <div class="separator"></div>
 
-<div id="citationAssistant">
+<div id="citationAssistant" class="sectionBlock">
 <h3>3.7 {translate key="manager.setup.citationAssistant"}</h3>
 
 <a name="metaCitationEditing"></a>

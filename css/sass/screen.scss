@@ -1,5 +1,4 @@
 @import "base";
-
 /* 
 
 Structure 
@@ -25,9 +24,8 @@ Structure
 /* apply a natural box layout model to all elements, but allowing components to change */
 
 html {
-  box-sizing: border-box;
   @include establish-baseline;
-  @include layout($susy float inside);
+
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -37,14 +35,29 @@ body {
 	font-family: "PT Sans", Helvetica, sans-serif;
 	font-size: 1em;
 	line-height: 1.4em;
+	figure {
+		display: inline-block;
+	}
 }
 #container {
 	background-color: white;
 }
 #body{
 	overflow: auto;
-	@include container(70em);
+	@include container;
+	@include show-grid(show);
 	@include rhythm();
+
+	p {
+		padding: .5em 0;
+	}
+
+	ul, ol {
+		margin: 1em;
+		padding-left: 1em;
+		list-style-type: initial;
+	}
+
 }
 
 /* Skip to Content 
@@ -86,6 +99,7 @@ h2 {
 h3 {
 	font-size: 1.75em;
 	font-weight: 700;
+	border-bottom: 1px solid $grey_bold;
 }
 h4 {
 	font-size: 1.75em;
@@ -94,37 +108,70 @@ h4 {
 
 /* Links */
 
+a {
+	@include link-colors($primary, $accent_bold, lighten($accent_bold, 10%), darken($primary, 5%), $accent_bold);
+	@include hover-link;
+}
+
 
 /* Forms */
+input, select, textarea {
+ 	@extend .roundedborder;
+ 	font: "PT Sans", Helvetica, sans-serif;
+ 	@include adjust-font-size-to(14px);
+ 	// padding: 2px;
+ }
+
+ .label {
+ 	width: auto;
+ }
+
+
 
 
 /* Tables */
 table {
-	@include outer-table-borders(1px, $grey_light);
-	@include alternating-rows-and-columns( lighten($grey_light, 20%), lighten($grey_light, 10%), #000000);
+	// @include outer-table-borders(1px, $grey_light);
+	// @include alternating-rows-and-columns( lighten($grey_light, 20%), lighten($grey_light, 10%), #000000);
 	width: 100%;
+
+	tr {
+		margin: .5em 0;
+	}
 
 	td {
 		padding: .5em .25em;
+		vertical-align: top;
 	}
 
+}
+
+/* Global Classes 
+============================= */
+
+.callout {
+	@include adjust-font-size-to(18px);
+	@include rhythm();
+	font-weight: 700;
 }
 
 
 /* Navigation
 ============================= */
-
-#navbar {
+nav {
 	width: 100%;
 	background-color: #272822;
 	overflow: auto;
 	position: fixed;
 	padding: .25em 0;
 	height: 32px;
-
+}
+#navbar {
+	@include container;
 }
 
 ul.menu {
+	@include span(9);
 	@include horizontal-list-container;
 
 	li {
@@ -133,8 +180,6 @@ ul.menu {
 		&:last-child {
 			border: none;
 		}
-
-
 		a {
 			@include link-colors(white, $accent_light, darken($accent_light, 10%), white, $accent_light	);
 			@include hover-link;
@@ -143,52 +188,62 @@ ul.menu {
 			letter-spacing: .05em;
 		}
 	}
-	@include container(70em);
 
+
+}
+
+#searchbar {
+	@include span (3 last);
+	text-align: right;
 }
 
 #breadcrumb {
 	@include adjust-font-size-to(14px);
 }
+
 /* Header
 ============================= */
-#headerTitle {
-	padding-top: 32px;
-	min-height: 200px;
-}
-
 #header {
-	background-color: $primary;
+	padding-top: 40px;
+	min-height: 200px;
 	text-align: center;
-	img, h1 {
-		display:inline-block;
-		margin: .5em;
-	}
-	img {
+	h1, img {
 		vertical-align: middle;
-
+		display: inline-block;
 	}
-	h1 {
-		vertical-align: middle;
+}
+#headerTitle {
+	@include rhythm();
+	figure {
+		max-width: 1080px;
+		margin: gutter();
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
-
 }
 
 /* Sidebars 
 ============================= */
-
 #leftSidebar {
-	@include span(first 3);
+	@include span(3 first);
+	margin-right: gutter();
 }
 #rightSidebar {
-	@include span(last 3);
+	@include span(3 last);
+	margin-left: gutter();
+}
+
+#sidebar .block {
+	@include rhythm();
 }
 
 /* Main 
 ============================ */
 
 #main {
-	@include span(9 of 12);
+	@include span(9 no-gutters);
 }
 
 /* Footer 
@@ -198,7 +253,7 @@ ul.menu {
 	clear: both;
 	text-align: center;
 	@include leading-border;
-	background-color: $grey_light;
+	background-color: lighten($grey_light, 5%);
 }
 #standardFooter {
 	@include rhythm-padding();
@@ -212,3 +267,10 @@ ul.menu {
 
 /* Articles 
 ============================ */
+
+/* Admin Pages 
+============================ */
+
+.sectionBlock {
+	@include rhythm();
+}
