@@ -108,13 +108,11 @@
 
 <div id="results">
 	<table width="100%" class="listing">
-		<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
 		<tr class="heading" valign="bottom">
 			{if !$currentJournal}<td width="20%">{translate key="journal.journal"}</td>{/if}
 			<td width="{if !$currentJournal}20%{else}40%{/if}">{translate key="issue.issue"}</td>
 			<td width="60%" colspan="2">{translate key="article.title"}</td>
 		</tr>
-		<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
 
 		{iterate from=results item=result}
 			{assign var=publishedArticle value=$result.publishedArticle}
@@ -177,7 +175,6 @@
 					{/if}
 				</td>
 			</tr>
-			<tr><td colspan="{$numCols|escape}" class="endseparator">&nbsp;</td></tr>
 		{else}
 			<tr>
 				<td {if !$currentJournal}colspan="2" {/if}align="left">{page_info iterator=$results}</td>

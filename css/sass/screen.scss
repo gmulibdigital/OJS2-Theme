@@ -1,4 +1,8 @@
 @import "base";
+
+@viewport {
+  width: device-width;
+}
 /* 
 
 Structure 
@@ -25,6 +29,7 @@ Structure
 
 html {
   @include establish-baseline;
+  box-sizing: content-box;
 
 }
 *, *:before, *:after {
@@ -33,11 +38,23 @@ html {
 
 body {
 	font-family: "PT Sans", Helvetica, sans-serif;
-	font-size: 1em;
-	line-height: 1.4em;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
 	figure {
 		display: inline-block;
 	}
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 700;
+}
+
+blockquote{
+	padding: 1em 1em 1em 2em;
 }
 #container {
 	background-color: white;
@@ -45,7 +62,6 @@ body {
 #body{
 	overflow: auto;
 	@include container;
-	@include show-grid(show);
 	@include rhythm();
 
 	p {
@@ -55,7 +71,17 @@ body {
 	ul, ol {
 		margin: 1em;
 		padding-left: 1em;
-		list-style-type: initial;
+
+		li {
+			padding: .1em;
+		}
+	}
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
 	}
 
 }
@@ -95,14 +121,15 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 h2 {
 	font-size: 2em;
 	font-weight: 700;
+	padding: .5em 0;
 }
 h3 {
 	font-size: 1.75em;
 	font-weight: 700;
-	border-bottom: 1px solid $grey_bold;
+	text-decoration: underline;
 }
 h4 {
-	font-size: 1.75em;
+	font-size: 1.5em;
 	font-weight: 400;
 }
 
@@ -127,8 +154,6 @@ input, select, textarea {
  }
 
 
-
-
 /* Tables */
 table {
 	// @include outer-table-borders(1px, $grey_light);
@@ -151,10 +176,19 @@ table {
 
 .callout {
 	@include adjust-font-size-to(18px);
-	@include rhythm();
 	font-weight: 700;
 }
 
+.block {
+	@include rhythm();
+	height: 100%;
+}
+
+.action, 
+	.toggleExtras-inactive,
+	.toggleExtras-active {
+	@extend .button;
+}
 
 /* Navigation
 ============================= */
@@ -162,14 +196,18 @@ nav {
 	width: 100%;
 	background-color: #272822;
 	overflow: auto;
-	position: fixed;
-	padding: .25em 0;
-	height: 32px;
+	padding: .5em 0;
+}
+#mobileNav {
+	display: none;
 }
 #navbar {
 	@include container;
+	#sidebar-open-btn {
+		display: none;
+	}
+	display: block;
 }
-
 ul.menu {
 	@include span(9);
 	@include horizontal-list-container;
@@ -199,12 +237,14 @@ ul.menu {
 
 #breadcrumb {
 	@include adjust-font-size-to(14px);
+	padding: .5em 0;
+	border-bottom: 3px double $grey_light;
+	border-top: 3px double $grey_light;
 }
 
 /* Header
 ============================= */
 #header {
-	padding-top: 40px;
 	min-height: 200px;
 	text-align: center;
 	h1, img {
@@ -226,24 +266,52 @@ ul.menu {
 
 /* Sidebars 
 ============================= */
+#sidebar {
+	@include span(3 last);
+	overflow: auto;
+	height: 100%;
+
+	#social {
+		@include adjust-font-size-to(48px);
+		line-height: 0;
+		
+		ul {
+			@include horizontal-list-container;
+		}
+
+		li {
+			padding: 0;
+			@include horizontal-list-item;
+		}
+	}
+}
+
 #leftSidebar {
-	@include span(3 first);
+	width: 100%;
+	float: left;
 	margin-right: gutter();
 }
 #rightSidebar {
-	@include span(3 last);
+	width: 100%;
+	float: right;
 	margin-left: gutter();
 }
 
-#sidebar .block {
-	@include rhythm();
+.blockTitle {
+	display: block;
+	@extend h4;
 }
-
 /* Main 
 ============================ */
 
 #main {
-	@include span(9 no-gutters);
+	@include span(8);
+	padding-right: 1em;
+
+	img {
+		max-width: 600px;
+		height: auto;
+	}
 }
 
 /* Footer 
@@ -260,7 +328,19 @@ ul.menu {
 	font-family: Lato;
 	font-weight: 400;
 	font-size: .9em;
+	a img {
+		max-width: 350px;
+	}
 }
+
+/* Search 
+============================ */
+#results table {
+	@include inner-table-borders(1px, $grey_light);
+	@include outer-table-borders(1px, $grey_bold);
+	@include rhythm();
+}
+
 /* Issues
 ============================ */
 
@@ -268,9 +348,24 @@ ul.menu {
 /* Articles 
 ============================ */
 
+a.file {
+	@extend .button;
+}
+
 /* Admin Pages 
 ============================ */
 
 .sectionBlock {
 	@include rhythm();
+}
+
+
+/* Mobile 
+============================ */
+
+@media screen and (max-width: 1060px) {
+	@import "screen_max1060";
+}
+@media screen and (max-width: 600px) {
+	@import "screen_max600";
 }

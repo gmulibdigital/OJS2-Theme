@@ -1,0 +1,76 @@
+/* Changes:
+- Collapse Top Menu
+*/
+
+#fullNav {
+	display: none;
+}
+#mobileNav {
+	display: block;
+	.navicon {
+		display: none;
+	}
+	/*
+	Top black bar that holds the toggle button
+	*/
+ 
+	a.navicon {
+		display: inline-block;
+
+		float: left;
+		height: 6px;
+		width: 34px;
+		margin: 5px 30px;
+		border-top: 18px double #FFF;
+		border-bottom: 6px solid #FFF;
+		font-size:0;
+		text-align: right;
+	}
+
+	.menu {
+		display: none;
+		@include span(12);
+
+		li {
+			clear: both;
+			display: block;
+			width: 100%;
+			text-align: center;
+			border-bottom: 2px solid $grey_bold; 
+			text-transform: uppercase;
+			letter-spacing: .2em;
+			margin: 2px 0;
+			padding: 6px 0 6px 8px;
+
+			&:last-child {
+				border: none;
+			}
+
+			a {
+				display: block;
+			}
+
+			#searchbar {
+				display: block;
+				width: 100%;
+				float: left;
+				text-align: center;
+			}
+		}
+	}
+
+}
+
+#header {
+	margin-top: 50px;
+}
+
+
+#body {
+	padding: 0 1%;
+}
+
+#main img {
+	max-width:350px;
+	height: auto;
+}

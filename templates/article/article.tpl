@@ -43,24 +43,20 @@
 		</div>
 	{/if}
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
-	<div id="articleTitle"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3></div>
+	<div id="articleTitle" class="block"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
-	<br />
+	</div>
 	{if $article->getLocalizedAbstract()}
-		<div id="articleAbstract">
+		<div id="articleAbstract" class="block">
 		<h4>{translate key="article.abstract"}</h4>
-		<br />
 		<div>{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}</div>
-		<br />
 		</div>
 	{/if}
 
 	{if $article->getLocalizedSubject()}
-		<div id="articleSubject">
+		<div id="articleSubject" class="block">
 		<h4>{translate key="article.subject"}</h4>
-		<br />
 		<div>{$article->getLocalizedSubject()|escape}</div>
-		<br />
 		</div>
 	{/if}
 
@@ -71,7 +67,7 @@
 	{/if}
 
 	{if $galleys}
-		<div id="articleFullText">
+		<div id="articleFullText" class="block">
 		<h4>{translate key="reader.fullText"}</h4>
 		{if $hasAccess || ($subscriptionRequired && $showGalleyLinks)}
 			{foreach from=$article->getGalleys() item=galley name=galleyList}
@@ -98,19 +94,17 @@
 	{/if}
 
 	{if $citationFactory->getCount()}
-		<div id="articleCitations">
+		<div id="articleCitations" class="block">
 		<h4>{translate key="submission.citations"}</h4>
-		<br />
 		<div>
 			{iterate from=citationFactory item=citation}
 				<p>{$citation->getRawCitation()|strip_unsafe_html}</p>
 			{/iterate}
 		</div>
-		<br />
 		</div>
 	{/if}
 {/if}
-
+<div class="block">
 {foreach from=$pubIdPlugins item=pubIdPlugin}
 	{if $issue->getPublished()}
 		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject)}
@@ -118,12 +112,13 @@
 		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject, true)}{* Preview rather than assign a pubId *}
 	{/if}
 	{if $pubId}
-		<br />
-		<br />
 		{$pubIdPlugin->getPubIdDisplayType()|escape}: {if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}</a>{else}{$pubId|escape}{/if}
 	{/if}
 {/foreach}
+</div>
 {call_hook name="Templates::Article::MoreInfo"}
+<div class="block">
 {include file="article/comments.tpl"}
+</div>
 
 {include file="article/footer.tpl"}

@@ -1,0 +1,16 @@
+/* Changes for Mobile:
+- Collapse sidebar using javascript
+- Main div spans full width
+*/
+
+
+
+
+#main {
+	@include span(12);
+}
+
+#sidebar {
+	display: none;
+}
+

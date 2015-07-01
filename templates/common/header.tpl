@@ -120,13 +120,17 @@
 		</script>
 	{/if}{* hasSystemNotifications *}
 	<script type="text/javascript" src="{baseURL}/ojs/lib/pkp/js/lib/jquery/plugins/jquery.pnotify.js"></script>
+
 	<link rel="stylesheet" href="{baseURL}/ojs/lib/pkp/lib/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css">
 
 	<!-- Add fonts style sheet -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	
 	<!-- Add theme style sheet -->
 	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{$additionalHeadData}
 </head>
@@ -156,7 +160,7 @@
 {else}
 	{$applicationName}
 {/if}
-</figure>
+</figure>	
 </h1>
 </div>
 </div>
@@ -166,12 +170,14 @@
 {if $leftSidebarCode || $rightSidebarCode}
 	<div id="sidebar">
 		{if $leftSidebarCode}
-			<div id="leftSidebar" role="complementary">
+			<div id="leftSidebar" class="slide" role="complementary">
+				{include file="common/social.tpl"}
 				{$leftSidebarCode}
 			</div>
 		{/if}
 		{if $rightSidebarCode}
-			<div id="rightSidebar" role="complementary">
+			<div id="rightSidebar" class="slide" role="complementary">
+				{include file="common/social.tpl"}
 				{$rightSidebarCode}
 			</div>
 		{/if}

@@ -22,6 +22,7 @@
 
 <ul>
 	{if $announcementsEnabled}
+
 		<li><a href="{url op="announcements"}">{translate key="manager.announcements"}</a></li>
 	{/if}
 	<li><a href="{url op="files"}">{translate key="manager.filesBrowser"}</a></li>

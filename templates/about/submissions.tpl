@@ -30,14 +30,16 @@
 	<div id="onlineSubmissions">
 		<h3>{translate key="about.onlineSubmissions"}</h3>
 		<p class="callout">{translate key="about.onlineSubmissions.registrationRequired"}</p>
-		<p>
-			{translate key="about.onlineSubmissions.haveAccount" journalTitle=$siteTitle|escape}<br />
+		<div class="block">
+			<p>{translate key="about.onlineSubmissions.haveAccount" journalTitle=$siteTitle|escape}</p>
 			<a href="{url page="login"}" class="action">{translate key="about.onlineSubmissions.login"}</a>
-		</p>
-		<p>
-			{translate key="about.onlineSubmissions.needAccount"}<br />
+		</div>
+		
+		<div class="block">			
+			<p>{translate key="about.onlineSubmissions.needAccount"}</p>
 			<a href="{url page="user" op="register"}" class="action">{translate key="about.onlineSubmissions.registration"}</a>
-		</p>
+		</div>
+		
 
 	</div>
 {/if}

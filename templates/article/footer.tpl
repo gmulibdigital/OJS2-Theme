@@ -38,25 +38,34 @@
 <!-- end AddThis -->
 {/if}
 
-{if $currentJournal}
-	{if $currentJournal->getSetting('includeCopyrightStatement')}
-		<br/><br/>
-		{translate key="submission.copyrightStatement" copyrightYear=$article->getCopyrightYear()|escape copyrightHolder=$article->getLocalizedCopyrightHolder()|escape}
-	{/if}
-	{if $currentJournal->getSetting('includeLicense') && $ccLicenseBadge}
-		<br /><br />
-		{$ccLicenseBadge}
-	{/if}
-{/if}
-
-{call_hook name="Templates::Article::Footer::PageFooter"}
-{if $pageFooter}
-<br /><br />
-{$pageFooter}
-{/if}
 </div><!-- content -->
 </div><!-- main -->
 </div><!-- body -->
+
+{strip}
+{if $currentJournal && $currentJournal->getSetting('onlineIssn')}
+	{assign var=issn value=$currentJournal->getSetting('onlineIssn')}
+{elseif $currentJournal && $currentJournal->getSetting('printIssn')}
+	{assign var=issn value=$currentJournal->getSetting('printIssn')}
+{/if}
+
+{if $displayCreativeCommons}
+	{translate key="common.ccLicense"}
+{/if}
+<div id="pageFooter">
+{if $pageFooter}
+	{$pageFooter}
+{/if}
+{call_hook name="Templates::Common::Footer::PageFooter"}
+	<div id="standardFooter">
+		<p>ISSN: {$issn}</p>
+		<p>Hosted by <a href="http://publishing.gmu.edu">Mason Publishing</a>, part of the <a href="http://library.gmu.edu">George Mason University Libraries</a>.</p>
+	</div>
+</div>
+<script type="text/javascript" src="{$baseUrl}/plugins/themes/mpg/js/menu.js"></script>
+
+{/strip}
+
 
 {if $defineTermsContextId}
 <script type="text/javascript">

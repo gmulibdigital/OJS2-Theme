@@ -1,6 +1,6 @@
 /* line 5, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, .blockTitle, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -84,6 +84,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #D1D3D5;
 }
 
+/* line 48, sass/_base.scss */
+.button, .action,
+.toggleExtras-inactive,
+.toggleExtras-active, a.file {
+  padding: 2px 4px;
+  background-color: #D1D3D5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #87908F;
+}
+
+@viewport {
+  width: device-width;
+}
 /* 
 
 Structure 
@@ -105,49 +120,58 @@ Structure
 /* General HTML Elements 
 ============================= */
 /* apply a natural box layout model to all elements, but allowing components to change */
+/* line 30, sass/screen.scss */
+html {
+  box-sizing: content-box;
+}
 /* line 106, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html html {
   font-size: 100%;
   line-height: 1.5em;
 }
 
-/* line 30, sass/screen.scss */
+/* line 35, sass/screen.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 34, sass/screen.scss */
+/* line 39, sass/screen.scss */
 body {
   font-family: "PT Sans", Helvetica, sans-serif;
-  font-size: 1em;
-  line-height: 1.4em;
+  font-size: 16px;
+  line-height: 24px;
 }
-/* line 38, sass/screen.scss */
+/* line 43, sass/screen.scss */
 body figure {
   display: inline-block;
 }
 
-/* line 42, sass/screen.scss */
+/* line 48, sass/screen.scss */
+em {
+  font-style: italic;
+}
+
+/* line 52, sass/screen.scss */
+strong {
+  font-weight: 700;
+}
+
+/* line 56, sass/screen.scss */
+blockquote {
+  padding: 1em 1em 1em 2em;
+}
+
+/* line 59, sass/screen.scss */
 #container {
   background-color: white;
 }
 
-/* line 45, sass/screen.scss */
+/* line 62, sass/screen.scss */
 #body {
   overflow: auto;
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(80%, rgba(179, 179, 255, 0.25)), color-stop(80%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 50% 0%, 50% 1, color-stop(100%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, rgba(0, 0, 0, 0) 80%), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-size: 8.47458%, 100% 24px;
-  background-origin: content-box, border-box;
-  background-clip: content-box, border-box;
-  background-position: left top;
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
@@ -159,21 +183,32 @@ body figure {
   display: block;
   clear: both;
 }
-/* line 51, sass/screen.scss */
+/* line 67, sass/screen.scss */
 #body p {
   padding: .5em 0;
 }
-/* line 55, sass/screen.scss */
+/* line 71, sass/screen.scss */
 #body ul, #body ol {
   margin: 1em;
   padding-left: 1em;
-  list-style-type: initial;
+}
+/* line 75, sass/screen.scss */
+#body ul li, #body ol li {
+  padding: .1em;
+}
+/* line 79, sass/screen.scss */
+#body ul {
+  list-style-type: disc;
+}
+/* line 83, sass/screen.scss */
+#body ol {
+  list-style-type: decimal;
 }
 
 /* Skip to Content 
 from http://codepen.io/joe-watkins/pen/rjhiK
 */
-/* line 67, sass/screen.scss */
+/* line 93, sass/screen.scss */
 #skip-to-content {
   padding: 1em;
   position: absolute;
@@ -183,7 +218,7 @@ from http://codepen.io/joe-watkins/pen/rjhiK
   color: white;
 }
 
-/* line 76, sass/screen.scss */
+/* line 102, sass/screen.scss */
 #skip-to-content:focus {
   position: absolute;
   top: 0;
@@ -191,45 +226,46 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 }
 
 /* Headings */
-/* line 84, sass/screen.scss */
-h1, h2, h3, h4, h5, h6 {
+/* line 110, sass/screen.scss */
+h1, h2, h3, h4, .blockTitle, h5, h6 {
   font-family: Lato, Trabuchet, sans-serif;
 }
 
-/* line 87, sass/screen.scss */
+/* line 113, sass/screen.scss */
 h1 {
   font-weight: 700;
   font-size: 2.625em;
   line-height: 1.14286em;
 }
 
-/* line 91, sass/screen.scss */
-h2, h3, h4, h5, h6 {
+/* line 117, sass/screen.scss */
+h2, h3, h4, .blockTitle, h5, h6 {
   font-family: Lato, Trebuchet, sans-serif;
   line-height: 1.8em;
 }
 
-/* line 95, sass/screen.scss */
+/* line 121, sass/screen.scss */
 h2 {
   font-size: 2em;
   font-weight: 700;
+  padding: .5em 0;
 }
 
-/* line 99, sass/screen.scss */
+/* line 126, sass/screen.scss */
 h3 {
   font-size: 1.75em;
   font-weight: 700;
-  border-bottom: 1px solid #87908F;
+  text-decoration: underline;
 }
 
-/* line 104, sass/screen.scss */
-h4 {
-  font-size: 1.75em;
+/* line 131, sass/screen.scss */
+h4, .blockTitle {
+  font-size: 1.5em;
   font-weight: 400;
 }
 
 /* Links */
-/* line 111, sass/screen.scss */
+/* line 138, sass/screen.scss */
 a {
   color: #00909E;
   text-decoration: none;
@@ -256,28 +292,28 @@ a:hover, a:focus {
 }
 
 /* Forms */
-/* line 118, sass/screen.scss */
+/* line 145, sass/screen.scss */
 input, select, textarea {
   font: "PT Sans", Helvetica, sans-serif;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
 
-/* line 125, sass/screen.scss */
+/* line 152, sass/screen.scss */
 .label {
   width: auto;
 }
 
 /* Tables */
-/* line 133, sass/screen.scss */
+/* line 158, sass/screen.scss */
 table {
   width: 100%;
 }
-/* line 138, sass/screen.scss */
+/* line 163, sass/screen.scss */
 table tr {
   margin: .5em 0;
 }
-/* line 142, sass/screen.scss */
+/* line 167, sass/screen.scss */
 table td {
   padding: .5em .25em;
   vertical-align: top;
@@ -285,34 +321,43 @@ table td {
 
 /* Global Classes 
 ============================= */
-/* line 152, sass/screen.scss */
+/* line 177, sass/screen.scss */
 .callout {
   font-size: 1.125em;
   line-height: 1.33333em;
+  font-weight: 700;
+}
+
+/* line 182, sass/screen.scss */
+.block {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
-  font-weight: 700;
+  height: 100%;
 }
 
 /* Navigation
 ============================= */
-/* line 161, sass/screen.scss */
+/* line 195, sass/screen.scss */
 nav {
   width: 100%;
   background-color: #272822;
   overflow: auto;
-  position: fixed;
-  padding: .25em 0;
-  height: 32px;
+  padding: .5em 0;
 }
 
-/* line 169, sass/screen.scss */
+/* line 201, sass/screen.scss */
+#mobileNav {
+  display: none;
+}
+
+/* line 204, sass/screen.scss */
 #navbar {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 /* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
 #navbar:after {
@@ -320,8 +365,12 @@ nav {
   display: block;
   clear: both;
 }
+/* line 206, sass/screen.scss */
+#navbar #sidebar-open-btn {
+  display: none;
+}
 
-/* line 173, sass/screen.scss */
+/* line 211, sass/screen.scss */
 ul.menu {
   width: 74.57627%;
   float: left;
@@ -332,7 +381,7 @@ ul.menu {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 177, sass/screen.scss */
+/* line 215, sass/screen.scss */
 ul.menu li {
   list-style-image: none;
   list-style-type: none;
@@ -355,11 +404,11 @@ ul.menu li:last-child {
 ul.menu li.last {
   padding-right: 0;
 }
-/* line 180, sass/screen.scss */
+/* line 218, sass/screen.scss */
 ul.menu li:last-child {
   border: none;
 }
-/* line 183, sass/screen.scss */
+/* line 221, sass/screen.scss */
 ul.menu li a {
   color: white;
   text-decoration: none;
@@ -388,7 +437,7 @@ ul.menu li a:hover, ul.menu li a:focus {
   text-decoration: underline;
 }
 
-/* line 195, sass/screen.scss */
+/* line 233, sass/screen.scss */
 #searchbar {
   width: 23.72881%;
   float: right;
@@ -396,39 +445,41 @@ ul.menu li a:hover, ul.menu li a:focus {
   text-align: right;
 }
 
-/* line 200, sass/screen.scss */
+/* line 238, sass/screen.scss */
 #breadcrumb {
   font-size: 0.875em;
   line-height: 1.71429em;
+  padding: .5em 0;
+  border-bottom: 3px double #D1D3D5;
+  border-top: 3px double #D1D3D5;
 }
 
 /* Header
 ============================= */
-/* line 206, sass/screen.scss */
+/* line 247, sass/screen.scss */
 #header {
-  padding-top: 40px;
   min-height: 200px;
   text-align: center;
 }
-/* line 210, sass/screen.scss */
+/* line 250, sass/screen.scss */
 #header h1, #header img {
   vertical-align: middle;
   display: inline-block;
 }
 
-/* line 215, sass/screen.scss */
+/* line 255, sass/screen.scss */
 #headerTitle {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
 }
-/* line 217, sass/screen.scss */
+/* line 257, sass/screen.scss */
 #headerTitle figure {
   max-width: 1080px;
   margin: 1.69492%;
 }
-/* line 220, sass/screen.scss */
+/* line 260, sass/screen.scss */
 #headerTitle figure img {
   width: 100%;
   height: auto;
@@ -436,41 +487,89 @@ ul.menu li a:hover, ul.menu li a:focus {
 
 /* Sidebars 
 ============================= */
-/* line 229, sass/screen.scss */
-#leftSidebar {
-  width: 23.72881%;
-  float: left;
-  margin-right: 1.69492%;
-  margin-right: 1.69492%;
-}
-
-/* line 233, sass/screen.scss */
-#rightSidebar {
+/* line 269, sass/screen.scss */
+#sidebar {
   width: 23.72881%;
   float: right;
   margin-right: 0;
+  overflow: auto;
+  height: 100%;
+}
+/* line 274, sass/screen.scss */
+#sidebar #social {
+  font-size: 3em;
+  line-height: 1.5em;
+  line-height: 0;
+}
+/* line 278, sass/screen.scss */
+#sidebar #social ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 282, sass/screen.scss */
+#sidebar #social li {
+  padding: 0;
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 49, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#sidebar #social li:first-child {
+  padding-left: 0;
+}
+/* line 50, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#sidebar #social li:last-child {
+  padding-right: 0;
+}
+/* line 52, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#sidebar #social li.last {
+  padding-right: 0;
+}
+
+/* line 289, sass/screen.scss */
+#leftSidebar {
+  width: 100%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 294, sass/screen.scss */
+#rightSidebar {
+  width: 100%;
+  float: right;
   margin-left: 1.69492%;
 }
 
-/* line 238, sass/screen.scss */
-#sidebar .block {
-  margin-top: 1.5em;
-  padding-top: 0em;
-  padding-bottom: 0em;
-  margin-bottom: 1.5em;
+/* line 300, sass/screen.scss */
+.blockTitle {
+  display: block;
 }
 
 /* Main 
 ============================ */
-/* line 245, sass/screen.scss */
+/* line 307, sass/screen.scss */
 #main {
-  width: 74.57627%;
+  width: 66.10169%;
   float: left;
+  margin-right: 1.69492%;
+  padding-right: 1em;
+}
+/* line 311, sass/screen.scss */
+#main img {
+  max-width: 600px;
+  height: auto;
 }
 
 /* Footer 
 ============================ */
-/* line 252, sass/screen.scss */
+/* line 320, sass/screen.scss */
 #pageFooter {
   clear: both;
   text-align: center;
@@ -480,13 +579,63 @@ ul.menu li a:hover, ul.menu li a:focus {
   background-color: #dee0e1;
 }
 
-/* line 258, sass/screen.scss */
+/* line 326, sass/screen.scss */
 #standardFooter {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   font-family: Lato;
   font-weight: 400;
   font-size: .9em;
+}
+/* line 331, sass/screen.scss */
+#standardFooter a img {
+  max-width: 350px;
+}
+
+/* Search 
+============================ */
+/* line 338, sass/screen.scss */
+#results table {
+  border: 1px solid #87908F;
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}
+/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table th, #results table td {
+  border-right: 1px solid #D1D3D5;
+  border-bottom: 1px solid #D1D3D5;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+/* line 22, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table th:last-child, #results table td:last-child {
+  border-right-width: 0;
+}
+/* line 28, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table th.last, #results table td.last {
+  border-right-width: 0;
+}
+/* line 33, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table tbody tr:last-child th, #results table tbody tr:last-child td, #results table tfoot tr:last-child th, #results table tfoot tr:last-child td {
+  border-bottom-width: 0;
+}
+/* line 37, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table tbody tr.last th, #results table tbody tr.last td, #results table tfoot tr.last th, #results table tfoot tr.last td {
+  border-bottom-width: 0;
+}
+/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table thead th {
+  border-bottom: 1px solid #87908F;
+}
+/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table tfoot th, #results table tfoot td {
+  border-top: 1px solid #87908F;
+}
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#results table th:first-child {
+  border-right: 1px solid #87908F;
 }
 
 /* Issues
@@ -495,10 +644,115 @@ ul.menu li a:hover, ul.menu li a:focus {
 ============================ */
 /* Admin Pages 
 ============================ */
-/* line 274, sass/screen.scss */
+/* line 358, sass/screen.scss */
 .sectionBlock {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
+}
+
+/* Mobile 
+============================ */
+@media screen and (max-width: 1060px) {
+  /* Changes:
+  - Collapse Top Menu
+  */
+  /* line 5, sass/_screen_max1060.scss */
+  #fullNav {
+    display: none;
+  }
+
+  /* line 8, sass/_screen_max1060.scss */
+  #mobileNav {
+    display: block;
+    /*
+    Top black bar that holds the toggle button
+    */
+  }
+  /* line 10, sass/_screen_max1060.scss */
+  #mobileNav .navicon {
+    display: none;
+  }
+  /* line 17, sass/_screen_max1060.scss */
+  #mobileNav a.navicon {
+    display: inline-block;
+    float: left;
+    height: 6px;
+    width: 34px;
+    margin: 5px 30px;
+    border-top: 18px double #FFF;
+    border-bottom: 6px solid #FFF;
+    font-size: 0;
+    text-align: right;
+  }
+  /* line 30, sass/_screen_max1060.scss */
+  #mobileNav .menu {
+    display: none;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 34, sass/_screen_max1060.scss */
+  #mobileNav .menu li {
+    clear: both;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #87908F;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin: 2px 0;
+    padding: 6px 0 6px 8px;
+  }
+  /* line 45, sass/_screen_max1060.scss */
+  #mobileNav .menu li:last-child {
+    border: none;
+  }
+  /* line 49, sass/_screen_max1060.scss */
+  #mobileNav .menu li a {
+    display: block;
+  }
+  /* line 53, sass/_screen_max1060.scss */
+  #mobileNav .menu li #searchbar {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+  }
+
+  /* line 64, sass/_screen_max1060.scss */
+  #header {
+    margin-top: 50px;
+  }
+
+  /* line 69, sass/_screen_max1060.scss */
+  #body {
+    padding: 0 1%;
+  }
+
+  /* line 73, sass/_screen_max1060.scss */
+  #main img {
+    max-width: 350px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* Changes for Mobile:
+  - Collapse sidebar using javascript
+  - Main div spans full width
+  */
+  /* line 9, sass/_screen_max600.scss */
+  #main {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 13, sass/_screen_max600.scss */
+  #sidebar {
+    display: none;
+  }
 }

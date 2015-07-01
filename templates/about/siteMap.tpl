@@ -17,8 +17,8 @@
 <div id="siteMap">
 <ul class="plain">
 <li>
-	<a href="{url journal="index" page="index" op="index"}">{translate key="navigation.home"}</a><br/>
-	{if $isUserLoggedIn}<a href="{url journal="index" page="user"}">{translate key="navigation.userHome"}</a><br/>{/if}
+	<a href="{url journal="index" page="index" op="index"}">{translate key="navigation.home"}</a></li>
+	{if $isUserLoggedIn}<li><a href="{url journal="index" page="user"}">{translate key="navigation.userHome"}</a></li>{/if}
 	<ul class="plain">
 	{if $journals|@count>1 && !$currentJournal}
 		{foreach from=$journals item=journal}
@@ -28,15 +28,15 @@
 		{if $journals|@count==1}
 			{assign var=currentJournal value=$journals[0]}
 		{else}
-			<li><a href="{url journal="index" page="about" op="siteMap"}">{translate key="journal.journals"}</a><br/>
+			<li><a href="{url journal="index" page="about" op="siteMap"}">{translate key="journal.journals"}</a></li>
 			<ul class="plain">
 			{assign var=onlyOneJournal value=1}
 		{/if}
 
-		<li><a href="{url journal=$currentJournal->getPath()}">{$currentJournal->getLocalizedTitle()|escape}</a><br/>
+		<li><a href="{url journal=$currentJournal->getPath()}">{$currentJournal->getLocalizedTitle()|escape}</a></li>
 			<ul class="plain">
 				<li><a href="{url journal=$currentJournal->getPath() page="about"}">{translate key="navigation.about"}</a></li>
-				<li>
+			
 					{if $isUserLoggedIn}
 						<ul class="plain">
 							{assign var=currentJournalId value=$currentJournal->getId()}
@@ -51,7 +51,7 @@
 							<li><a href="{url journal=$currentJournal->getPath() page="user" op="register"}">{translate key="navigation.register"}</a></li>
 						</ul>
 					{/if}
-				</li>
+			
 				{if $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
 					<li><a href="{url journal=$currentJournal->getPath() page="search"}">{translate key="navigation.search"}</a><br />
 						<ul class="plain">
