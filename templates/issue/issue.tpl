@@ -11,6 +11,7 @@
 {foreach name=sections from=$publishedArticles item=section key=sectionId}
 {if $section.title}<h4 class="tocSectionTitle">{$section.title|escape}</h4>{/if}
 
+<table class="tocArticle">
 {foreach from=$section.articles item=article}
 	{assign var=articlePath value=$article->getBestArticleId($currentJournal)}
 	{assign var=articleId value=$article->getId()}
@@ -33,8 +34,8 @@
 		{assign var=hasAccess value=0}
 	{/if}
 
-<table class="tocArticle">
-<tr valign="top">
+
+<tr valign="top" class="articleTOC">
 	<td class="tocArticleCoverImage{if $showCoverPage} showCoverImage{/if}">
 		{if $showCoverPage}
 			<div class="tocCoverImage">
@@ -93,9 +94,10 @@
 		</div>
 	</td>
 </tr>
-</table>
+
 {call_hook name="Templates::Issue::Issue::Article"}
 {/foreach}
+</table>
 
 {if !$smarty.foreach.sections.last}
 <div class="separator"></div>
