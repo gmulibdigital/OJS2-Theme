@@ -28,7 +28,7 @@
 </table>
 </div>
 {/if}
-<div id="generalInformation" class="sectionBlock">
+<div id="generalInformation" class="block">
 <h3>1.1 {translate key="manager.setup.generalInformation"}</h3>
 
 <table width="100%" class="data">
@@ -81,7 +81,7 @@
 
 <div class="separator"></div>
 
-<div id="principalContact" class="sectionBlock">
+<div id="principalContact" class="block">
 <h3>1.2 {translate key="manager.setup.principalContact"}</h3>
 
 <p>{translate key="manager.setup.principalContactDescription"}</p>
@@ -120,7 +120,7 @@
 
 <div class="separator"></div>
 
-<div id="technicalSupportContact" class="sectionBlock">
+<div id="technicalSupportContact" class="block">
 <h3>1.3 {translate key="manager.setup.technicalSupportContact"}</h3>
 
 <p>{translate key="manager.setup.technicalSupportContactDescription"}</p>
@@ -141,7 +141,7 @@
 </table>
 </div>
 <div class="separator"></div>
-<div id="setupEmails" class="sectionBlock">
+<div id="setupEmails" class="block">
 <h3>1.4 {translate key="manager.setup.emails"}</h3>
 <table width="100%" class="data">
 	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailHeaderDescription"}<br />&nbsp;</td></tr>
@@ -174,7 +174,7 @@
 </div>
 
 <div class="separator"></div>
-<div id="setupPublisher" class="sectionBlock">
+<div id="setupPublisher" class="block">
 <h3>1.5 {translate key="manager.setup.publisher"}</h3>
 
 <p>{translate key="manager.setup.publisherDescription"}</p>
@@ -199,7 +199,7 @@
 </table>
 </div>
 <div class="separator"></div>
-<div id="sponsors" class="sectionBlock">
+<div id="sponsors" class="block">
 <h3>1.6 {translate key="manager.setup.sponsors"}</h3>
 
 <p>{translate key="manager.setup.sponsorsDescription"}</p>
@@ -244,7 +244,7 @@
 
 <div class="separator"></div>
 
-<div id="contributors" class="sectionBlock">
+<div id="contributors" class="block">
 <h3>1.7 {translate key="manager.setup.contributors"}</h3>
 
 <p>{translate key="manager.setup.contributorsDescription"}</p>
@@ -289,7 +289,7 @@
 
 <div class="separator"></div>
 
-<div id="searchEngineIndexing" class="sectionBlock">
+<div id="searchEngineIndexing" class="block">
 <h3>1.8 {translate key="manager.setup.searchEngineIndexing"}</h3>
 
 <p>{translate key="manager.setup.searchEngineIndexingDescription"}</p>
@@ -316,7 +316,7 @@
 
 <div class="separator" ></div>
 
-<div class="sectionBlock">
+<div class="block">
 <h3>1.9 {translate key="manager.setup.history"}</h3>
 
 <p>{translate key="manager.setup.historyDescription"}</p>

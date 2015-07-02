@@ -12,12 +12,12 @@
 {assign var="pageTitle" value="manager.importExport"}
 {include file="common/header.tpl"}
 {/strip}
-
+<div class="pseudoMenu">
 <ul>
 	{foreach from=$plugins item=plugin}
-	<li><a href="{url op="importexport" path="plugin"|to_array:$plugin->getName()}">{$plugin->getDisplayName()|escape}</a>:&nbsp;{$plugin->getDescription()|escape}</li>
+	<li><a class="pseudoHeading" href="{url op="importexport" path="plugin"|to_array:$plugin->getName()}">{$plugin->getDisplayName()|escape}</a>{$plugin->getDescription()|escape}</li>
 	{/foreach}
 </ul>
-
+</div>
 {include file="common/footer.tpl"}
 

@@ -7,10 +7,10 @@
 
 
 #main {
-	@include span(12);
+	@include span(12 no-gutter);
+	padding-right: 0;
 }
 
 #sidebar {
 	display: none;
 }
-

@@ -59,10 +59,6 @@
 	{if $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/rightSidebar.css" type="text/css" />{/if}
 	{if $leftSidebarCode && $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/bothSidebars.css" type="text/css" />{/if} -->
 
-	<!-- {foreach from=$stylesheets item=cssUrl}
-		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach} -->
-
 	<!-- Default global locale keys for JavaScript -->
 	{include file="common/jsLocaleKeys.tpl" }
 
@@ -130,9 +126,10 @@
 	<!-- Add theme style sheet -->
 	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{foreach from=$stylesheets item=cssUrl}
+		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
+	{/foreach}
 
-	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
 <a id="skip-to-content" href="#main">Skip to Main Content</a>
@@ -171,13 +168,13 @@
 	<div id="sidebar">
 		{if $leftSidebarCode}
 			<div id="leftSidebar" class="slide" role="complementary">
-				{include file="common/social.tpl"}
+				{include file="common/submit.tpl"}
 				{$leftSidebarCode}
 			</div>
 		{/if}
 		{if $rightSidebarCode}
 			<div id="rightSidebar" class="slide" role="complementary">
-				{include file="common/social.tpl"}
+				{include file="common/submit.tpl"}
 				{$rightSidebarCode}
 			</div>
 		{/if}

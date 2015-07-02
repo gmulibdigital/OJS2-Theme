@@ -48,13 +48,10 @@ function toggleChecked() {
 <div id="reviewFormElements">
 <form id="reviewFormElements" action="{url op="copyReviewFormElement"}" method="post">
 <table width="100%" class="listing" id="reviewFormElementsTable">
-	<tr>
-		<td class="headseparator" colspan="3">&nbsp;</td>
-	</tr>
 	<tr class="heading" valign="bottom">
 		<td width="3%">&nbsp;</td>
-		<td width="77%">{translate key="manager.reviewFormElements.question"}</td>
-		<td width="20%">{translate key="common.action"}</td>
+		<td width="73%">{translate key="manager.reviewFormElements.question"}</td>
+		<td width="24%">{translate key="common.action"}</td>
 	</tr>
 	<tr>
 		<td class="headseparator" colspan="3">&nbsp;</td>
@@ -65,11 +62,12 @@ function toggleChecked() {
 		<td><input type="checkbox" name="copy[]" value="{$reviewFormElement->getId()|escape}"/></td>
 		<td class="drag">{$reviewFormElement->getLocalizedQuestion()|truncate:200:"..."}</td>
 		<td class="nowrap">
-			<a href="{url op="editReviewFormElement" path=$reviewFormElement->getReviewFormId()|to_array:$reviewFormElement->getId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteReviewFormElement" path=$reviewFormElement->getReviewFormId()|to_array:$reviewFormElement->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.reviewFormElements.confirmDelete"}')" class="action">{translate key="common.delete"}</a>&nbsp;|&nbsp;<a href="{url op="moveReviewFormElement" d=u id=$reviewFormElement->getId()}" class="action">&uarr;</a>&nbsp;<a href="{url op="moveReviewFormElement" d=d id=$reviewFormElement->getId()}" class="action">&darr;</a>
+			<a href="{url op="editReviewFormElement" path=$reviewFormElement->getReviewFormId()|to_array:$reviewFormElement->getId()}" class="action">{translate key="common.edit"}</a><a href="{url op="deleteReviewFormElement" path=$reviewFormElement->getReviewFormId()|to_array:$reviewFormElement->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.reviewFormElements.confirmDelete"}')" class="action">{translate key="common.delete"}</a>
+			<a href="{url op="moveReviewFormElement" d=u id=$reviewFormElement->getId()}" class="action">&uarr;</a>&nbsp;<a href="{url op="moveReviewFormElement" d=d id=$reviewFormElement->getId()}" class="action">&darr;</a>
 		</td>
 	</tr>
   {if $reviewFormElements->eof()}
-    <tr><td class="endseparator" colspan="3"></td></tr>
+
   {/if}
 {/iterate}
 

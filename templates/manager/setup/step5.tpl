@@ -106,7 +106,7 @@ function prepBlockFields() {
 	</tr>
 </table>
 {/if}
-<div id="journalHomepageHeader" class="sectionBlock">
+<div id="journalHomepageHeader" class="block">
 <h3>5.1 {translate key="manager.setup.journalHomepageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageHeaderDescription"}</p>
@@ -199,7 +199,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalHomepageContent" class="sectionBlock">
+<div id="journalHomepageContent" class="block">
 <h3>5.2 {translate key="manager.setup.journalHomepageContent"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageContentDescription"}</p>
@@ -262,7 +262,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalPageHeaderInfo" class="sectionBlock">
+<div id="journalPageHeaderInfo" class="block">
 <h3>5.3 {translate key="manager.setup.journalPageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalPageHeaderDescription"}</p>
@@ -354,7 +354,7 @@ function prepBlockFields() {
 </div>
 <div class="separator"></div>
 
-<div id="journalPageFooterInfo" class="sectionBlock">
+<div id="journalPageFooterInfo" class="block">
 <h3>5.4 {translate key="manager.setup.journalPageFooter"}</h3>
 
 <p>{translate key="manager.setup.journalPageFooterDescription"}</p>
@@ -364,7 +364,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="navigationBar" class="sectionBlock">
+<div id="navigationBar" class="block">
 <h3>5.5 {translate key="manager.setup.navigationBar"}</h3>
 
 <p>{translate key="manager.setup.itemsDescription"}</p>
@@ -433,7 +433,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="journalLayout" class="sectionBlock">
+<div id="journalLayout" class="block">
 <h3>5.6 {translate key="manager.setup.journalLayout"}</h3>
 
 <p>{translate key="manager.setup.journalLayoutDescription"}</p>
@@ -460,10 +460,29 @@ function prepBlockFields() {
 {translate key="common.fileName"}: <a href="{$publicFilesDir}/{$journalStyleSheet.uploadName|escape:"url"}" class="file">{$journalStyleSheet.name|escape}</a> {$journalStyleSheet.dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteJournalStyleSheet" value="{translate key="common.delete"}" class="button" />
 {/if}
 
-<table id="assignBlocksToSidebars" border="0" align="center" style="width: 100%;">
-	<tr align="center">
-		<td rowspan="2" id="assignBlocksToSidebarLeft" style="with: 30%;" >
-			{translate key="manager.setup.layout.leftSidebar"}<br/>
+<table id="assignBlocksToSidebars" class="block" border="0" align="center" style="width: 100%;">
+	<tr>
+		<td class="heading" id="assignBlocksToSidebarLeft" style="width: 30%;" >
+			{translate key="manager.setup.layout.leftSidebar"}
+			
+		</td>
+		<td class="heading">
+
+		</td>
+		<td valign="top" class="heading" id="assignBlocksToSidebarUnselected" style="width: 30%;" >
+			{translate key="manager.setup.layout.unselected"}
+			
+		</td>
+		<td class="heading">
+			
+		</td>
+		<td id="assignBlocksToSidebarRight" class="heading" style="width: 30%;">
+			{translate key="manager.setup.layout.rightSidebar"}
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectLeftWidget']);" /><br/>
 			<select name="blockSelectLeftWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:200px">
 				{foreach from=$leftBlockPlugins item=block}
@@ -474,13 +493,13 @@ function prepBlockFields() {
 			</select><br/>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&darr;" onclick="moveDown(this.form.elements['blockSelectLeftWidget']);" />
 		</td>
-		<td>
+		<td class="centerButton">
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockUnselectedWidget'],this.form.elements['blockSelectLeftWidget']);" /><br/>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockSelectLeftWidget'],this.form.elements['blockUnselectedWidget']);" />
+
 		</td>
-		<td valign="top" id="assignBlocksToSidebarUnselected" style="width: 30%;" >
-			{translate key="manager.setup.layout.unselected"}<br/>
-			<select name="blockUnselectedWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:180px;" >
+		<td>
+			<select name="blockUnselectedWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:100%;" >
 				{foreach from=$disabledBlockPlugins item=block}
 					<option value="{$block->getName()|escape}">{$block->getDisplayName()|escape}</option>
 				{foreachelse}
@@ -488,12 +507,11 @@ function prepBlockFields() {
 				{/foreach}
 			</select>
 		</td>
-		<td>
+		<td class="centerButton">
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockUnselectedWidget']);" /><br/>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockUnselectedWidget'],this.form.elements['blockSelectRightWidget']);" />
 		</td>
-		<td rowspan="2" id="assignBlocksToSidebarRight" style="width: 30%;">
-			{translate key="manager.setup.layout.rightSidebar"}<br/>
+		<td>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectRightWidget']);" /><br/>
 			<select name="blockSelectRightWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:200px" >
 				{foreach from=$rightBlockPlugins item=block}
@@ -506,7 +524,7 @@ function prepBlockFields() {
 		</td>
 	</tr>
 	<tr align="center">
-		<td colspan="3" valign="top" height="60px">
+		<td colspan="5" valign="top" height="60px">
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockSelectLeftWidget']);" /><br/>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockSelectLeftWidget'],this.form.elements['blockSelectRightWidget']);" />
 		</td>
@@ -517,7 +535,7 @@ function prepBlockFields() {
 <input type="hidden" name="blockUnselected" value="" />
 </div>
 <div class="separator"></div>
-<div id="setupInfo" class="sectionBlock">
+<div id="setupInfo" class="block">
 <h3>5.7 {translate key="manager.setup.information"}</h3>
 
 <p>{translate key="manager.setup.information.description"}</p>
@@ -537,7 +555,7 @@ function prepBlockFields() {
 
 <div class="separator"></div>
 
-<div id="lists" class="sectionBlock">
+<div id="lists" class="block">
 <h3>5.8 {translate key="manager.setup.lists"}</h3>
 <p>{translate key="manager.setup.listsDescription"}</p>
 <table width="100%" class="data">

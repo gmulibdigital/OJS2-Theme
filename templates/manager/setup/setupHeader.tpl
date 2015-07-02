@@ -14,7 +14,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<ul class="steplist">
+<ul class="steplist menu">
 	<li id="step1" {if $setupStep == 1} class="current"{/if}><a href="{url op="setup" path="1"}">1. {translate key="manager.setup.details"}</a></li>
 	<li id="step2" {if $setupStep == 2} class="current"{/if}><a href="{url op="setup" path="2"}">2. {translate key="manager.setup.policies"}</a></li>
 	<li id="step3" {if $setupStep == 3} class="current"{/if}><a href="{url op="setup" path="3"}">3. {translate key="manager.setup.submissions"}</a></li>

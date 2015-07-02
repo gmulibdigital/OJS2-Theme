@@ -73,7 +73,7 @@
 		</table>
 		<br />
 	{/if}
-	<h3>{translate key="issue.toc"}</h3>
+	<!-- <h3>{translate key="issue.toc"}</h3> -->
 	{include file="issue/issue.tpl"}
 {else}
 	{translate key="current.noCurrentIssueDesc"}

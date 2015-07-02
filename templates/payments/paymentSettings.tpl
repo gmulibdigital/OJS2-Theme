@@ -18,11 +18,10 @@
 	<li><a href="{url op="viewPayments"}">{translate key="manager.payment.records"}</a></li>
 </ul>
 
-<br />
 
 <form name="paymentSettingsForm" method="post" action="{url op="savePaymentSettings"}">
 {if count($formLocales) > 1}
-<div id="locales">
+<div id="locales" class="block">
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -37,7 +36,7 @@
 {/if}
 
 {include file="common/formErrors.tpl"}
-<div id="generalOptions">
+<div id="generalOptions" class="block">
 <h3>{translate key="manager.payment.generalOptions"}</h3>
 <table width="100%" class="data">
 	<tr>
@@ -54,7 +53,7 @@
 	</tr>
 </table>
 </div>
-<div id="authorFees">
+<div id="authorFees" class="block">
 <h3>{translate key="manager.payment.authorFees"}</h3>
 <p>{translate key="manager.payment.authorFeesDescription"}</p>
 <table width="100%" class="data">
@@ -112,7 +111,7 @@
 </tr>
 </table>
 </div>
-<div id="readerFees">
+<div id="readerFees" class="block">
 <h3>{translate key="manager.payment.readerFees"}</h3>
 
 <p>{translate key="manager.payment.readerFeesDescription"}</p>
@@ -160,7 +159,7 @@
 </tr>
 </table>
 </div>
-<div id="generalFees">
+<div id="generalFees" class="block">
 <h3>{translate key="manager.payment.generalFees"}</h3>
 
 <p>{translate key="manager.payment.generalFeesDescription"}</p>
@@ -196,7 +195,7 @@
 </tr>
 </table>
 </div>
-<div id="gifts">
+<div id="gifts" class="block">
 <h3>{translate key="manager.payment.giftFees"}</h3>
 
 <p>{translate key="manager.payment.giftFeesDescription"}</p>

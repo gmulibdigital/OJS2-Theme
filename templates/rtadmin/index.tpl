@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="rtAdminStatus">
+<div id="rtAdminStatus" class="block">
 <h3>{translate key="rt.admin.status"}</h3>
 <p>
 {translate key="rt.admin.readingToolsEnabled"}: {if $enabled}{translate key="common.enabled"}{else}{translate key="common.disabled"}{/if}<br/>
@@ -21,7 +21,7 @@
 </p>
 </div>
 
-<div id="rtAdminConfig">
+<div id="rtAdminConfig" class="block">
 <h3>{translate key="rt.admin.configuration"}</h3>
 <ul>
 	<li><a href="{url op="settings"}">{translate key="rt.admin.settings"}</a></li>
@@ -29,14 +29,14 @@
 </ul>
 </div>
 
-<div id="rtAdminManage">
+<div id="rtAdminManage" class="block">
 <h3>{translate key="rt.admin.management"}</h3>
 <ul>
 	<li><a href="{url op="validateUrls"}">{translate key="rt.admin.validateUrls"}</a></li>
 </ul>
 </div>
 
-<div id="rtAdminSharing">
+<div id="rtAdminSharing" class="block">
 <h3>{translate key="rt.admin.sharing"}</h3>
 <ul>
 	<li><a href="{url op="sharingSettings"}">{translate key="rt.admin.configureSharing"}</a></li>

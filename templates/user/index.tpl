@@ -19,17 +19,24 @@
 	{call_hook name="Templates::User::Index::Site"}
 {/if}
 
-<div id="myJournals">
+<div id="myJournals" class="block">
 {if !$currentJournal}<h3>{translate key="user.myJournals"}</h3>{/if}
 
 {foreach from=$userJournals item=journal}
-	<div id="journal-{$journal->getPath()|escape}">
+	<div id="journal-{$journal->getPath()|escape}" class="block">
 	{assign var="hasRole" value=1}
 	{if !$currentJournal}<h4><a href="{url journal=$journal->getPath() page="user"}">{$journal->getLocalizedTitle()|escape}</a></h4>
-	{else}<h3>{$journal->getLocalizedTitle()|escape}</h3>{/if}
+	{else}<h3><a href="{url page="index"}">{$journal->getLocalizedTitle()|escape}</a></h3>{/if}
 	{assign var="journalId" value=$journal->getId()}
 	{assign var="journalPath" value=$journal->getPath()}
 	<table width="100%" class="info">
+		<tr class="tableHeading">
+			<th>User Pages</th>
+			<th>Assign</th>
+			<th>Review</th>
+			<th>Edit</th>
+			<th>Frequent Tasks</th>
+		</tr>
 		{if $isValid.JournalManager.$journalId}
 			<tr>
 				<td><a href="{url journal=$journalPath page="manager"}">{translate key="user.role.manager"}</a></td>
@@ -41,7 +48,8 @@
 		{/if}
 		{if $isValid.SubscriptionManager.$journalId}
 			<tr>
-				<td width="20%" colspan="5"><a href="{url journal=$journalPath page="subscriptionManager"}">{translate key="user.role.subscriptionManager"}</a></td>
+				<td width="20%" colspan="1"><a href="{url journal=$journalPath page="subscriptionManager"}">{translate key="user.role.subscriptionManager"}</a></td>
+				<td></td>
 			</tr>
 		{/if}
 		{if $isValid.Editor.$journalId || $isValid.SectionEditor.$journalId || $isValid.LayoutEditor.$journalId || $isValid.Copyeditor.$journalId || $isValid.Proofreader.$journalId}
@@ -156,11 +164,11 @@
 		{/if}
 		{* Add a row to the bottom of each table to ensure all have same width*}
 		<tr>
-			<td width="25%"></td>
-			<td width="12%"></td>
-			<td width="12%"></td>
-			<td width="12%"></td>
-			<td width="39%"></td>
+			<td width="22%"></td>
+			<td width="16%"></td>
+			<td width="16%"></td>
+			<td width="16%"></td>
+			<td width="30%"></td>
 		</tr>
 	</table>
 	{call_hook name="Templates::User::Index::Journal" journal=$journal}
@@ -203,7 +211,7 @@
 	{/if}{* $currentJournal *}
 {/if}{* !$hasRole *}
 
-<div id="myAccount">
+<div id="myAccount" class="block pseudoMenu">
 <h3>{translate key="user.myAccount"}</h3>
 <ul>
 	{if $hasOtherJournals}

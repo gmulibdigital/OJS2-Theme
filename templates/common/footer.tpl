@@ -29,7 +29,7 @@
 {/if}
 {call_hook name="Templates::Common::Footer::PageFooter"}
 	<div id="standardFooter">
-		<p>ISSN: {$issn}</p>
+		<p>ISSN: {$issn}</p>		
 		<p>Hosted by <a href="http://publishing.gmu.edu">Mason Publishing</a>, part of the <a href="http://library.gmu.edu">George Mason University Libraries</a>.</p>
 		<a href="http://publishing.gmu.edu">
 			<img src="{$baseUrl}/plugins/themes/mpg/img/15-392_UnitLogo_MasonPubGroup-wide-blk.png" alt="Mason Publishing Logo"/>

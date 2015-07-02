@@ -13,7 +13,7 @@
 
 <div id="fullNav">
 <div id="navbar" role="navigation">
-	<ul class="menu">
+	<ul class="navMenu menu">
 		<li id="home"><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
 		<li id="about"><a href="{url page="about"}">{translate key="navigation.about"}</a></li>
 
@@ -63,7 +63,7 @@
     <a class="navicon mtoggle" href="#">MAIN MENU</a>
 </div>
 <div id="navbar" role="navigation">
-	<ul class="menu">
+	<ul class="navMenu menu">
 		<li id="home"><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
 		<li id="about"><a href="{url page="about"}">{translate key="navigation.about"}</a></li>
 
@@ -86,7 +86,7 @@
 
 		{if $currentJournal && $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
 			<li id="current"><a href="{url page="issue" op="current"}">{translate key="navigation.current"}</a></li>
-			<li id="archives"><a href="{url page="issue" op="archive"}">{translate key="navigation.archives"}</a></li>
+			<li id="archives"><a href="{url page="issue" op="archive"}">Browse</a></li>
 		{/if}
 
 		{if $enableAnnouncements}

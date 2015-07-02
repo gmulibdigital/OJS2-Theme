@@ -15,7 +15,7 @@
 {include file="common/formErrors.tpl"}
 
 {if count($formLocales) > 1}
-<div id="locales" class="sectionBlock">
+<div id="locales" class="block">
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -28,7 +28,7 @@
 </table>
 </div>
 {/if}
-<div id="focusAndScopeDescription" class="sectionBlock">
+<div id="focusAndScopeDescription" class="block">
 <h3>2.1 {translate key="manager.setup.focusAndScopeOfJournal"}</h3>
 <p>{translate key="manager.setup.focusAndScopeDescription"}</p>
 <p>
@@ -38,7 +38,7 @@
 
 <div class="separator"></div>
 
-<div id="peerReviewPolicy" class="sectionBlock">
+<div id="peerReviewPolicy" class="block">
 <h3>2.2 {translate key="manager.setup.peerReviewPolicy"}</h3>
 <div id="peerReviewDescription">
 <p>{translate key="manager.setup.peerReviewDescription"}</p>
@@ -47,7 +47,7 @@
 
 <p><textarea name="reviewPolicy[{$formLocale|escape}]" id="reviewPolicy" rows="12" cols="60" class="textArea">{$reviewPolicy[$formLocale]|escape}</textarea></p>
 </div>
-<div id="reviewGuidelinesInfo" class="sectionBlock">
+<div id="reviewGuidelinesInfo" class="block">
 
 <h4>{translate key="manager.setup.reviewGuidelines"}</h4>
 
@@ -56,7 +56,7 @@
 
 <p><textarea name="reviewGuidelines[{$formLocale|escape}]" id="reviewGuidelines" rows="12" cols="60" class="textArea">{$reviewGuidelines[$formLocale]|escape}</textarea></p>
 </div>
-<div id="reviewProcess" class="sectionBlock">
+<div id="reviewProcess" class="block">
 <h4>{translate key="manager.setup.reviewProcess"}</h4>
 
 <p>{translate key="manager.setup.reviewProcessDescription"}</p>
@@ -87,7 +87,7 @@
 	</tr>
 </table>
 </div>
-<div id="reviewOptions" class="sectionBlock">
+<div id="reviewOptions" class="block">
 <h4>{translate key="manager.setup.reviewOptions"}</h4>
 
 	<script type="text/javascript">
@@ -160,7 +160,7 @@
 </div>
 </div>
 <div class="separator"></div>
-<div id="privacyStatementInfo" class="sectionBlock">
+<div id="privacyStatementInfo" class="block">
 <h3>2.3 {translate key="manager.setup.privacyStatement"}</h3>
 
 <p><textarea name="privacyStatement[{$formLocale|escape}]" id="privacyStatement" rows="12" cols="60" class="textArea">{$privacyStatement[$formLocale]|escape}</textarea></p>
@@ -168,14 +168,14 @@
 
 <div class="separator"></div>
 
-<div id="editorDecision" class="sectionBlock">
+<div id="editorDecision" class="block">
 <h3>2.4 {translate key="manager.setup.editorDecision"}</h3>
 
 <p><input type="checkbox" name="notifyAllAuthorsOnDecision" id="notifyAllAuthorsOnDecision" value="1"{if $notifyAllAuthorsOnDecision} checked="checked"{/if} /> <label for="notifyAllAuthorsOnDecision">{translate key="manager.setup.notifyAllAuthorsOnDecision"}</label></p>
 </div>
 <div class="separator"></div>
 
-<div id="addItemtoAboutJournal" class="sectionBlock">
+<div id="addItemtoAboutJournal" class="block">
 <h3>2.5 {translate key="manager.setup.addItemtoAboutJournal"}</h3>
 
 <table width="100%" class="data">
@@ -209,7 +209,7 @@
 </div>
 <div class="separator"></div>
 
-<div id="journalArchiving" class="sectionBlock">
+<div id="journalArchiving" class="block">
 <h3>2.6 {translate key="manager.setup.journalArchiving"}</h3>
 
 <p>{translate key="manager.setup.preservationDescription"}</p>
@@ -230,7 +230,7 @@
 
 <div class="separator"></div>
 
-<div id="reviewerDatabaseLink" class="sectionBlock">
+<div id="reviewerDatabaseLink" class="block">
 <h3>2.7 {translate key="manager.setup.reviewerDatabaseLink"}</h3>
 
 <p>{translate key="manager.setup.reviewerDatabaseLink.desc"}</p>
