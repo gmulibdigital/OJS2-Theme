@@ -49,7 +49,7 @@
 		{if $isValid.SubscriptionManager.$journalId}
 			<tr>
 				<td width="20%" colspan="1"><a href="{url journal=$journalPath page="subscriptionManager"}">{translate key="user.role.subscriptionManager"}</a></td>
-				<td></td>
+				<td colspan="4"></td>
 			</tr>
 		{/if}
 		{if $isValid.Editor.$journalId || $isValid.SectionEditor.$journalId || $isValid.LayoutEditor.$journalId || $isValid.Copyeditor.$journalId || $isValid.Proofreader.$journalId}

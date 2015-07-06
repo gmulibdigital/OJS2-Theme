@@ -32,19 +32,19 @@
 
 {include file="common/formErrors.tpl"}
 
-<table class="data" width="100%">
+<table class="data email" width="100%">
 
 {if $isNewTemplate}
 	<tr valign="top">
-		<td width="20%" class="label">{fieldLabel name="emailKey" key="manager.emails.emailKey"}</td>
-		<td width="80%" class="value"><input type="text" name="emailKey" value="{$emailKey|escape}" id="emailKey" size="20" maxlength="120" class="textField" /><br/>&nbsp;</td>
+		<th width="20%" class="label">{fieldLabel name="emailKey" key="manager.emails.emailKey"}</th>
+		<th width="80%" class="value"><input type="text" name="emailKey" value="{$emailKey|escape}" id="emailKey" size="20" maxlength="120" class="textField" /><br/>&nbsp;</th>
 	</tr>
 {/if}
 
 {foreach from=$supportedLocales item=localeName key=localeKey}
-	<tr valign="top"><td colspan="2">
-		<h3>{translate key="manager.emails.emailTemplate"} ({$localeName|escape})</h3>
-	</td></tr>
+	<tr valign="top"><th colspan="2">
+		{translate key="manager.emails.emailTemplate"} ({$localeName|escape})
+	</th></tr>
 
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="subject-$localeKey" key="email.subject"}</td>
@@ -55,9 +55,9 @@
 		<td class="value"><textarea name="body[{$localeKey|escape}]" id="body-{$localeKey|escape}" cols="70" rows="20" class="textArea">{$body.$localeKey|escape}</textarea></td>
 	</tr>
 {foreachelse}
-<tr valign="top"><td colspan="2">
-	<h3>{translate key="manager.emails.emailTemplate"}</h3>
-</td></tr>
+<tr valign="top"><th colspan="2">
+	{translate key="manager.emails.emailTemplate"}
+</th></tr>
 
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="subject-$currentLocale" key="email.subject"}</td>

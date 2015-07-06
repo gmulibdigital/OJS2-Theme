@@ -15,12 +15,12 @@
 
 <div id="emails" class="block">
 <table class="listing" width="100%">
-	<tr class="heading" valign="bottom">
-		<td width="20%">{translate key="manager.emails.emailTemplates"}</td>
-		<td width="10%">{translate key="email.sender"}</td>
-		<td width="10%">{translate key="email.recipient"}</td>
-		<td width="35%">{translate key="email.subject"}</td>
-		<td width="25%" align="right">{translate key="common.action"}</td>
+	<tr valign="bottom">
+		<th width="20%">{translate key="manager.emails.emailTemplates"}</th>
+		<th width="10%">{translate key="email.sender"}</th>
+		<th width="10%">{translate key="email.recipient"}</th>
+		<th width="35%">{translate key="email.subject"}</th>
+		<th width="25%" align="right">{translate key="common.action"}</th>
 	</tr>
 	<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
 {iterate from=emailTemplates item=emailTemplate}

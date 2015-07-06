@@ -84,8 +84,6 @@
 	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}">
 

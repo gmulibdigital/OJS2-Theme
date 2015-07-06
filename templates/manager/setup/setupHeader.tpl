@@ -22,3 +22,4 @@
 	<li id="step5" {if $setupStep == 5} class="current"{/if}><a href="{url op="setup" path="5"}">5. {translate key="manager.setup.look"}</a></li>
 </ul>
 
+<div id="setup">

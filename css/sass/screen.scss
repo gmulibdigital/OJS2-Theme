@@ -127,7 +127,7 @@ h4 {
 /* Links */
 
 a {
-	@include link-colors($primary, $accent_bold, lighten($accent_bold, 10%), darken($primary, 5%), $accent_bold);
+	@include link-colors( $accent-light, $accent-bold, lighten($primary, 5%), darken($accent-bold, 10%), $accent-light);
 	@include hover-link;
 }
 
@@ -156,15 +156,25 @@ select {
 
 /* Tables */
 table {
-	//@include outer-table-borders(1px, $grey_light);
-	//@include inner-table-borders(1px, $grey_light);
-	// @include alternating-rows-and-columns( lighten($grey_light, 20%), lighten($grey_light, 10%), #000000);
+	//@include outer-table-borders(1px, $grey-light);
+	//@include inner-table-borders(1px, $grey-light);
+	//@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);
 	width: 100%;
 
+	th {
+		font-family: Lato;
+		@include adjust-font-size-to(18px);
+		background-color: $grey-light;
+		border-bottom:2px solid $grey-light;
+		text-transform: capitalize;
+		padding: .5em .25em;
+	}
 	tr {
 		margin: .5em 0;
+		&.heading {
+			@extend th;
+		}
 	}
-
 	td {
 		padding: .5em .25em;
 		vertical-align: top;
@@ -181,7 +191,7 @@ table {
 	@include horizontal-list-container;
 	li {
 		@include horizontal-list-item(1em, left);
-		border-right: 2px solid $grey_light;
+		border-right: 2px solid $grey-light;
 
 		&:last-child {
 			border-right: none;
@@ -213,19 +223,22 @@ table {
 	display:none;
 }
 
-.articleTOC{
-	border: 1px solid $grey_light;
+.TOC{
+	border: 1px solid $grey-light;
 	&:nth-child(even) {
-		background-color: lighten($grey_light, 10%);
+		background-color: lighten($grey-light, 10%);
 	}
 }
 .pseudoHeading {
-	@extend h4;
+	@include adjust-font-size-to(20px);
+	padding: .5em 0 .25em;
 }
 .label {
 	font-weight: 700;
 }
-
+.separator {
+	display: none;
+}
 /* Navigation
 ============================= */
 nav {
@@ -253,7 +266,7 @@ ul.navMenu {
 			border: none;
 		}
 		a {
-			@include link-colors(white, $accent_light, darken($accent_light, 10%), white, $accent_light	);
+			@include link-colors(white, $accent-bold, darken($accent-bold, 10%), white, $accent-bold);
 			@include hover-link;
 			font-family: Lato, sans-serif;
 			font-weight: 300;
@@ -277,8 +290,8 @@ ul.navMenu {
 #breadcrumb {
 	@include adjust-font-size-to(14px);
 	padding: .5em 0;
-	border-bottom: 3px double $grey_light;
-	border-top: 3px double $grey_light;
+	border-bottom: 3px double $grey-light;
+	border-top: 3px double $grey-light;
 }
 
 /* Header
@@ -350,7 +363,7 @@ ul.navMenu {
 	clear: both;
 	text-align: center;
 	@include leading-border;
-	background-color: lighten($grey_light, 5%);
+	background-color: lighten($grey-light, 5%);
 
 	#social {
 		@include adjust-font-size-to(36px);
@@ -383,8 +396,8 @@ ul.navMenu {
 /* Search 
 ============================ */
 #results table {
-	@include inner-table-borders(1px, $grey_light);
-	@include outer-table-borders(1px, $grey_bold);
+	@include inner-table-borders(1px, $grey-light);
+	@include outer-table-borders(1px, $grey-bold);
 	@include rhythm();
 }
 
@@ -413,13 +426,13 @@ table.info {
 	.tableHeading {
 		font-family: Lato;
 		@include adjust-font-size-to(18px);
-		background-color: lighten($grey_light, 5%);
+		background-color: lighten($grey-light, 5%);
 	}
 	a {
 		display: inline-block;
 	}
 	tr {
-		border-bottom: 1px solid $grey_light;
+		border-bottom: 1px solid $grey-light;
 	
 		&:last-child {
 			border-bottom: none;
@@ -434,24 +447,45 @@ table.info {
 }
 
 table.listing {
-	@extend table.info;
+	@extend .adminMenu;
 
-	.heading {
-		line-height: 2em
-	}
-	tr:nth-child(even){
-		background-color: lighten($grey_light, 10%);
+	tr {
+		border-bottom: 1px solid $grey-light;
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 	td { text-align: left;}
 }
+
+table.settings {
+	@include rhythm();
+	@include outer-table-borders(1px, $grey-light);
+	
+	td.label {
+		vertical-align: middle;
+	}
+}
+table.email {
+	tr {
+		&:nth-child(odd) {background-color: lighten($grey-light, 8%);}
+	}
+}
+
 .pseudoMenu {
 	@extend .adminMenu;
+
+	a {display:block;}
 }
 
 .heading {
 	font-family: Lato;
 	@include adjust-font-size-to(18px);
-	background-color: lighten($grey_light, 5%);
+	background-color: lighten($grey-light, 5%);
+
+	td:last-child{
+		text-align: center;
+	}
 }
 span.instruct {
 	display: block;
@@ -459,11 +493,11 @@ span.instruct {
 }
 
 #assignBlocksToSidebars {
-	border: 1px solid $grey_light;
+	border: 1px solid $grey-light;
 
 	.heading {
 		text-align: center;
-		border: 1px solid $grey_bold;
+		border: 1px solid $grey-bold;
 	}
 	input {
 		padding: 2px 0;
@@ -471,6 +505,22 @@ span.instruct {
 
 	td.centerButton {
 		vertical-align: middle !important;
+	}
+}
+
+#setup {
+	.options {
+		@extend .button;
+	}
+
+	.pkp_controllers_grid table {
+		@include rhythm();
+		@include inner-table-borders(1px, $grey-light);
+		@include outer-table-borders(1px, $grey-bold);
+
+		th {
+			@extend .heading;
+		}
 	}
 }
 /* Mobile 

@@ -22,18 +22,13 @@
 <br />
 
 <table width="100%" class="listing">
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
+	<tr valign="bottom">
+		<th width="25%">{translate key="common.user"}</th>
+		<th width="25%">{translate key="manager.payment.paymentType"}</th>
+		<th width="25%">{translate key="manager.payment.timestamp"}</th>
+		<th width="25%">{translate key="manager.payment.action"}</th>
 	</tr>
-	<tr class="heading" valign="bottom">
-		<td width="25%">{translate key="common.user"}</td>
-		<td width="25%">{translate key="manager.payment.paymentType"}</td>
-		<td width="25%">{translate key="manager.payment.timestamp"}</td>
-		<td width="25%">{translate key="manager.payment.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
-	</tr>
+
 
 	{iterate from=payments item=payment}
 	{assign var=isSubscription value=$payment->isSubscription()}

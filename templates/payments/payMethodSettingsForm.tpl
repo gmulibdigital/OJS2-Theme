@@ -40,10 +40,12 @@ function changePaymentMethod() {
 
 
 <table width="100%" class="data">
+	<tr>
+		<th>{translate key="manager.payment.paymentMethods"}</th>
+	</tr>
 	<tr valign="top">
 		<td class="data" colspan="2">
 			{assign var=pluginIndex value=1}
-			<h4>{translate key="manager.payment.paymentMethods"}</h4>
 			{foreach from=$paymentMethodPlugins item=plugin}
 				&nbsp;<input type="radio" name="paymentMethodPluginName" id="paymentMethodPluginName-{$pluginIndex|escape}" value="{$plugin->getName()|escape}" onclick="changePaymentMethod();" {if $paymentMethodPluginName == $plugin->getName()}checked="checked" {/if}/>&nbsp;<label for="paymentMethodPluginName-{$pluginIndex|escape}">{$plugin->getDisplayName()|escape}</label><br/>
 				<p>{$plugin->getDescription()}</p>

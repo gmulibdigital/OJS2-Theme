@@ -22,7 +22,7 @@
 <form name="paymentSettingsForm" method="post" action="{url op="savePaymentSettings"}">
 {if count($formLocales) > 1}
 <div id="locales" class="block">
-<table width="100%" class="data">
+<table width="100%" class="settings">
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
@@ -38,9 +38,13 @@
 {include file="common/formErrors.tpl"}
 <div id="generalOptions" class="block">
 <h3>{translate key="manager.payment.generalOptions"}</h3>
-<table width="100%" class="data">
+<table width="100%" class="settings">
 	<tr>
-		<td class="label" width="20%"><input type="checkbox" name="journalPaymentsEnabled" id="journalPaymentsEnabled" value="1"{if $journalPaymentsEnabled} checked="checked"{/if} /></td>
+		<th class="label" width="20%"><input type="checkbox" name="journalPaymentsEnabled" id="journalPaymentsEnabled" value="1"{if $journalPaymentsEnabled} checked="checked"{/if} /></th>
+		<th>Enable Payments</th>
+	</tr>
+	<tr>
+		<td width="20%"></td>
 		<td class="value" width="80%">{fieldLabel name="journalPaymentsEnabled" key="manager.payment.options.enablePayments"}</td>
 	</tr>
 	<tr>
@@ -56,10 +60,10 @@
 <div id="authorFees" class="block">
 <h3>{translate key="manager.payment.authorFees"}</h3>
 <p>{translate key="manager.payment.authorFeesDescription"}</p>
-<table width="100%" class="data">
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="submissionFeeEnabled" id="submissionFeeEnabled" value="1"{if $submissionFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="submissionFeeEnabled" key="manager.payment.options.submissionFee"}</td>
+	<th width="20%"><input type="checkbox" name="submissionFeeEnabled" id="submissionFeeEnabled" value="1"{if $submissionFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="submissionFeeEnabled" key="manager.payment.options.submissionFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="submissionFee" key="manager.payment.options.fee"}</td>
@@ -73,9 +77,11 @@
 	<td class="label" width="20%">{fieldLabel name="submissionFeeDescription" key="manager.payment.options.feeDescription"}</td>
 	<td class="value" width="80%"><textarea class="textArea" name="submissionFeeDescription[{$formLocale|escape}]" id="submissionFeeDescription" rows="2" cols="50">{$submissionFeeDescription[$formLocale]|escape}</textarea></td>
 </tr>
+</table>
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="fastTrackFeeEnabled" id="fastTrackFeeEnabled" value="1"{if $fastTrackFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="fastTrackFeeEnabled" key="manager.payment.options.fastTrackFee"}</td>
+	<th width="20%"><input type="checkbox" name="fastTrackFeeEnabled" id="fastTrackFeeEnabled" value="1"{if $fastTrackFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="fastTrackFeeEnabled" key="manager.payment.options.fastTrackFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="fastTrackFee" key="manager.payment.options.fee"}</td>
@@ -89,9 +95,11 @@
 	<td class="label" width="20%">{fieldLabel name="fastTrackFeeDescription" key="manager.payment.options.feeDescription"}</td>
 	<td class="value" width="80%"><textarea class="textArea" name="fastTrackFeeDescription[{$formLocale|escape}]" id="fastTrackFeeDescription" rows="2" cols="50">{$fastTrackFeeDescription[$formLocale]|escape}</textarea></td>
 </tr>
+</table>
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="publicationFeeEnabled" id="publicationFeeEnabled" value="1"{if $publicationFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="publicationFeeEnabled" key="manager.payment.options.publicationFee"}</td>
+	<th width="20%"><input type="checkbox" name="publicationFeeEnabled" id="publicationFeeEnabled" value="1"{if $publicationFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="publicationFeeEnabled" key="manager.payment.options.publicationFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="publicationFee" key="manager.payment.options.fee"}</td>
@@ -116,14 +124,20 @@
 
 <p>{translate key="manager.payment.readerFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table width="100%" class="settings">
 <tr>
-	<td class="value" width="20%"><input type="checkbox" name="acceptSubscriptionPayments" id="acceptSubscriptionPayments" value="1"{if $acceptSubscriptionPayments} checked="checked"{/if} /></td>
-	<td class="label" width="80%">{fieldLabel name="acceptSubscriptionPayments" key="manager.payment.options.acceptSubscriptionPayments"}</td>
+	<th class="value" width="20%"><input type="checkbox" name="acceptSubscriptionPayments" id="acceptSubscriptionPayments" value="1"{if $acceptSubscriptionPayments} checked="checked"{/if} /></th>
+	<th>Reader Subscriptions</th>
 </tr>
 <tr>
-	<td width="20%"><input type="checkbox" name="purchaseIssueFeeEnabled" id="purchaseIssueFeeEnabled" value="1"{if $purchaseIssueFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="purchaseIssueFeeEnabled" key="manager.payment.options.purchaseIssueFee"}</td>
+	<td width="20%"></td>
+	<td width="80%">{fieldLabel name="acceptSubscriptionPayments" key="manager.payment.options.acceptSubscriptionPayments"}</td>
+
+</table>
+<table width="100%" class="settings">
+<tr>
+	<th width="20%"><input type="checkbox" name="purchaseIssueFeeEnabled" id="purchaseIssueFeeEnabled" value="1"{if $purchaseIssueFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="purchaseIssueFeeEnabled" key="manager.payment.options.purchaseIssueFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="purchaseIssueFee" key="manager.payment.options.fee"}</td>
@@ -137,9 +151,11 @@
 	<td class="label" width="20%">{fieldLabel name="purchaseIssueFeeDescription" key="manager.payment.options.feeDescription"}</td>
 	<td class="value" width="80%"><textarea class="textArea" name="purchaseIssueFeeDescription[{$formLocale|escape}]" id="purchaseIssueFeeDescription" rows="2" cols="50">{$purchaseIssueFeeDescription[$formLocale]|escape}</textarea></td>
 </tr>
+</table>
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="purchaseArticleFeeEnabled" id="purchaseArticleFeeEnabled" value="1"{if $purchaseArticleFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="purchaseArticleFeeEnabled" key="manager.payment.options.purchaseArticleFee"}</td>
+	<th width="20%"><input type="checkbox" name="purchaseArticleFeeEnabled" id="purchaseArticleFeeEnabled" value="1"{if $purchaseArticleFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="purchaseArticleFeeEnabled" key="manager.payment.options.purchaseArticleFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="purchaseArticleFee" key="manager.payment.options.fee"}</td>
@@ -155,7 +171,7 @@
 </tr>
 <tr>
 	<td class="value" width="20%"><input type="checkbox" name="restrictOnlyPdf" id="restrictOnlyPdf" value="1"{if $restrictOnlyPdf} checked="checked"{/if} /></td>
-	<td class="label" width="80%">{fieldLabel name="restrictOnlyPdf" key="manager.payment.options.onlypdf"}</td>
+	<td width="80%">{fieldLabel name="restrictOnlyPdf" key="manager.payment.options.onlypdf"}</td>
 </tr>
 </table>
 </div>
@@ -164,10 +180,10 @@
 
 <p>{translate key="manager.payment.generalFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="membershipFeeEnabled" id="membershipFeeEnabled" value="1"{if $membershipFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="membershipFeeEnabled" key="manager.payment.options.membershipFee"}</td>
+	<th width="20%"><input type="checkbox" name="membershipFeeEnabled" id="membershipFeeEnabled" value="1"{if $membershipFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="membershipFeeEnabled" key="manager.payment.options.membershipFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="membershipFee" key="manager.payment.options.fee"}</td>
@@ -181,9 +197,11 @@
 	<td class="label" width="20%">{fieldLabel name="membershipFeeDescription" key="manager.payment.options.feeDescription"}</td>
 	<td class="value" width="80%"><textarea class="textArea" name="membershipFeeDescription[{$formLocale|escape}]" id="membershipFeeDescription" rows="2" cols="50">{$membershipFeeDescription[$formLocale]|escape}</textarea></td>
 </tr>
+</table>
+<table width="100%" class="settings">
 <tr>
-	<td width="20%"><input type="checkbox" name="donationFeeEnabled" id="donationFeeEnabled" value="1"{if $donationFeeEnabled} checked="checked"{/if} /></td>
-	<td width="80%">{fieldLabel name="donationFeeEnabled" key="manager.payment.options.donationFee"}</td>
+	<th width="20%"><input type="checkbox" name="donationFeeEnabled" id="donationFeeEnabled" value="1"{if $donationFeeEnabled} checked="checked"{/if} /></th>
+	<th width="80%">{fieldLabel name="donationFeeEnabled" key="manager.payment.options.donationFee"}</th>
 </tr>
 <tr>
 	<td class="label" width="20%">{fieldLabel name="donationFeeName" key="manager.payment.options.feeName"}</td>
@@ -200,10 +218,13 @@
 
 <p>{translate key="manager.payment.giftFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table width="100%" class="settings">
 <tr>
-	<td class="value" width="20%"><input type="checkbox" name="acceptGiftSubscriptionPayments" id="acceptGiftSubscriptionPayments" value="1"{if $acceptGiftSubscriptionPayments} checked="checked"{/if} /></td>
-	<td class="label" width="80%">{fieldLabel name="acceptGiftSubscriptionPayments" key="manager.payment.options.acceptGiftSubscriptionPayments"}</td>
+	<th width="20%"><input type="checkbox" name="acceptGiftSubscriptionPayments" id="acceptGiftSubscriptionPayments" value="1"{if $acceptGiftSubscriptionPayments} checked="checked"{/if} /></th>
+	<th>Gift Subscriptions</th>
+<tr>
+	<td class="value" width="20%"></td>
+	<td width="80%">{fieldLabel name="acceptGiftSubscriptionPayments" key="manager.payment.options.acceptGiftSubscriptionPayments"}</td>
 </tr>
 </table>
 </div>

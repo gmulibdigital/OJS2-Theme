@@ -20,12 +20,12 @@ $susy: (
 /*  Colors
 ================== */
 
-$primary: #00909E;
-$accent_bold: #425195;
-$accent_light: #BCD631; 
+$primary: #006633;
+$accent-bold: #F37021;
+$accent-light: #3EC2CF; 
 
-$grey_bold: #87908F;
-$grey_light: #D1D3D5;
+$grey-bold: #87908F;
+$grey-light: #D1D3D5;
 
 $background: #E4E6D7;
 
@@ -60,15 +60,15 @@ $base-line-height: 24px;
 		margin: .5em 0;
 		li {
 			list-style-type: none;
-			padding: 5px;
-			border: 1px solid $grey_light;
-
-			&:nth-child(even){
-				background-color: lighten($grey_light, 10%);
-			}
+			padding: 10px 0 5px 5px;
+			border-bottom: 1px solid $grey_light;
+			display: block;
 
 			a {
-				display: block;
+				&:before {
+					content: '\00BB';
+					padding-right: 5px;
+				}
 			}
 		}
 	}

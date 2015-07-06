@@ -29,7 +29,7 @@
 </div><!-- locales -->
 {/if}
 
-<div id="securitySettings" class="sectionBlock">
+<div id="securitySettings" class="block">
 <h3>4.1 {translate key="manager.setup.securitySettings"}</h3>
 <div id="onlineAccessManagement">
 <h4>{translate key="manager.setup.onlineAccessManagement"}</h4>
@@ -169,7 +169,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="publicationScheduling" class="sectionBlock">
+<div id="publicationScheduling" class="block">
 <h3>4.2 {translate key="manager.setup.publicationScheduling"}</h3>
 <div id="publicationSchedule">
 <h4>{translate key="manager.setup.publicationSchedule"}</h4>
@@ -238,7 +238,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="publicIdentifier" class="sectionBlock">
+<div id="publicIdentifier" class="block">
 <h3>4.3 {translate key="manager.setup.publicIdentifier"}</h3>
 <div id="uniqueIdentifier">
 <h4>{translate key="manager.setup.uniqueIdentifier"}</h4>
@@ -278,7 +278,7 @@ function setRegAllowOpts(form) {
 </div><!-- publicIdentifier -->
 <div class="separator"></div>
 
-<div id="announcementsSection" class="sectionBlock">
+<div id="announcementsSection" class="block">
 <h3>4.4 {translate key="manager.setup.announcements"}</h3>
 
 <p>{translate key="manager.setup.announcementsDescription"}</p>
@@ -319,7 +319,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="copyediting" class="sectionBlock">
+<div id="copyediting" class="block">
 <h3>4.5 {translate key="manager.setup.copyediting"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
@@ -348,7 +348,7 @@ function setRegAllowOpts(form) {
 
 <div class="separator"></div>
 
-<div id="layoutAndGalleys" class="sectionBlock">
+<div id="layoutAndGalleys" class="block">
 <h3>4.6 {translate key="manager.setup.layoutAndGalleys"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
@@ -417,7 +417,7 @@ function setRegAllowOpts(form) {
 </div>
 <div class="separator"></div>
 
-<div id="proofreading" class="sectionBlock">
+<div id="proofreading" class="block">
 <h3>4.7 {translate key="manager.setup.proofreading"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
@@ -451,6 +451,6 @@ function setRegAllowOpts(form) {
 <p><span class="formRequired">{translate key="common.requiredField"}</span></p>
 
 </form>
-
+</div>
 {include file="common/footer.tpl"}
 

@@ -11,7 +11,7 @@
 {assign var="pageTitle" value="manager.setup.journalSetup"}
 {include file="manager/setup/setupHeader.tpl"}
 
-<p>{translate key="manager.setup.journalSetupUpdated"}</p>
+<p class="block">{translate key="manager.setup.journalSetupUpdated"}</p>
 
 {if $setupStep == 1}
 <div><span class="disabled">&lt;&lt; {translate key="navigation.previousStep"}</span> | <a href="{url op="setup" path="2"}">{translate key="navigation.nextStep"} &gt;&gt;</a></div>

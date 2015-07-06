@@ -14,7 +14,7 @@
 {include file="common/formErrors.tpl"}
 
 {if count($formLocales) > 1}
-<div id="locale" class="sectionBlock">
+<div id="locale" class="block">
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -28,7 +28,7 @@
 </div>
 {/if}
 
-<div id="authorGuidelinesInfo" class="sectionBlock">
+<div id="authorGuidelinesInfo" class="block">
 <h3>3.1 {translate key="manager.setup.authorGuidelines"}</h3>
 
 <p>{translate key="manager.setup.authorGuidelinesDescription"}</p>
@@ -39,7 +39,7 @@
 
 </div>
 
-<div id="submissionPreparationChecklist" class="sectionBlock">
+<div id="submissionPreparationChecklist" class="block">
 <h4>{translate key="manager.setup.submissionPreparationChecklist"}</h4>
 
 <p>{translate key="manager.setup.submissionPreparationChecklistDescription"}</p>
@@ -70,7 +70,7 @@
 
 <div class="separator"></div>
 
-<div id="permissions" class="sectionBlock">
+<div id="permissions" class="block">
 <h3>3.2 {translate key="submission.permissions"}</h3>
 
 <h4>{translate key="manager.setup.authorCopyrightNotice"}</h4>
@@ -156,7 +156,7 @@
 
 <div class="separator"></div>
 
-<div id="competingInterests" class="sectionBlock">
+<div id="competingInterests" class="block">
 <h3>3.3 {translate key="manager.setup.competingInterests"}</h3>
 
 <p>{translate key="manager.setup.competingInterests.description"}</p>
@@ -186,7 +186,7 @@
 
 <div class="separator"></div>
 
-<div id="forAuthorsToIndexTheirWork" class="sectionBlock">
+<div id="forAuthorsToIndexTheirWork" class="block">
 <h3>3.4 {translate key="manager.setup.forAuthorsToIndexTheirWork"}</h3>
 
 <p>{translate key="manager.setup.forAuthorsToIndexTheirWorkDescription"}</p>
@@ -194,30 +194,24 @@
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="5%" class="label" valign="bottom"><input type="checkbox" name="metaDiscipline" id="metaDiscipline" value="1"{if $metaDiscipline} checked="checked"{/if} /></td>
-		<td width="95%" class="value">
-			<h4>{fieldLabel name="metaDiscipline" key="manager.setup.discipline"}</h4>
+		<td width="95%" class="value" >
+			<h4 class="heading">{fieldLabel name="metaDiscipline" key="manager.setup.discipline"}</h4>
 		</td>
 	</tr>
 	<tr valign="top">
 		<td>&nbsp;</td>
 		<td class="value">
-			<span class="instruct">{translate key="manager.setup.disciplineDescription"}</span><br/>
+			<span class="instruct">{translate key="manager.setup.disciplineDescription"}</span>
 			<span class="instruct">{translate key="manager.setup.disciplineProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaDisciplineExamples[{$formLocale|escape}]" id="metaDisciplineExamples" value="{$metaDisciplineExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.disciplineExamples"}</span>
 		</td>
-	</tr>
-
-	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
 		<td width="5%" class="label" valign="bottom"><input type="checkbox" name="metaSubjectClass" id="metaSubjectClass" value="1"{if $metaSubjectClass} checked="checked"{/if} /></td>
 		<td width="95%" class="value">
-			<h4>{fieldLabel name="metaSubjectClass" key="manager.setup.subjectClassification"}</h4>
+			<h4 class="heading">{fieldLabel name="metaSubjectClass" key="manager.setup.subjectClassification"}</h4>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -237,48 +231,34 @@
 		</td>
 	</tr>
 
-	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
-	</tr>
-
 	<tr valign="top">
 		<td width="5%" class="label" valign="bottom"><input type="checkbox" name="metaSubject" id="metaSubject" value="1"{if $metaSubject} checked="checked"{/if} /></td>
 		<td width="95%" class="value">
-			<h4>{fieldLabel name="metaSubject" key="manager.setup.subjectKeywordTopic"}</h4>
+			<h4 class="heading">{fieldLabel name="metaSubject" key="manager.setup.subjectKeywordTopic"}</h4>
 		</td>
 	</tr>
 	<tr valign="top">
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.subjectProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaSubjectExamples[{$formLocale|escape}]" id="metaSubjectExamples" value="{$metaSubjectExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.subjectExamples"}</span>
 		</td>
-	</tr>
-
-	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
 		<td width="5%" class="label" valign="bottom"><input type="checkbox" name="metaCoverage" id="metaCoverage" value="1"{if $metaCoverage} checked="checked"{/if} /></td>
 		<td width="95%" class="value">
-			<h4>{fieldLabel name="metaCoverage" key="manager.setup.coverage"}</h4>
+			<h4 class="heading">{fieldLabel name="metaCoverage" key="manager.setup.coverage"}</h4>
 		</td>
 	</tr>
-	<tr>
-		<td class="separator" colspan="2">&nbsp;</td>
-	</tr>
+
 	<tr valign="top">
 		<td>&nbsp;</td>
 		<td class="value">
-			<span class="instruct">{translate key="manager.setup.coverageDescription"}</span><br/>
+			<span class="instruct">{translate key="manager.setup.coverageDescription"}</span>
 			<span class="instruct">{translate key="manager.setup.coverageGeoProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaCoverageGeoExamples[{$formLocale|escape}]" id="metaCoverageGeoExamples" value="{$metaCoverageGeoExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.coverageGeoExamples"}</span>
 		</td>
 	</tr>
@@ -289,52 +269,39 @@
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.coverageChronProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaCoverageChronExamples[{$formLocale|escape}]" id="metaCoverageChronExamples" value="{$metaCoverageChronExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.coverageChronExamples"}</span>
 		</td>
 	</tr>
-	<tr>
-		<td class="separator" colspan="2">&nbsp;</td>
-	</tr>
+
 	<tr valign="top">
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.coverageResearchSampleProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaCoverageResearchSampleExamples[{$formLocale|escape}]" id="metaCoverageResearchSampleExamples" value="{$metaCoverageResearchSampleExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.coverageResearchSampleExamples"}</span>
 		</td>
-	</tr>
-
-	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
 		<td width="5%" class="label" valign="bottom"><input type="checkbox" name="metaType" id="metaType" value="1"{if $metaType} checked="checked"{/if} /></td>
 		<td width="95%" class="value">
-			<h4>{fieldLabel name="metaType" key="manager.setup.typeMethodApproach"}</h4>
+			<h4 class="heading">{fieldLabel name="metaType" key="manager.setup.typeMethodApproach"}</h4>
 		</td>
 	</tr>
 	<tr valign="top">
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.typeProvideExamples"}:</span>
-			<br />
 			<input type="text" name="metaTypeExamples[{$formLocale|escape}]" id="metaTypeExamples" value="{$metaTypeExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
 			<span class="instruct">{translate key="manager.setup.typeExamples"}</span>
 		</td>
 	</tr>
 </table>
 </div>
 
-<div class="separator"></div>
 
-<div id="registerJournalForIndexing" class="sectionBlock">
+<div id="registerJournalForIndexing" class="block">
 <h3>3.5 {translate key="manager.setup.registerJournalForIndexing"}</h3>
 
 {url|assign:"oaiUrl" page="oai"}
@@ -343,7 +310,7 @@
 
 <div class="separator"></div>
 
-<div id="notifications" class="sectionBlock">
+<div id="notifications" class="block">
 <h3>3.6 {translate key="manager.setup.notifications"}</h3>
 
 <p>{translate key="manager.setup.notifications.description"}</p>
@@ -369,7 +336,7 @@
 
 <div class="separator"></div>
 
-<div id="citationAssistant" class="sectionBlock">
+<div id="citationAssistant" class="block">
 <h3>3.7 {translate key="manager.setup.citationAssistant"}</h3>
 
 <a name="metaCitationEditing"></a>
@@ -478,5 +445,5 @@
 <p><span class="formRequired">{translate key="common.requiredField"}</span></p>
 
 </form>
-
+</div>
 {include file="common/footer.tpl"}
