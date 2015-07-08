@@ -8,14 +8,14 @@
  * Show listing of submission archives.
  *
  *}
-<div id="submissions">
+<div id="submissions" class="block">
 <table width="100%" class="listing">
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
 	<tr class="heading" valign="bottom">
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
-		<td width="15%"><span class="disabled"></span><br />{sort_search key="submissions.submitted" sort="submitDate"}</td>
+		<td width="15%"><span class="disabled"></span>{sort_search key="submissions.submitted" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
 		<td width="25%">{sort_search key="article.authors" sort="authors"}</td>
 		<td width="30%">{sort_search key="article.title" sort="title"}</td>

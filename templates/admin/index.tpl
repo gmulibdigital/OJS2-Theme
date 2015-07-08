@@ -10,6 +10,7 @@
  *}
 {strip}
 {assign var="pageTitle" value="admin.siteAdmin"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 

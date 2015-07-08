@@ -10,11 +10,12 @@
  *}
 {strip}
 {assign var="pageTitle" value="admin.mergeUsers"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 <div id="selectMergeUsers">
 <p>{if !empty($oldUserIds)}{translate key="admin.mergeUsers.into.description"}{else}{translate key="admin.mergeUsers.from.description"}{/if}</p>
-<div id="roles">
+<div id="roles" class="block">
 <h3>{translate key=$roleName}</h3>
 <form method="post" action="{url path=$roleSymbolic oldUserIds=$oldUserIds}">
 	<select name="roleSymbolic" class="selectMenu">
@@ -44,6 +45,7 @@
 <p>{foreach from=$alphaList item=letter}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 {if not $roleId}
+<div class="pseudoMenu">
 <ul>
 	<li><a href="{url path="managers" oldUserIds=$oldUserIds}">{translate key="user.role.managers"}</a></li>
 	<li><a href="{url path="editors" oldUserIds=$oldUserIds}">{translate key="user.role.editors"}</a></li>
@@ -56,13 +58,13 @@
 	<li><a href="{url path="readers" oldUserIds=$oldUserIds}">{translate key="user.role.readers"}</a></li>
 	<li><a href="{url path="subscriptionManagers" oldUserIds=$oldUserIds}">{translate key="user.role.subscriptionManagers"}</a></li>
 </ul>
+</div>
 
-<br />
 {else}
 <p><a href="{url path="all" oldUserIds=$oldUserIds}" class="action">{translate key="admin.mergeUsers.allUsers"}</a></p>
 {/if}
 </div>
-<div id="users">
+<div id="users" class="block">
 {if !empty($oldUserIds)}
 	{* Selecting target user; do not include checkboxes on LHS *}
 	{assign var="numCols" value=4}

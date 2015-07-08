@@ -11,6 +11,7 @@
 {strip}
 {assign var="pageId" value="admin.categories.categoryForm"}
 {assign var="pageCrumbTitle" value=$pageTitle}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 <div id="categoryFormDiv">

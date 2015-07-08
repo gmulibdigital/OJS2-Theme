@@ -31,7 +31,7 @@
 <form id="issue" method="post" action="{url op="saveIssue"}" enctype="multipart/form-data">
 
 <div class="separator"></div>
-<div id="identification">
+<div id="identification" class="block">
 <h3>{translate key="editor.issues.identification"}</h3>
 
 <table width="100%" class="data">
@@ -80,7 +80,7 @@
 
 {if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION}
 <div class="separator"></div>
-<div id="access">
+<div id="access" class="block">
 <h3>{translate key="editor.issues.access"}</h3>
 <table width="100%" class="data">
 	<tr valign="top">
@@ -103,7 +103,7 @@
 {/if}
 
 <div class="separator"></div>
-<div id="cover">
+<div id="cover" class="block">
 <h3>{translate key="editor.issues.cover"}</h3>
 <table width="100%" class="data">
 	<tr valign="top">

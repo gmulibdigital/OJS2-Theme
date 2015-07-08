@@ -14,7 +14,7 @@
 {/strip}
 
 {if not(empty($publisherNote) && empty($publisherInstitution))}
-<div id="publisher">
+<div id="publisher" class="block">
 <h3>{translate key="common.publisher"}</h3>
 
 {if $publisherNote}<p>{$publisherNote|nl2br}</p>{/if}
@@ -25,7 +25,7 @@
 {/if}
 
 {if not (empty($sponsorNote) && empty($sponsors))}
-<div id="sponsors">
+<div id="sponsors" class="block">
 <h3>{translate key="about.sponsors"}</h3>
 
 {if $sponsorNote}<p>{$sponsorNote|nl2br}</p>{/if}
@@ -46,7 +46,7 @@
 {/if}
 
 {if !empty($contributorNote) || (!empty($contributors) && !empty($contributors[0].name))}
-<div id="contributors">
+<div id="contributors" class="block">
 <h3>{translate key="about.contributors"}</h3>
 
 {if $contributorNote}<p>{$contributorNote|nl2br}</p>{/if}

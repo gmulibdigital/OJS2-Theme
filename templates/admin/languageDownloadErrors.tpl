@@ -10,6 +10,7 @@
  *}
 {strip}
 {assign var="pageTitle" value="common.languages"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 

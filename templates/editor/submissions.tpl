@@ -23,8 +23,10 @@
 	<li{if $pageToDisplay == "submissionsArchives"} class="current"{/if}><a href="{url op="submissions" path="submissionsArchives"}">{translate key="common.queue.short.submissionsArchives"}</a></li>
 </ul>
 
+<div class="block sort">
+	<h4 class="heading">Filter Submissions</h4>
 <form action="#">
-<ul class="filter">
+<ul class="filter menu">
 	<li>{translate key="editor.submissions.assignedTo"}: <select name="filterEditor" onchange="location.href='{url|escape:"javascript" path=$pageToDisplay searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth dateSearchField=$dateSearchField filterEditor="EDITOR" escape=false}'.replace('EDITOR', this.options[this.selectedIndex].value)" size="1" class="selectMenu">{html_options options=$editorOptions selected=$filterEditor}</select></li>
 	<li>{translate key="editor.submissions.inSection"}: <select name="filterSection" onchange="location.href='{url|escape:"javascript" path=$pageToDisplay searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth dateSearchField=$dateSearchField filterSection="SECTION_ID" escape=false}'.replace('SECTION_ID', this.options[this.selectedIndex].value)" size="1" class="selectMenu">{html_options options=$sectionOptions selected=$filterSection}</select></li>
 </ul>
@@ -78,7 +80,7 @@ function sortSearch(heading, direction) {
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 &nbsp;
-
+</div>
 {include file="editor/$pageToDisplay.tpl"}
 
 {if ($pageToDisplay == "submissionsInReview")}

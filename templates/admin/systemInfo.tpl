@@ -10,6 +10,7 @@
  *}
 {strip}
 {assign var="pageTitle" value="admin.systemInformation"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 <div id="systemVersion">
@@ -84,7 +85,7 @@
 {/foreach}
 </div>
 <div class="separator"></div>
-<div id="serverInformation">
+<div id="serverInformation" class="block">
 <h3>{translate key="admin.serverInformation"}</h3>
 <p>{translate key="admin.serverInformationDescription"}</p>
 

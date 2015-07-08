@@ -20,15 +20,22 @@ $susy: (
 /*  Colors
 ================== */
 
-$primary: #006633;
-$accent-bold: #F37021;
-$accent-light: #3EC2CF; 
+$primary: #FFCC33;
+$accent-bold: #3939B3;
+$accent-light: #A621A6; 
+$accent-yellow: #D4F631;
 
 $grey-bold: #87908F;
 $grey-light: #D1D3D5;
 
 $background: #E4E6D7;
 
+
+/* Fonts
+================== */
+
+$font-main: "PT Sans", Helvetica, sans-serif;
+$font-heading: Lato, Trabuchet, sans-serif;
 
 /* Rhythm
 =================== */
@@ -54,7 +61,6 @@ $base-line-height: 24px;
 }
 
 .adminMenu {
-	@include adjust-font-size-to(18px);
 	ul {
 		padding: 0;
 		margin: .5em 0;

@@ -13,10 +13,10 @@
 {assign var="pageCrumbTitle" value="user.role.editor"}
 {include file="common/header.tpl"}
 {/strip}
-<div id="articleSubmissions">
+<div id="articleSubmissions" class="block">
 <h3>{translate key="article.submissions"}</h3>
 
-<ul>
+<ul class="menu">
 	<li><a href="{url op="submissions" path="submissionsUnassigned"}">{translate key="common.queue.short.submissionsUnassigned"}</a>&nbsp;({if $submissionsCount[0]}{$submissionsCount[0]}{else}0{/if})</li>
 	<li><a href="{url op="submissions" path="submissionsInReview"}">{translate key="common.queue.short.submissionsInReview"}</a>&nbsp;({if $submissionsCount[1]}{$submissionsCount[1]}{else}0{/if})</li>
 	<li><a href="{url op="submissions" path="submissionsInEditing"}">{translate key="common.queue.short.submissionsInEditing"}</a>&nbsp;({if $submissionsCount[2]}{$submissionsCount[2]}{else}0{/if})</li>
@@ -48,7 +48,8 @@ function sortSearch(heading, direction) {
 // -->
 {/literal}
 </script>
-
+<div class="block">
+	<h4>Filter Submissions</h4>
 <form method="post" id="submit" action="{url path="search"}">
 	{if $section}<input type="hidden" name="section" value="{$section|escape:"quotes"}"/>{/if}
 	<input type="hidden" name="sort" value="id"/>
@@ -76,7 +77,7 @@ function sortSearch(heading, direction) {
 	<br/>
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
-&nbsp;
+</div>
 
 {if $displayResults}
 	<div id="submissions">
@@ -146,7 +147,7 @@ function sortSearch(heading, direction) {
 <div class="separator">&nbsp;</div>
 
 {/if}{* displayResults *}
-<div id="issues">
+<div id="issues" class="block pseudoMenu">
 <h3>{translate key="editor.navigation.issues"}</h3>
 
 <ul>

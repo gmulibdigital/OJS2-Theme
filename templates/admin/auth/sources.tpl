@@ -10,26 +10,19 @@
  *}
 {strip}
 {assign var="pageTitle" value="admin.authSources"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
-
-<br />
 
 <form method="post" action="{url op="updateAuthSources"}">
 
 <div id="sources">
 <table width="100%" class="listing">
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
-	</tr>
 	<tr valign="top" class="heading">
 		<td width="10%">{translate key="common.default"}</td>
 		<td width="30%">{translate key="common.title"}</td>
 		<td width="30%">{translate key="common.plugin"}</td>
 		<td width="30%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
 	</tr>
 	{iterate from=sources item=auth}
 	<tr valign="top">
@@ -67,7 +60,7 @@
 </form>
 
 {translate key="admin.auth.defaultSourceDescription"}
-<div id="createAuth">
+<div id="createAuth" class="block">
 <h4>{translate key="admin.auth.create"}</h4>
 
 <form method="post" action="{url op="createAuthSource"}">

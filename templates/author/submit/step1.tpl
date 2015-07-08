@@ -36,7 +36,7 @@
 		<input type="hidden" name="sectionId" value="{$key|escape}" />
 	{/foreach}
 {else}{* if count($sectionOptions) == 2 *}
-<div id="section">
+<div id="section" class="block">
 
 <h3>{translate key="author.submit.journalSection"}</h3>
 
@@ -65,7 +65,7 @@
 	{/foreach}
 {else}
 	{* There are several submission locales available; allow choice *}
-	<div id="submissionLocale">
+	<div id="submissionLocale" >
 
 	<h3>{translate key="author.submit.submissionLocale"}</h3>
 	<p>{translate key="author.submit.submissionLocaleDescription"}</p>
@@ -134,7 +134,7 @@ function checkSubmissionChecklist() {
 {/if}{* if count($sectionOptions) <= 1 *}
 
 {if $currentJournal->getLocalizedSetting('copyrightNotice') != ''}
-<div id="copyrightNotice">
+<div id="copyrightNotice" class="block">
 <h3>{translate key="about.copyrightNotice"}</h3>
 
 <p>{$currentJournal->getLocalizedSetting('copyrightNotice')|nl2br}</p>
@@ -153,7 +153,7 @@ function checkSubmissionChecklist() {
 
 {/if}{* $currentJournal->getLocalizedSetting('copyrightNotice') != '' *}
 
-<div id="privacyStatement">
+<div id="privacyStatement" class="block">
 <h3>{translate key="author.submit.privacyStatement"}</h3>
 <br />
 {$currentJournal->getLocalizedSetting('privacyStatement')|nl2br}
@@ -161,7 +161,7 @@ function checkSubmissionChecklist() {
 
 <div class="separator"></div>
 
-<div id="commentsForEditor">
+<div id="commentsForEditor" class="block">
 <h3>{translate key="author.submit.commentsForEditor"}</h3>
 
 <table width="100%" class="data">

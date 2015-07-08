@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<ul>
+<ul class="menu">
 	{if $currentJournal->getLocalizedSetting('focusScopeDesc') != ''}<li id="linkFocusScopeDesc"><a href="{url op="editorialPolicies" anchor="focusAndScope"}">{translate key="about.focusAndScope"}</a></li>{/if}
 	<li id="linkEditorialPolicies"><a href="{url op="editorialPolicies" anchor="SectionPolicies"}">{translate key="about.sectionPolicies"}</a></li>
 	{if $currentJournal->getLocalizedSetting('reviewPolicy') != ''}<li id="linkReviewPolicy"><a href="{url op="linkEditorialPolicies" anchor="peerReviewProcess"}">{translate key="about.peerReviewProcess"}</a></li>{/if}
@@ -30,14 +30,14 @@
 </ul>
 
 {if $currentJournal->getLocalizedSetting('focusScopeDesc') != ''}
-<div id="focusAndScope"><h3>{translate key="about.focusAndScope"}</h3>
+<div id="focusAndScope" class="block"><h3>{translate key="about.focusAndScope"}</h3>
 <p>{$currentJournal->getLocalizedSetting('focusScopeDesc')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
 </div>
 {/if}
 
-<div id="sectionPolicies"><h3>{translate key="about.sectionPolicies"}</h3>
+<div id="sectionPolicies" class="block"><h3>{translate key="about.sectionPolicies"}</h3>
 {foreach from=$sections item=section}{if !$section->getHideAbout()}
 	<h4>{$section->getLocalizedTitle()}</h4>
 	{if strlen($section->getLocalizedPolicy()) > 0}
@@ -71,7 +71,7 @@
 
 <div class="separator">&nbsp;</div>
 
-{if $currentJournal->getLocalizedSetting('reviewPolicy') != ''}<div id="peerReviewProcess"><h3>{translate key="about.peerReviewProcess"}</h3>
+{if $currentJournal->getLocalizedSetting('reviewPolicy') != ''}<div id="peerReviewProcess" class="block"><h3>{translate key="about.peerReviewProcess"}</h3>
 <p>{$currentJournal->getLocalizedSetting('reviewPolicy')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -79,7 +79,7 @@
 {/if}
 
 {if $currentJournal->getLocalizedSetting('pubFreqPolicy') != ''}
-<div id="publicationFrequency"><h3>{translate key="about.publicationFrequency"}</h3>
+<div id="publicationFrequency" class="block"><h3>{translate key="about.publicationFrequency"}</h3>
 <p>{$currentJournal->getLocalizedSetting('pubFreqPolicy')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -87,7 +87,7 @@
 {/if}
 
 {if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN && $currentJournal->getLocalizedSetting('openAccessPolicy') != ''} 
-<div id="openAccessPolicy"><h3>{translate key="about.openAccessPolicy"}</h3>
+<div id="openAccessPolicy" class="block"><h3>{translate key="about.openAccessPolicy"}</h3>
 <p>{$currentJournal->getLocalizedSetting('openAccessPolicy')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -95,7 +95,7 @@
 {/if}
 
 {if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION && $currentJournal->getSetting('enableAuthorSelfArchive')} 
-<div id="authorSelfArchivePolicy"><h3>{translate key="about.authorSelfArchive"}</h3> 
+<div id="authorSelfArchivePolicy" class="block"><h3>{translate key="about.authorSelfArchive"}</h3> 
 <p>{$currentJournal->getLocalizedSetting('authorSelfArchivePolicy')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -103,7 +103,7 @@
 {/if}
 
 {if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION && $currentJournal->getSetting('enableDelayedOpenAccess')}
-<div id="delayedOpenAccessPolicy"><h3>{translate key="about.delayedOpenAccess"}</h3> 
+<div id="delayedOpenAccessPolicy" class="block"><h3>{translate key="about.delayedOpenAccess"}</h3> 
 <p>{translate key="about.delayedOpenAccessDescription1"} {$currentJournal->getSetting('delayedOpenAccessDuration')} {translate key="about.delayedOpenAccessDescription2"}</p>
 {if $currentJournal->getLocalizedSetting('delayedOpenAccessPolicy') != ''}
 	<p>{$currentJournal->getLocalizedSetting('delayedOpenAccessPolicy')|nl2br}</p>
@@ -114,7 +114,7 @@
 {/if}
 
 {if $currentJournal->getSetting('enableLockss') && $currentJournal->getLocalizedSetting('lockssLicense') != ''}
-<div id="archiving"><h3>{translate key="about.archiving"}</h3>
+<div id="archiving" class="block"><h3>{translate key="about.archiving"}</h3>
 <p>{$currentJournal->getLocalizedSetting('lockssLicense')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>

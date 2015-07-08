@@ -14,7 +14,7 @@
 {/strip}
 <div id="contact">
 {if !empty($journalSettings.mailingAddress)}
-<div id="mailingAddress">
+<div id="mailingAddress" class="block">
 <h3>{translate key="common.mailingAddress"}</h3>
 <p>
 	{$journalSettings.mailingAddress|nl2br}
@@ -23,7 +23,7 @@
 {/if}
 
 {if not ($currentJournal->getLocalizedSetting('contactTitle') == '' && $currentJournal->getLocalizedSetting('contactAffiliation') == '' && $currentJournal->getLocalizedSetting('contactMailingAddress') == '' && empty($journalSettings.contactPhone) && empty($journalSettings.contactFax) && empty($journalSettings.contactEmail))}
-<div id="principalContact">
+<div id="principalContact" class="block">
 <h3>{translate key="about.contact.principalContact"}</h3>
 <p>
 	{if !empty($journalSettings.contactName)}
@@ -53,7 +53,7 @@
 {/if}
 
 {if not (empty($journalSettings.supportName) && empty($journalSettings.supportPhone) && empty($journalSettings.supportEmail))}
-<div id="supportContact">
+<div id="supportContact" class="block">
 <h3>{translate key="about.contact.supportContact"}</h3>
 <p>
 	{if !empty($journalSettings.supportName)}

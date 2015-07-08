@@ -10,11 +10,11 @@
 {strip}
 {include file="common/header.tpl"}
 {/strip}
-
+<div class="pseudoMenu">
 {if $mainPage}
 	<p>{translate key="manager.plugins.description"}</p>
 
-	<ul id="plugins">
+	<ul id="plugins" >
 		{foreach from=$plugins item=plugin}
 			{if $plugin->getCategory() != $category}
 				{assign var=category value=$plugin->getCategory()}
@@ -69,6 +69,6 @@
 		{/foreach}
 	</ul>
 {/if}
-
+</div>
 {include file="common/footer.tpl"}
 

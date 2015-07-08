@@ -12,7 +12,7 @@
 {assign var="pageTitle" value="about.aboutTheJournal"}
 {include file="common/header.tpl"}
 {/strip}
-<div id="aboutPeople">
+<div id="aboutPeople" class="block pseudoMenu">
 <h3>{translate key="about.people"}</h3>
 <ul>
 	{if not (empty($journalSettings.mailingAddress) && empty($journalSettings.contactName) && empty($journalSettings.contactAffiliation) && empty($journalSettings.contactMailingAddress) && empty($journalSettings.contactPhone) && empty($journalSettings.contactFax) && empty($journalSettings.contactEmail) && empty($journalSettings.supportName) && empty($journalSettings.supportPhone) && empty($journalSettings.supportEmail))}
@@ -27,7 +27,7 @@
 	{call_hook name="Templates::About::Index::People"}
 </ul>
 </div>
-<div id="aboutPolicies">
+<div id="aboutPolicies" class="block pseudoMenu">
 <h3>{translate key="about.policies"}</h3>
 <ul>
 	{if $currentJournal->getLocalizedSetting('focusScopeDesc') != ''}<li><a href="{url op="editorialPolicies" anchor="focusAndScope"}">{translate key="about.focusAndScope"}</a></li>{/if}
@@ -48,7 +48,7 @@
 	{call_hook name="Templates::About::Index::Policies"}
 </ul>
 </div>
-<div id="aboutSubmissions">
+<div id="aboutSubmissions" class="block pseudoMenu">
 <h3>{translate key="about.submissions"}</h3>
 <ul>
 	{if !$currentJournal->getSetting('disableUserReg')}<li><a href="{url op="submissions" anchor="onlineSubmissions"}">{translate key="about.onlineSubmissions"}</a></li>{/if}
@@ -59,7 +59,7 @@
 	{call_hook name="Templates::About::Index::Submissions"}
 </ul>
 </div>
-<div id="aboutOther">
+<div id="aboutOther" class="block pseudoMenu">
 <h3>{translate key="about.other"}</h3>
 <ul>
 	{if not ($currentJournal->getSetting('publisherInstitution') == '' && $currentJournal->getLocalizedSetting('publisherNote') == '' && $currentJournal->getLocalizedSetting('contributorNote') == '' && empty($journalSettings.contributors) && $currentJournal->getLocalizedSetting('sponsorNote') == '' && empty($journalSettings.sponsors))}<li><a href="{url op="journalSponsorship"}">{translate key="about.journalSponsorship"}</a></li>{/if}

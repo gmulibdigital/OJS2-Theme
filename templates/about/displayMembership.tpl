@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="displayMembership">
+<div id="displayMembership" class="block">
 <h4>{$group->getLocalizedTitle()}</h4>
 {assign var=groupId value=$group->getId()}
 

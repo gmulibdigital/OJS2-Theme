@@ -10,6 +10,7 @@
  *}
 {strip}
 {assign var="pageTitle" value="journal.journals"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 <script type="text/javascript">

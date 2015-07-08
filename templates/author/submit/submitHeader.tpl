@@ -12,7 +12,7 @@
 {assign var="pageCrumbTitle" value="author.submit"}
 {include file="common/header.tpl"}
 {/strip}
-
+<div class="pseudoMenu">
 <ul class="steplist">
 <li id="step1" {if $submitStep == 1} class="current"{/if}>{if $submitStep != 1 && $submissionProgress >= 1}<a href="{url op="submit" path="1" articleId=$articleId}">{/if}
 {translate key="author.submit.start"}{if $submitStep != 1 && $submissionProgress >= 1}</a>{/if}</li>
@@ -30,3 +30,4 @@
 {translate key="author.submit.confirmation"}{if $submitStep != 5 && $submissionProgress >= 5}</a>{/if}</li>
 </ul>
 
+</div>

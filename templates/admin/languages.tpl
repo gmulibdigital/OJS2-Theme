@@ -10,11 +10,12 @@
  *}
 {strip}
 {assign var="pageTitle" value="common.languages"}
+{assign var="pageDisplayed" value="site"}
 {include file="common/header.tpl"}
 {/strip}
 
 <form method="post" action="{url op="saveLanguageSettings"}">
-<div id="languageSettings">
+<div id="languageSettings" class="block">
 <h3>{translate key="admin.languages.languageSettings"}</h3>
 
 <table class="form">
@@ -63,7 +64,7 @@
 <div class="separator"></div>
 
 <form method="post" action="{url op="installLocale"}">
-<div id="installLanguages">
+<div id="installLanguages" class="block">
 <h3>{translate key="admin.languages.installLanguages"}</h3>
 <h4>{translate key="admin.languages.installedLocales"}</h4>
 <table class="data" width="100%">
@@ -75,7 +76,7 @@
 {/foreach}
 </table>
 </div>
-<div id="installNewLocales">
+<div id="installNewLocales" class="block">
 <h4>{translate key="admin.languages.installNewLocales"}</h4>
 <p>{translate key="admin.languages.installNewLocalesInstructions"}</p>
 {assign var=incompleteLocaleFound value=0}
@@ -102,7 +103,7 @@
 </form>
 
 <div class="separator"></div>
-<div id="downloadLocales">
+<div id="downloadLocales" class="block">
 <h3>{translate key="admin.languages.downloadLocales"}</h3>
 
 {if $downloadAvailable}

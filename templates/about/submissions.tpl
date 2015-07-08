@@ -18,7 +18,7 @@
 	{assign var="authorFees" value=1}
 {/if}
 
-<ul>
+<ul class="menu">
 	{if !$currentJournal->getSetting('disableUserReg')}<li id="linkDisableUserReg"><a href="{url page="about" op="submissions" anchor="onlineSubmissions"}">{translate key="about.onlineSubmissions"}</a></li>{/if}
 	{if $currentJournal->getLocalizedSetting('authorGuidelines') != ''}<li id="linkAuthorGuidelines"><a href="{url page="about" op="submissions" anchor="authorGuidelines"}">{translate key="about.authorGuidelines"}</a></li>{/if}
 	{if $currentJournal->getLocalizedSetting('copyrightNotice') != ''}<li id="linkCopyrightNotice"><a href="{url page="about" op="submissions" anchor="copyrightNotice"}">{translate key="about.copyrightNotice"}</a></li>{/if}
@@ -27,15 +27,15 @@
 </ul>
 
 {if !$currentJournal->getSetting('disableUserReg')}
-	<div id="onlineSubmissions">
+	<div id="onlineSubmissions" class="block">
 		<h3>{translate key="about.onlineSubmissions"}</h3>
 		<p class="callout">{translate key="about.onlineSubmissions.registrationRequired"}</p>
-		<div class="block">
+		<div >
 			<p>{translate key="about.onlineSubmissions.haveAccount" journalTitle=$siteTitle|escape}</p>
 			<a href="{url page="login"}" class="action">{translate key="about.onlineSubmissions.login"}</a>
 		</div>
 		
-		<div class="block">			
+		<div >			
 			<p>{translate key="about.onlineSubmissions.needAccount"}</p>
 			<a href="{url page="user" op="register"}" class="action">{translate key="about.onlineSubmissions.registration"}</a>
 		</div>
@@ -47,7 +47,7 @@
 <div class="separator">&nbsp;</div>
 
 {if $currentJournal->getLocalizedSetting('authorGuidelines') != ''}
-<div id="authorGuidelines"><h3>{translate key="about.authorGuidelines"}</h3>
+<div id="authorGuidelines" class="block"><h3>{translate key="about.authorGuidelines"}</h3>
 <p>{$currentJournal->getLocalizedSetting('authorGuidelines')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -55,7 +55,7 @@
 {/if}
 
 {if $submissionChecklist}
-	<div id="submissionPreparationChecklist"><h3>{translate key="about.submissionPreparationChecklist"}</h3>
+	<div id="submissionPreparationChecklist" class="block"><h3>{translate key="about.submissionPreparationChecklist"}</h3>
 	<p>{translate key="about.submissionPreparationChecklist.description"}</p>
 	<ol>
 		{foreach from=$submissionChecklist item=checklistItem}
@@ -67,14 +67,14 @@
 {/if}{* $submissionChecklist *}
 
 {if $currentJournal->getLocalizedSetting('copyrightNotice') != ''}
-<div id="copyrightNotice"><h3>{translate key="about.copyrightNotice"}</h3>
+<div id="copyrightNotice" class="block"><h3>{translate key="about.copyrightNotice"}</h3>
 <p>{$currentJournal->getLocalizedSetting('copyrightNotice')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
 </div>
 {/if}
 
-{if $currentJournal->getLocalizedSetting('privacyStatement') != ''}<div id="privacyStatement"><h3>{translate key="about.privacyStatement"}</h3>
+{if $currentJournal->getLocalizedSetting('privacyStatement') != ''}<div id="privacyStatement" class="block"><h3>{translate key="about.privacyStatement"}</h3>
 <p>{$currentJournal->getLocalizedSetting('privacyStatement')|nl2br}</p>
 
 <div class="separator">&nbsp;</div>
@@ -83,7 +83,7 @@
 
 {if $authorFees}
 
-<div id="authorFees"><h3>{translate key="manager.payment.authorFees"}</h3>
+<div id="authorFees" class="block"><h3>{translate key="manager.payment.authorFees"}</h3>
 	<p>{translate key="about.authorFeesMessage"}</p>
 	{if $currentJournal->getSetting('submissionFeeEnabled')}
 		<p>{$currentJournal->getLocalizedSetting('submissionFeeName')|escape}: {$currentJournal->getSetting('submissionFee')|string_format:"%.2f"} ({$currentJournal->getSetting('currency')})<br />

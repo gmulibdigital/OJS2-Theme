@@ -33,7 +33,7 @@ html {
 
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -64,6 +64,9 @@ ul {
 ol {
 	list-style-type: decimal;
 	list-style-position: inside;
+	li {
+		padding: 5px 0;
+	}
 }
 #container {
 	background-color: white;
@@ -73,6 +76,7 @@ ol {
 	@include container;
 	@include rhythm();
 
+	padding: 0 10px;
 	p {
 		padding: .5em 0;
 	}
@@ -135,9 +139,10 @@ a {
 /* Forms */
 input, select, textarea {
  	@extend .roundedborder;
- 	font: "PT Sans", Helvetica, sans-serif;
+ 	font-family: "PT Sans", Helvetica, sans-serif;
  	@include adjust-font-size-to(14px);
  	// padding: 2px;
+ 	margin: .25em 0;
  }
 
  .label {
@@ -146,12 +151,13 @@ input, select, textarea {
 
 form {
 	@include rhythm();
+
 }
 input {
 	padding: 3px;
 }
 select {
-	@include adjust-font-size-to(17px);
+	//@include adjust-font-size-to(16px);
 }
 
 /* Tables */
@@ -225,7 +231,8 @@ table {
 
 .TOC{
 	border: 1px solid $grey-light;
-	&:nth-child(even) {
+	padding: 5px;
+	&:nth-child(odd) {
 		background-color: lighten($grey-light, 10%);
 	}
 }
@@ -233,11 +240,29 @@ table {
 	@include adjust-font-size-to(20px);
 	padding: .5em 0 .25em;
 }
+.pseudoMenu {
+	@extend .adminMenu;
+
+	a {display:block;}
+}
 .label {
 	font-weight: 700;
 }
 .separator {
 	display: none;
+}
+.sort {
+	border: 1px solid $grey-light;
+	form { padding: .25em; margin: .25em 0;}
+}
+.heading {
+	font-family: Lato;
+	@include adjust-font-size-to(18px);
+	background-color: lighten($grey-light, 5%);
+	padding:.25em;
+	td:last-child{
+		text-align: center;
+	}
 }
 /* Navigation
 ============================= */
@@ -255,6 +280,7 @@ nav {
 	#sidebar-open-btn {
 		display: none;
 	}
+	padding: 0 10px;
 	display: block;
 }
 ul.navMenu {
@@ -297,7 +323,8 @@ ul.navMenu {
 /* Header
 ============================= */
 #header {
-	min-height: 200px;
+	@include rhythm();
+	min-height: 150px;
 	text-align: center;
 	h1, img {
 		vertical-align: middle;
@@ -305,7 +332,7 @@ ul.navMenu {
 	}
 }
 #headerTitle {
-	@include rhythm();
+	padding: 1em;
 	figure {
 		max-width: 1080px;
 		margin: gutter();
@@ -323,8 +350,11 @@ ul.navMenu {
 	overflow: auto;
 	height: 100%;
 
-	#submit {
+	#submit-button {
 		@include trailer();
+	}
+	form {
+		margin: 0;
 	}
 }
 
@@ -340,8 +370,18 @@ ul.navMenu {
 }
 
 .blockTitle {
+	font-family: $font-heading;
+	@include adjust-font-size-to(20px);
 	display: block;
-	@extend h4;
+	padding: 5px;
+	background-color: lighten($grey-light, 10%);
+}
+
+#sidebarUser {
+	@extend .pseudoMenu;
+}
+#sidebarFontSize {
+	display: none;
 }
 /* Main 
 ============================ */
@@ -414,10 +454,20 @@ a.file {
 	@extend .button;
 }
 
+#articleTitle h3 {
+	background-color: initial;
+
+}
+
 /* Admin Pages 
 ============================ */
 .sectionBlock {
 	@include rhythm();
+}
+
+.block h3 {
+	background-color: lighten($grey-light, 10%);
+	padding-left: 5px;
 }
 
 table.info {
@@ -448,7 +498,7 @@ table.info {
 
 table.listing {
 	@extend .adminMenu;
-
+	.heading a {color: #000;}
 	tr {
 		border-bottom: 1px solid $grey-light;
 		&:last-child {
@@ -472,21 +522,42 @@ table.email {
 	}
 }
 
-.pseudoMenu {
-	@extend .adminMenu;
-
-	a {display:block;}
+#profile table tr {
+	border-bottom: 1px solid $grey-light;
 }
 
-.heading {
-	font-family: Lato;
-	@include adjust-font-size-to(18px);
-	background-color: lighten($grey-light, 5%);
+#systemConfiguration {
+	h4 {
+		text-transform: capitalize;
+		margin-top: 1em;
+		padding: .25em;
+		background-color: lighten($grey-light, 10%);
+	}
+	table tr {
+		border-bottom: 1px solid $grey-light;
+	}
+}	
+td > table {
+	@include adjust-font-size-to(12px);
+}
 
-	td:last-child{
-		text-align: center;
+.highlightReviewerNotNotified {background-color: $accent-yellow; &:before {content: "\00b9"; padding-right: 10px;} }
+.highlightNoDecision {background-color: $accent-bold; color: white; &:before {content: "\00b2"; padding-right: 10px;}}
+.highlightReviewerConfirmationOverdue, .highlightCopyediting {background-color: lighten($accent-bold, 25%);&:before {content: "\2020"; padding-right: 10px;} }
+.highlightRevisedCopyUploaded, .highlightLayoutEditing {background-color: lighten($accent-light, 5%); &:before {content: "\2666"; padding-right: 10px;}}
+.highlightReviewerCompletionOverdue, .higlightProofreading {background-color: $primary; &:before {content: "\25CA"; padding-right: 10px;}}
+
+#notes {
+	ul {
+		padding:0;
+	}
+
+	ul li {
+		padding:.5em;
+		list-style-type: none;
 	}
 }
+
 span.instruct {
 	display: block;
 	margin: .5em 0;
@@ -523,6 +594,40 @@ span.instruct {
 		}
 	}
 }
+
+
+/* Author Submission Pages */
+
+.steplist {
+	padding: 0;
+
+	li {
+		list-style-type: none;
+	}
+}
+
+.pseudoMenu .current {
+	background-color: $grey-light;
+}
+
+/* Plugin Management */
+#plugins {
+	a.action {display: inline-block; &:before {content: initial;}}
+}
+
+/* PopUp Windows 
+============================ */
+.popup {
+	#header {
+		margin-top: 1em;
+		min-height: initial;
+	}
+	#body {
+		width: 100%;
+		padding: 2em 3em;
+	}	
+}
+
 /* Mobile 
 ============================ */
 

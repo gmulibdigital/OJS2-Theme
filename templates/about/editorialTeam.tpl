@@ -13,9 +13,9 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="editorialTeam">
+<div id="editorialTeam" class="block pseudoMenu">
 {if count($editors) > 0}
-	<div id="editors">
+	<div id="editors" class="block">
 	{if count($editors) == 1}
 		<h3>{translate key="user.role.editor"}</h3>
 	{else}
@@ -31,14 +31,14 @@
 {/if}
 
 {if count($sectionEditors) > 0}
-	<div id="sectionEditors">
+	<div id="sectionEditors" class="block">
 	{if count($sectionEditors) == 1}
 		<h3>{translate key="user.role.sectionEditor"}</h3>
 	{else}
 		<h3>{translate key="user.role.sectionEditors"}</h3>
 	{/if}
 
-	<ul class="editorialTeam">
+	<ul class="editorialTeam" class="block">
 		{foreach from=$sectionEditors item=sectionEditor}
 			<li><a href="javascript:openRTWindow('{url op="editorialTeamBio" path=$sectionEditor->getId()}')">{$sectionEditor->getFullName()|escape}</a>{if $sectionEditor->getLocalizedAffiliation()}, {$sectionEditor->getLocalizedAffiliation()|escape}{/if}{if $sectionEditor->getCountry()}{assign var=countryCode value=$sectionEditor->getCountry()}{assign var=country value=$countries.$countryCode}, {$country|escape}{/if}</li>
 		{/foreach}
@@ -47,7 +47,7 @@
 {/if}
 
 {if count($layoutEditors) > 0}
-	<div id="layoutEditors">
+	<div id="layoutEditors" class="block">
 	{if count($layoutEditors) == 1}
 		<h3>{translate key="user.role.layoutEditor"}</h3>
 	{else}
@@ -63,14 +63,14 @@
 {/if}
 
 {if count($copyEditors) > 0}
-	<div id="copyEditors">
+	<div id="copyEditors" class="block">
 	{if count($copyEditors) == 1}
 		<h3>{translate key="user.role.copyeditor"}</h3>
 	{else}
 		<h3>{translate key="user.role.copyeditors"}</h3>
 	{/if}
 
-	<ul class="editorialTeam">
+	<ul class="editorialTeam" class="block">
 		{foreach from=$copyEditors item=copyEditor}
 			<li><a href="javascript:openRTWindow('{url op="editorialTeamBio" path=$copyEditor->getId()}')">{$copyEditor->getFullName()|escape}</a>{if $copyEditor->getLocalizedAffiliation()}, {$copyEditor->getLocalizedAffiliation()|escape}{/if}{if $copyEditor->getCountry()}{assign var=countryCode value=$copyEditor->getCountry()}{assign var=country value=$countries.$countryCode}, {$country|escape}{/if}</li>
 		{/foreach}
@@ -79,14 +79,14 @@
 {/if}
 
 {if count($proofreaders) > 0}
-	<div id="proofreaders">
+	<div id="proofreaders" class="block">
 	{if count($proofreaders) == 1}
 		<h3>{translate key="user.role.proofreader"}</h3>
 	{else}
 		<h3>{translate key="user.role.proofreaders"}</h3>
 	{/if}
 
-	<ul class="editorialTeam">
+	<ul class="editorialTeam" class="block">
 		{foreach from=$proofreaders item=proofreader}
 			<li><a href="javascript:openRTWindow('{url op="editorialTeamBio" path=$proofreader->getId()}')">{$proofreader->getFullName()|escape}</a>{if $proofreader->getLocalizedAffiliation()}, {$proofreader->getLocalizedAffiliation()|escape}{/if}{if $proofreader->getCountry()}{assign var=countryCode value=$proofreader->getCountry()}{assign var=country value=$countries.$countryCode}, {$country|escape}{/if}</li>
 		{/foreach}

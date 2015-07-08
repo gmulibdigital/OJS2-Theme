@@ -63,7 +63,7 @@ function moveAuthor(dir, authorIndex) {
 </div>
 {/if}
 
-<div id="authors">
+<div id="authors" class="block">
 <h3>{translate key="article.authors"}</h3>
 <input type="hidden" name="deletedAuthors" value="{$deletedAuthors|escape}" />
 <input type="hidden" name="moveAuthor" value="0" />
@@ -208,7 +208,7 @@ function moveAuthor(dir, authorIndex) {
 </div>
 <div class="separator"></div>
 
-<div id="titleAndAbstract">
+<div id="titleAndAbstract" class="block">
 <h3>{translate key="submission.titleAndAbstract"}</h3>
 
 <table width="100%" class="data">
@@ -228,7 +228,7 @@ function moveAuthor(dir, authorIndex) {
 <div class="separator"></div>
 
 {if $section->getMetaIndexed()==1}
-	<div id="indexing">
+	<div id="indexing" class="block">
 		<h3>{translate key="submission.indexing"}</h3>
 		{if $currentJournal->getSetting('metaDiscipline') || $currentJournal->getSetting('metaSubjectClass') || $currentJournal->getSetting('metaSubject') || $currentJournal->getSetting('metaCoverage') || $currentJournal->getSetting('metaType')}<p>{translate key="author.submit.submissionIndexingDescription"}</p>{/if}
 		<table width="100%" class="data">
@@ -349,7 +349,7 @@ function moveAuthor(dir, authorIndex) {
 	<div class="separator"></div>
 {/if}
 
-<div id="submissionSupportingAgencies">
+<div id="submissionSupportingAgencies" class="block">
 <h3>{translate key="author.submit.submissionSupportingAgencies"}</h3>
 <p>{translate key="author.submit.submissionSupportingAgenciesDescription"}</p>
 
@@ -365,7 +365,7 @@ function moveAuthor(dir, authorIndex) {
 {call_hook name="Templates::Author::Submit::AdditionalMetadata"}
 
 {if $currentJournal->getSetting('metaCitations')}
-<div id="metaCitations">
+<div id="metaCitations" class="block">
 <h3>{translate key="submission.citations"}</h3>
 
 <p>{translate key="author.submit.submissionCitations"}</p>
