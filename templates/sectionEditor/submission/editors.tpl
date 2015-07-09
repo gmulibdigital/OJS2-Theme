@@ -8,11 +8,11 @@
  * Subtemplate defining the submission editors table.
  *
  *}
-<div id="editors">
+<div id="editors" class="block">
 <h3>{translate key="user.role.editors"}</h3>
 <form action="{url page="editor" op="setEditorFlags"}" method="post">
 <input type="hidden" name="articleId" value="{$submission->getId()}"/>
-<table width="100%" class="listing">
+<table width="100%" class="listing sort block">
 	<tr class="heading" valign="bottom">
 		<td width="{if $isEditor}20%{else}25%{/if}">&nbsp;</td>
 		<td width="30%">&nbsp;</td>

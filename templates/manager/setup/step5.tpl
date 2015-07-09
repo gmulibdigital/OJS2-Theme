@@ -110,6 +110,7 @@ function prepBlockFields() {
 <h3>5.1 {translate key="manager.setup.journalHomepageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageHeaderDescription"}</p>
+<p><em>For best results, use an 1080 x 350 pixel image.</em></p>
 <div id="journalTitleAndLogo">
 <h4>{translate key="manager.setup.journalTitle"}</h4>
 
@@ -125,7 +126,7 @@ function prepBlockFields() {
 </table>
 
 {if $homeHeaderTitleImage[$formLocale]}
-{translate key="common.fileName"}: {$homeHeaderTitleImage[$formLocale].name|escape} {$homeHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomeHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
+<p>{translate key="common.fileName"}: {$homeHeaderTitleImage[$formLocale].name|escape} {$homeHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomeHeaderTitleImage" value="{translate key="common.delete"}" class="button" /></p>
 <br />
 <img src="{$publicFilesDir}/{$homeHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderTitleImage[$formLocale].width|escape}" height="{$homeHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeader.altText"}" />
 <br />
@@ -143,7 +144,7 @@ function prepBlockFields() {
 </div>
 <div id="journalLogoImage">
 <h4>{translate key="manager.setup.journalLogo"}</h4>
-
+<p><em>For best results, use an image with a maximum height of 200px.</em></p>
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{translate key="manager.setup.useImageLogo"}</td>
@@ -266,6 +267,7 @@ function prepBlockFields() {
 <h3>5.3 {translate key="manager.setup.journalPageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalPageHeaderDescription"}</p>
+<p><em>For best results, use an 1080 x 350 pixel image.</em></p>
 <div id="pageHeaderTitle">
 <h4>{translate key="manager.setup.journalTitle"}</h4>
 
@@ -281,7 +283,7 @@ function prepBlockFields() {
 </table>
 
 {if $pageHeaderTitleImage[$formLocale]}
-{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].name|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
+<p>{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].name|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button" /></p>
 <br />
 <img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeader.altText"}" />
 <br />
@@ -299,7 +301,7 @@ function prepBlockFields() {
 </div>
 <div id="journalLogo">
 <h4>{translate key="manager.setup.journalLogo"}</h4>
-
+<p><em>For best results, use an image with a maximum height of 200px.</em></p>
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">{translate key="manager.setup.useImageLogo"}</td>

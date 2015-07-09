@@ -13,15 +13,10 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br/>
 
 {include file="manager/statistics/statistics.tpl"}
 
-<div class="separator">&nbsp;</div>
-
-<br/>
-
-<div id="reports">
+<div id="reports" class="block pseudoMenu">
 	<h3>{translate key="manager.statistics.reports"}</h3>
 	<p>{translate key="manager.statistics.reports.description"}</p>
 	

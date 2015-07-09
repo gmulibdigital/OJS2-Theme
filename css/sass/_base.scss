@@ -4,6 +4,7 @@
 @import "compass/typography/lists/horizontal-list";
 @import "compass/typography/links";
 @import "compass/utilities/tables";
+@import "compass/css3/box-shadow";
 @import "susy";
 
 
@@ -20,10 +21,11 @@ $susy: (
 /*  Colors
 ================== */
 
-$primary: #FFCC33;
-$accent-bold: #3939B3;
-$accent-light: #A621A6; 
-$accent-yellow: #D4F631;
+$primary: #006633; // mason green
+$accent-bold: #07355E; // blue
+$accent-light: #1EB568;  // light green
+$accent-bright: #266BA8; // light blue
+$accent-contrast: #FF6C3E; // orange
 
 $grey-bold: #87908F;
 $grey-light: #D1D3D5;
@@ -49,14 +51,18 @@ $base-line-height: 24px;
 
 .roundedborder {
 	@include border-radius (4px);
-	border: 1px solid $grey_light;
+	border: 1px solid $accent-bold;
 }
 
 .button {
-	padding: 2px 4px;
-	background-color: $grey_light;
+	padding: 2px 3px;
 	@include border-radius (4px);
-	border: 1px solid $grey_bold;
+	border: 1px solid $accent-bold;
+	background-color: $accent-bright;
+	font-weight: 300;
+	&:hover, &:focus {
+		background-color: lighten($accent-bright, 10%);
+	}
 	margin-right: 1px;
 }
 

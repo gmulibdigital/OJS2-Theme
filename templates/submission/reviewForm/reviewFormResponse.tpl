@@ -23,7 +23,7 @@
 {if $isLocked || $editorPreview}
 	{assign var=disabled value=1}
 {/if}
-<div id="reviewFormResponse">
+<div id="reviewFormResponse" class="block">
 <h3>{$reviewForm->getLocalizedTitle()}</h3>
 <p>{$reviewForm->getLocalizedDescription()}</p>
 

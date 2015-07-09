@@ -16,7 +16,7 @@
 <div id="articleSubmissions" class="block">
 <h3>{translate key="article.submissions"}</h3>
 
-<ul class="menu">
+<ul class="menu block">
 	<li><a href="{url op="submissions" path="submissionsUnassigned"}">{translate key="common.queue.short.submissionsUnassigned"}</a>&nbsp;({if $submissionsCount[0]}{$submissionsCount[0]}{else}0{/if})</li>
 	<li><a href="{url op="submissions" path="submissionsInReview"}">{translate key="common.queue.short.submissionsInReview"}</a>&nbsp;({if $submissionsCount[1]}{$submissionsCount[1]}{else}0{/if})</li>
 	<li><a href="{url op="submissions" path="submissionsInEditing"}">{translate key="common.queue.short.submissionsInEditing"}</a>&nbsp;({if $submissionsCount[2]}{$submissionsCount[2]}{else}0{/if})</li>
@@ -24,9 +24,6 @@
 	{call_hook name="Templates::Editor::Index::Submissions"}
 </ul>
 </div>
-<div class="separator">&nbsp;</div>
-
-&nbsp;<br />
 
 {if !$dateFrom}
 {assign var="dateFrom" value="--"}
@@ -48,8 +45,8 @@ function sortSearch(heading, direction) {
 // -->
 {/literal}
 </script>
-<div class="block">
-	<h4>Filter Submissions</h4>
+<div class="block sort">
+	<h4 class="heading">Filter Submissions</h4>
 <form method="post" id="submit" action="{url path="search"}">
 	{if $section}<input type="hidden" name="section" value="{$section|escape:"quotes"}"/>{/if}
 	<input type="hidden" name="sort" value="id"/>

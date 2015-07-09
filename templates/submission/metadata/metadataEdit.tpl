@@ -63,7 +63,7 @@ function moveAuthor(dir, authorIndex) {
 </locales>
 {/if}
 
-<div id="authors">
+<div id="authors" class="block">
 <h3>{translate key="article.authors"}</h3>
 
 <input type="hidden" name="deletedAuthors" value="{$deletedAuthors|escape}" />
@@ -213,7 +213,7 @@ function moveAuthor(dir, authorIndex) {
 <div class="separator"></div>
 {/if}
 
-<div id="titleAndAbstract">
+<div id="titleAndAbstract" class="block">
 <h3>{translate key="submission.titleAndAbstract"}</h3>
 
 <table width="100%" class="data">
@@ -234,7 +234,7 @@ function moveAuthor(dir, authorIndex) {
 
 <div class="separator"></div>
 
-<div id="cover">
+<div id="cover" class="block">
 <h3>{translate key="editor.article.cover"}</h3>
 
 <input type="hidden" name="fileName[{$formLocale|escape}]" value="{$fileName[$formLocale]|escape}" />
@@ -269,7 +269,7 @@ function moveAuthor(dir, authorIndex) {
 
 <div class="separator"></div>
 
-<div id="indexing">
+<div id="indexing" class="block">
 <h3>{translate key="submission.indexing"}</h3>
 
 {if $journalSettings.metaDiscipline || $journalSettings.metaSubjectClass || $journalSettings.metaSubject || $journalSettings.metaCoverage || $journalSettings.metaType}<p>{translate key="author.submit.submissionIndexingDescription"}</p>{/if}
@@ -386,7 +386,7 @@ function moveAuthor(dir, authorIndex) {
 
 <div class="separator"></div>
 
-<div id="supportingAgencies">
+<div id="supportingAgencies" class="block">
 <h3>{translate key="submission.supportingAgencies"}</h3>
 
 <p>{translate key="author.submit.submissionSupportingAgenciesDescription"}</p>
@@ -411,7 +411,7 @@ function moveAuthor(dir, authorIndex) {
 {call_hook name="Templates::Submission::MetadataEdit::AdditionalMetadata"}
 
 {if $journalSettings.metaCitations}
-<div id="metaCitations">
+<div id="metaCitations" class="block">
 <h3>{translate key="submission.citations"}</h3>
 
 <p>{translate key="author.submit.submissionCitations"}</p>
@@ -443,7 +443,7 @@ function moveAuthor(dir, authorIndex) {
 {/if}
 
 {if $isEditor}
-<div id="display">
+<div id="display" class="block">
 <h3>{translate key="editor.article.display"}</h3>
 
 <table width="100%" class="data">
@@ -458,7 +458,7 @@ function moveAuthor(dir, authorIndex) {
 </table>
 </div>
 
-<div id="permissions">
+<div id="permissions" class="block">
 <h3>{translate key="submission.permissions"}</h3>
 <table width="100%" class="data">
 	<tr valign="top">

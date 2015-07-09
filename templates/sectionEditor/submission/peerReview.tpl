@@ -8,7 +8,7 @@
  * Subtemplate defining the peer review table.
  *
  *}
-<div id="submission">
+<div id="submission" class="block">
 <h3>{translate key="article.submission"}</h3>
 
 <table width="100%" class="data">
@@ -102,17 +102,13 @@
 <div class="separator"></div>
 </div>
 
-<div id="peerReview">
-<table class="data" width="100%">
-	<tr id="reviewersHeader" valign="middle">
-		<td width="22%"><h3>{translate key="submission.peerReview"}</h3></td>
-		<td width="14%"><h4>{translate key="submission.round" round=$round}</h4></td>
-		<td width="64%" class="nowrap">
-			<a href="{url op="selectReviewer" path=$submission->getId()}" class="action">{translate key="editor.article.selectReviewer"}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<div id="peerReview" class="block">
+
+	<h3>{translate key="submission.peerReview"}</h3>
+	<h4>{translate key="submission.round" round=$round}</h4>
+	<a href="{url op="selectReviewer" path=$submission->getId()}" class="action">{translate key="editor.article.selectReviewer"}</a>
 			<a href="{url op="submissionRegrets" path=$submission->getId()}" class="action">{translate|escape key="sectionEditor.regrets.link"}</a>
-		</td>
-	</tr>
-</table>
+
 
 {assign var="start" value="A"|ord}
 {foreach from=$reviewAssignments item=reviewAssignment key=reviewKey}
@@ -120,12 +116,12 @@
 
 {if not $reviewAssignment->getCancelled() and not $reviewAssignment->getDeclined()}
 	{assign var="reviewIndex" value=$reviewIndexes[$reviewId]}
-	<div class="separator"></div>
+	<div class="block">
 
 	<table class="data" width="100%">
-	<tr class="reviewer">
-		<td class="r1" width="20%"><h4>{translate key="user.role.reviewer"} {$reviewIndex+$start|chr}</h4></td>
-		<td class="r2" width="34%"><h4>{$reviewAssignment->getReviewerFullName()|escape}</h4></td>
+	<tr class="reviewer heading">
+		<td class="r1" width="20%">{translate key="user.role.reviewer"} {$reviewIndex+$start|chr}</td>
+		<td class="r2" width="34%">{$reviewAssignment->getReviewerFullName()|escape}</td>
 		<td class="r3" width="46%">
 				{if not $reviewAssignment->getDateNotified()}
 					<a href="{url op="clearReview" path=$submission->getId()|to_array:$reviewAssignment->getId()}" class="action">{translate key="editor.article.clearReview"}</a>
@@ -135,8 +131,9 @@
 		</td>
 	</tr>
 	</table>
+	</div>
 
-	<table width="100%" class="data">
+	<table width="100%" class="data table-borders">
 	<tr valign="top">
 		<td class="label">{translate key="submission.reviewForm"}</td>
 		<td>

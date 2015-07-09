@@ -8,7 +8,7 @@
  * Subtemplate defining the submission summary table.
  *
  *}
-<div id="submission">
+<div id="submission" class="block">
 <h3>{translate key="article.submission"}</h3>
 
 <table width="100%" class="data">

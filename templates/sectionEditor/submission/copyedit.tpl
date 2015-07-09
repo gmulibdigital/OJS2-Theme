@@ -8,7 +8,7 @@
  * Subtemplate defining the copyediting table.
  *
  *}
-<div id="copyedit">
+<div id="copyedit" class="block">
 <h3>{translate key="submission.copyediting"}</h3>
 
 {if $currentJournal->getLocalizedSetting('copyeditInstructions')}
@@ -24,15 +24,20 @@
 	</tr>
 </table>
 {/if}
-
-<table width="100%" class="info">
-	<tr>
-		<td width="28%" colspan="2"><a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a></td>
-		<td width="18%" class="heading">{translate key="submission.request"}</td>
-		<td width="18%" class="heading">{translate key="submission.underway"}</td>
-		<td width="18%" class="heading">{translate key="submission.complete"}</td>
-		<td width="18%" class="heading">{translate key="submission.acknowledge"}</td>
+<div class="block">
+	<a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a>
+</div>
+<table width="100%" class="alt-color">
+	<thead>
+	<tr class="heading">
+		<td width="28%" colspan="2"></td>
+		<td width="18%">{translate key="submission.request"}</td>
+		<td width="18%">{translate key="submission.underway"}</td>
+		<td width="18%">{translate key="submission.complete"}</td>
+		<td width="18%">{translate key="submission.acknowledge"}</td>
 	</tr>
+</thead>
+	<tbody>
 	<tr>
 		<td width="2%">1.</td>
 		{assign var="initialCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_INITIAL')}
@@ -98,9 +103,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
+
 	<tr>
 		<td>2.</td>
 		{assign var="authorCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_AUTHOR')}
@@ -144,9 +147,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
+
 	<tr>
 		<td>3.</td>
 		{assign var="finalCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
@@ -209,6 +210,7 @@
 	<tr>
 		<td colspan="6" class="separator">&nbsp;</td>
 	</tr>
+</tbody>
 </table>
 
 {if $authorCopyeditSignoff->getDateCompleted()}

@@ -14,7 +14,7 @@
 {/strip}
 
 {if $canViewAuthors}
-<div id="authors">
+<div id="authors" class="block">
 <h3>{translate key="article.authors"}</h3>
 	
 <table width="100%" class="data">
@@ -64,7 +64,7 @@
 <div class="separator"></div>
 {/if}
 
-<div id="titleAndAbstract">
+<div id="titleAndAbstract" class="block">
 <h3>{translate key="submission.titleAndAbstract"}</h3>
 
 <table width="100%" class="data">
@@ -83,7 +83,7 @@
 </table>
 </div>
 <div class="separator"></div>
-<div id="cover">
+<div id="cover" class="block">
 <h3>{translate key="editor.article.cover"}</h3>
 
 <table width="100%" class="data">
@@ -102,7 +102,7 @@
 </table>
 </div>
 <div class="separator"></div>
-<div id="indexing">
+<div id="indexing" class="block">
 <h3>{translate key="submission.indexing"}</h3>
 	
 <table width="100%" class="data">
@@ -177,7 +177,7 @@
 
 <div class="separator"></div>
 
-<div id="supportingAgencies">
+<div id="supportingAgencies" class="block">
 <h3>{translate key="submission.supportingAgencies"}</h3>
 	
 <table width="100%" class="data">

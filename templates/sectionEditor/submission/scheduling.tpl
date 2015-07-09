@@ -8,17 +8,17 @@
  * Subtemplate defining the scheduling table.
  *
  *}
-<div id="scheduling">
+<div id="scheduling" class="block">
 <h3>{translate key="submission.scheduling"}</h3>
 
-<table class="data" width="100%">
+<table class="data listing" width="100%">
 {if !$publicationFeeEnabled || $publicationPayment}
 	<form action="{url op="scheduleForPublication" path=$submission->getId()}" method="post">
 		<tr valign="top">
-			<td width="25%" class="label">
+			<td width="20%" class="label">
 				<label for="issueId">{translate key="editor.article.scheduleForPublication"}</label>
 			</td>
-			<td width="25%" class="value">
+			<td width="40%" class="value">
 				{if $publishedArticle}
 					{assign var=issueId value=$publishedArticle->getIssueId()}
 				{else}
@@ -29,7 +29,7 @@
 					{html_options options=$issueOptions|truncate:40:"..." selected=$issueId}
 				</select>
 			</td>
-			<td width="50%" class="value">
+			<td width="40%" class="value">
 				<input type="submit" value="{translate key="common.record"}" class="button defaultButton" />&nbsp;
 				{if $issueId}
 					{if $isEditor}

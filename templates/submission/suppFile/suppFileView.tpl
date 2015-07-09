@@ -13,7 +13,7 @@
 {assign var="pageCrumbTitle" value="submission.supplementaryFiles"}
 {include file="common/header.tpl"}
 {/strip}
-<div id="supplementaryFileData">
+<div id="supplementaryFileData" class="block">
 <h3>{translate key="author.submit.supplementaryFileData"}</h3>
 
 <table width="100%" class="data">
@@ -62,7 +62,7 @@
 
 <div class="separator"></div>
 
-<div id="supplementaryFileUpload">
+<div id="supplementaryFileUpload" class="block">
 <h3>{translate key="author.submit.supplementaryFileUpload"}</h3>
 
 <table width="100%" class="data">

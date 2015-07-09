@@ -39,7 +39,7 @@
 </table>
 </div>
 {/if}
-<div id="supplementaryFileData">
+<div id="supplementaryFileData" class="block">
 <h3>{translate key="author.submit.supplementaryFileData"}</h3>
 <p>{translate key="author.submit.supplementaryFileDataDescription"}</p>
 
@@ -117,7 +117,7 @@
 
 {call_hook name="Templates::Submission::SuppFile::AdditionalMetadata"}
 
-<div id="supplementaryFileUpload">
+<div id="supplementaryFileUpload" class="block">
 <h3>{translate key="author.submit.supplementaryFileUpload"}</h3>
 
 <table id="suppFile" class="data">

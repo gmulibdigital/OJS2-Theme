@@ -27,13 +27,13 @@
 </div>
 {/if}
 
-<table width="100%" class="info">
-	<tr>
+<table width="100%" class="listing block">
+	<tr class="heading">
 		<td width="28%" colspan="2">&nbsp;</td>
-		<td width="18%" class="heading">{translate key="submission.request"}</td>
-		<td width="16%" class="heading">{translate key="submission.underway"}</td>
-		<td width="16%" class="heading">{translate key="submission.complete"}</td>
-		<td width="22%" colspan="2" class="heading">{translate key="submission.acknowledge"}</td>
+		<td width="18%">{translate key="submission.request"}</td>
+		<td width="16%">{translate key="submission.underway"}</td>
+		<td width="16%">{translate key="submission.complete"}</td>
+		<td width="22%" colspan="2">{translate key="submission.acknowledge"}</td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -95,16 +95,14 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="7" class="separator">&nbsp;</td>
-	</tr>
-
-	<tr>
+</table>
+<table class="listing block">
+	<tr class="heading">
 		<td colspan="2">{translate key="submission.layout.galleyFormat"}</td>
-		<td colspan="2" class="heading">{translate key="common.file"}</td>
-		<td class="heading">{translate key="common.order"}</td>
-		<td class="heading">{translate key="common.action"}</td>
-		<td class="heading">{translate key="submission.views"}</td>
+		<td colspan="2">{translate key="common.file"}</td>
+		<td>{translate key="common.order"}</td>
+		<td>{translate key="common.action"}</td>
+		<td>{translate key="submission.views"}</td>
 	</tr>
 	{foreach name=galleys from=$submission->getGalleys() item=galley}
 	<tr>
@@ -125,11 +123,13 @@
 	<tr>
 		<td colspan="7" class="separator">&nbsp;</td>
 	</tr>
-	<tr>
+</table>
+<table class="listing block">
+	<tr class="heading">
 		<td width="28%" colspan="2">{translate key="submission.supplementaryFiles"}</td>
-		<td width="34%" colspan="2" class="heading">{translate key="common.file"}</td>
-		<td width="16%" class="heading">{translate key="common.order"}</td>
-		<td width="16%" colspan="2" class="heading">{translate key="common.action"}</td>
+		<td width="34%" colspan="2">{translate key="common.file"}</td>
+		<td width="16%">{translate key="common.order"}</td>
+		<td width="16%" colspan="2">{translate key="common.action"}</td>
 	</tr>
 	{foreach name=suppFiles from=$submission->getSuppFiles() item=suppFile}
 	<tr>

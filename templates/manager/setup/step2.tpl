@@ -105,13 +105,13 @@
 
 <p>
 	<strong>{translate key="manager.setup.reviewOptions.reviewTime"}</strong><br/>
-	{translate key="manager.setup.reviewOptions.numWeeksPerReview"}: <input type="text" name="numWeeksPerReview" id="numWeeksPerReview" value="{$numWeeksPerReview|escape}" size="2" maxlength="8" class="textField" /> {translate key="common.weeks"}<br/>
-	{translate key="common.note"}: {translate key="manager.setup.reviewOptions.noteOnModification"}
-</p>
+	{translate key="manager.setup.reviewOptions.numWeeksPerReview"}: <input type="text" name="numWeeksPerReview" id="numWeeksPerReview" value="{$numWeeksPerReview|escape}" size="2" maxlength="8" class="textField" /> {translate key="common.weeks"}</p>
+	<p>{translate key="common.note"}: {translate key="manager.setup.reviewOptions.noteOnModification"}</p>
+
 
 	<p>
-		<strong>{translate key="manager.setup.reviewOptions.reviewerReminders"}</strong><br/>
-		{translate key="manager.setup.reviewOptions.automatedReminders"}:<br/>
+		<strong>{translate key="manager.setup.reviewOptions.reviewerReminders"}</strong></p>
+		<p>{translate key="manager.setup.reviewOptions.automatedReminders"}:<br/>
 		<input type="checkbox" name="remindForInvite" id="remindForInvite" value="1" onclick="toggleAllowSetInviteReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $remindForInvite} checked="checked"{/if} />&nbsp;
 		<label for="remindForInvite">{translate key="manager.setup.reviewOptions.remindForInvite1"}</label>
 		<select name="numDaysBeforeInviteReminder" size="1" class="selectMenu"{if not $remindForInvite || !$scheduledTasksEnabled} disabled="disabled"{/if}>
@@ -129,12 +129,12 @@
 				<option value="{$smarty.section.submitDayOptions.index}"{if $numDaysBeforeSubmitReminder eq $smarty.section.submitDayOptions.index} selected="selected"{/if}>{$smarty.section.submitDayOptions.index}</option>
 		{/section}
 		</select>
-		{translate key="manager.setup.reviewOptions.remindForSubmit2"}
+		{translate key="manager.setup.reviewOptions.remindForSubmit2"}</p>
 		{if !$scheduledTasksEnabled}
-		<br/>
-		{translate key="manager.setup.reviewOptions.automatedRemindersDisabled"}
+	
+		<p>{translate key="manager.setup.reviewOptions.automatedRemindersDisabled"}</p>
 		{/if}
-	</p>
+	
 
 <p>
 	<strong>{translate key="manager.setup.reviewOptions.reviewerRatings"}</strong><br/>

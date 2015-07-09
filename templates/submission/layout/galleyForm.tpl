@@ -11,7 +11,7 @@
 {assign var="pageTitle" value="submission.galley"}
 {include file="common/header.tpl"}
 {/strip}
-<div id="galleyForm">
+<div id="galleyForm" class="block">
 <h3>{if $galleyId}{translate key="submission.layout.editGalley"}{else}{translate key="submission.layout.addGalley"}{/if}</h3>
 
 <br />
@@ -92,7 +92,7 @@
 {call_hook name="Templates::Submission::Layout::GalleyForm::AdditionalMetadata"}
 
 {if $galley->isHTMLGalley()}
-<div id="htmlGalley">
+<div id="htmlGalley" class="block">
 <h3>{translate key="submission.layout.galleyHTMLData"}</h3>
 
 <h4>{translate key="submission.layout.galleyStylesheet"}</h4>
@@ -137,7 +137,7 @@
 </table>
 </div>
 <br />
-<div id="galleyImages">
+<div id="galleyImages" class="block">
 <h4>{translate key="submission.layout.galleyImages"}</h4>
 
 <table width="100%" class="listing">

@@ -7,7 +7,7 @@
  *
  * Subtemplate defining the submission status table.
  *}
-<div id="status">
+<div id="status" class="block">
 <h3>{translate key="common.status"}</h3>
 
 <table width="100%" class="data">

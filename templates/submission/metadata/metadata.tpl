@@ -7,7 +7,7 @@
  *
  * Subtemplate defining the submission metadata table. Non-form implementation.
  *}
-<div id="metadata">
+<div id="metadata" class="block">
 <h3>{translate key="submission.metadata"}</h3>
 
 {if $canEditMetadata}
@@ -15,7 +15,7 @@
 	{call_hook name="Templates::Submission::Metadata::Metadata::AdditionalEditItems"}
 {/if}
 
-<div id="authors">
+<div id="authors" class="block">
 <h4>{translate key="article.authors"}</h4>
 	
 <table width="100%" class="data">
@@ -75,7 +75,7 @@
 </table>
 </div>
 
-<div id="titleAndAbstract">
+<div id="titleAndAbstract" class="block">
 <h4>{translate key="submission.titleAndAbstract"}</h4>
 
 <table width="100%" class="data">
@@ -164,7 +164,7 @@
 </table>
 </div>
 
-<div id="supportingAgencies">
+<div id="supportingAgencies" class="block">
 <h4>{translate key="submission.supportingAgencies"}</h4>
 	
 <table width="100%" class="data">

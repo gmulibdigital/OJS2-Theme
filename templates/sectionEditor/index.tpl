@@ -21,7 +21,7 @@
 </ul>
 
 <form action="#">
-<ul class="filter">
+<ul class="filter menu">
 	<li>{translate key="editor.submissions.inSection"}: <select name="filterSection" onchange="location.href='{url|escape:"javascript" path=$pageToDisplay searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth dateSearchField=$dateSearchField filterSection="SECTION_ID" escape=false}'.replace('SECTION_ID', this.options[this.selectedIndex].value)" size="1" class="selectMenu">{html_options options=$sectionOptions selected=$filterSection}</select></li>
 </ul>
 </form>
@@ -46,8 +46,9 @@ function sortSearch(heading, direction) {
 // -->
 {/literal}
 </script>
-
-<form method="post" id="submit" action="{url op="index" path=$pageToDisplay}">
+<div class="block sort">
+	<h4 class="heading">Filter Submissions</h4>
+<form method="post" id="submit" action="{url op="index" path=$pageToDisplay}" class="filter menu">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -74,7 +75,7 @@ function sortSearch(heading, direction) {
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 &nbsp;
-
+</div>
 {include file="sectionEditor/$pageToDisplay.tpl"}
 
 {if ($pageToDisplay == "submissionsInReview")}

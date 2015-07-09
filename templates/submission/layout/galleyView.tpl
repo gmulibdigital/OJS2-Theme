@@ -12,7 +12,7 @@
 {assign var="pageTitle" value="submission.galley"}
 {include file="common/header.tpl"}
 {/strip}
-<div id="galleyFileData">
+<div id="galleyFileData" class="block">
 
 <p>{translate key="submission.layout.galleyFileData"}</p>
 
@@ -44,7 +44,7 @@
 </table>
 </div>
 {if $galley->isHTMLGalley()}
-<div id="htmlGalley">
+<div id="htmlGalley" class="block">
 
 <h3>{translate key="submission.layout.galleyHTMLData"}</h3>
 {assign var=styleFile value=$galley->getStyleFile()}
@@ -73,7 +73,7 @@
 {/if}
 </table>
 </div>
-<div id="galleyImages">
+<div id="galleyImages" class="block">
 
 <strong>{translate key="submission.layout.galleyImages"}</strong>
 

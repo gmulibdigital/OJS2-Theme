@@ -232,7 +232,7 @@
 		<button id="refreshCitationListButton" type="button" title="{translate key="submission.citations.editor.unprocessedCitationsButtonTitle"}">{translate key="submission.citations.editor.unprocessedCitationsButton"}</button>
 	</div>
 {/if}
-<div id="citationEditor" class="composite-ui">
+<div id="citationEditor" class="composite-ui block">
 	<div id="citationEditorMainTabs">
 		<button id="fullScreenButton" type="button">{translate key="common.fullscreen"}</button>
 		<ul class="main-tabs">
@@ -266,7 +266,7 @@
 					{/if}
 				</div>
 				<div id="citationEditorDetailPane" class="pane right-pane">
-					<table class="pane_header"><thead><tr><th>&nbsp;</th></tr></thead></table>
+					<table class="pane_header"><thead><tr><th></th></tr></thead></table>
 					<div id="citationEditorDetailCanvas" class="canvas">
 						<div class="wrapper scrollable">
 							<div class="help-message">{$initialHelpMessage}</div>

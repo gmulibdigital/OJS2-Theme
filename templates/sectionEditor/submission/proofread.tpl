@@ -11,7 +11,7 @@
 {assign var=proofSignoff value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
 {assign var=proofreader value=$submission->getUserBySignoffType('SIGNOFF_PROOFREADING_PROOFREADER')}
 
-<div id="proofread">
+<div id="proofread" class="block">
 <h3>{translate key="submission.proofreading"}</h3>
 
 {if $useProofreaders}
@@ -24,13 +24,13 @@
 </table>
 {/if}
 
-<table width="100%" class="info">
-	<tr>
+<table width="100%" class="listing block">
+	<tr class="heading">
 		<td width="28%" colspan="2">&nbsp;</td>
-		<td width="18%" class="heading">{translate key="submission.request"}</td>
-		<td width="18%" class="heading">{translate key="submission.underway"}</td>
-		<td width="18%" class="heading">{translate key="submission.complete"}</td>
-		<td width="18%" class="heading">{translate key="submission.acknowledge"}</td>
+		<td width="18%">{translate key="submission.request"}</td>
+		<td width="18%">{translate key="submission.underway"}</td>
+		<td width="18%">{translate key="submission.complete"}</td>
+		<td width="18%">{translate key="submission.acknowledge"}</td>
 	</tr>
 	<tr>
 		<td width="2%">1.</td>

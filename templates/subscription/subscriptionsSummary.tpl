@@ -22,22 +22,24 @@
 	<li><a href="{url op="subscriptionPolicies"}">{translate key="manager.subscriptionPolicies"}</a></li>
 	<li><a href="{url op="payments"}">{translate key="manager.payments"}</a></li>
 </ul>
-
+<div class="block">
 <h3>{translate key="manager.individualSubscriptions"}</h3>
-<ul>
+<ul class="block">
 	{foreach name=allStatus from=$individualStatus key=statusIndex item=status}
 	<li><a href="{url op="subscriptions" path="individual" filterStatus=$status.status}">{translate key=$status.localeKey}</a> ({$status.count})</li>
 	{/foreach}
 </ul>
 <a href="{url op="selectSubscriber" path="individual"}" class="action">{translate key="manager.subscriptions.create"}</a>
-
+</div>
+<div class="block">
 <h3>{translate key="manager.institutionalSubscriptions"}</h3>
-<ul>
+<ul class="block">
 	{foreach name=allStatus from=$institutionalStatus key=statusIndex item=status}
 	<li><a href="{url op="subscriptions" path="institutional" filterStatus=$status.status}">{translate key=$status.localeKey}</a> ({$status.count})</li>
 	{/foreach}
 </ul>
 <a href="{url op="selectSubscriber" path="institutional"}" class="action">{translate key="manager.subscriptions.create"}</a>
+</div>
 
 {include file="common/footer.tpl"}
 

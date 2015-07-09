@@ -21,7 +21,7 @@
 </p>
 </div>
 
-<div id="rtAdminConfig" class="block">
+<div id="rtAdminConfig" class="block pseudoMenu">
 <h3>{translate key="rt.admin.configuration"}</h3>
 <ul>
 	<li><a href="{url op="settings"}">{translate key="rt.admin.settings"}</a></li>
@@ -29,14 +29,14 @@
 </ul>
 </div>
 
-<div id="rtAdminManage" class="block">
+<div id="rtAdminManage" class="block pseudoMenu">
 <h3>{translate key="rt.admin.management"}</h3>
 <ul>
 	<li><a href="{url op="validateUrls"}">{translate key="rt.admin.validateUrls"}</a></li>
 </ul>
 </div>
 
-<div id="rtAdminSharing" class="block">
+<div id="rtAdminSharing" class="block pseudoMenu>
 <h3>{translate key="rt.admin.sharing"}</h3>
 <ul>
 	<li><a href="{url op="sharingSettings"}">{translate key="rt.admin.configureSharing"}</a></li>

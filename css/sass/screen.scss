@@ -122,6 +122,9 @@ h2 {
 h3 {
 	font-size: 1.75em;
 	font-weight: 700;
+	padding-left: 5px;
+	background-color: lighten($grey-light, 10%);
+	margin-top: 1em;
 }
 h4 {
 	font-size: 1.5em;
@@ -129,20 +132,26 @@ h4 {
 }
 
 /* Links */
-
 a {
-	@include link-colors( $accent-light, $accent-bold, lighten($primary, 5%), darken($accent-bold, 10%), $accent-light);
 	@include hover-link;
+	@include link-colors(lighten($accent-bold, 20%), $accent-light, #primary, $accent-bright, $accent-bold);
 }
-
+nav a {
+	@include link-colors(white, $accent-light, $accent-bright, white, $accent-light)
+}
+#pageFooter a {
+	@include link-colors($accent-light, $accent-bright, $primary, darken($accent-light, 10%), $accent-bright);
+}
+a.action, .button, .options a {
+	@include link-colors(white, white, $accent-contrast, white, white);
+}
 
 /* Forms */
 input, select, textarea {
  	@extend .roundedborder;
  	font-family: "PT Sans", Helvetica, sans-serif;
- 	@include adjust-font-size-to(14px);
- 	// padding: 2px;
- 	margin: .25em 0;
+ 	margin: 0 .05em 0 0;
+ 	@include adjust-font-size-to(16px);
  }
 
  .label {
@@ -154,16 +163,12 @@ form {
 
 }
 input {
-	padding: 3px;
-}
-select {
-	//@include adjust-font-size-to(16px);
+	padding: 2px;
 }
 
 /* Tables */
 table {
-	//@include outer-table-borders(1px, $grey-light);
-	//@include inner-table-borders(1px, $grey-light);
+
 	//@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);
 	width: 100%;
 
@@ -186,6 +191,14 @@ table {
 		vertical-align: top;
 	}
 
+}
+.table-borders {
+	//@include outer-table-borders(1px, $grey-light);
+	//@include inner-table-borders(1px, $grey-light);
+
+	tr {
+		border-bottom: 1px solid $grey-light;
+	}
 }
 
 /* Global Classes 
@@ -212,6 +225,7 @@ table {
 .block {
 	@include rhythm();
 	height: 100%;
+	clear: both;
 }
 
 .action, 
@@ -220,10 +234,16 @@ table {
 	@extend .button;
 
 }
-.largeButton {
-	padding: 1em;
-	background-color: $primary;
-	a {color: white !important;}
+.largeButton a {
+		color: white !important; 
+		display: block;
+		padding: 1em;
+		background-color: $accent-bold;
+		@include box-shadow();
+		@include border-radius (4px);
+		&:hover, &:focus {
+			background-color: $accent-bright;
+		}
 }
 .headseparator {
 	display:none;
@@ -288,15 +308,11 @@ ul.navMenu {
 
 	li {
 		border-right: 3px solid black;
+		font-family: $font-heading;
+		font-weight: 300;
+		letter-spacing: .05em;
 		&:last-child {
 			border: none;
-		}
-		a {
-			@include link-colors(white, $accent-bold, darken($accent-bold, 10%), white, $accent-bold);
-			@include hover-link;
-			font-family: Lato, sans-serif;
-			font-weight: 300;
-			letter-spacing: .05em;
 		}
 	}
 }
@@ -346,8 +362,6 @@ ul.navMenu {
 /* Sidebars 
 ============================= */
 #sidebar {
-	@include span(3 last);
-	overflow: auto;
 	height: 100%;
 
 	#submit-button {
@@ -359,14 +373,10 @@ ul.navMenu {
 }
 
 #leftSidebar {
-	width: 100%;
-	float: left;
-	margin-right: gutter();
+	@include span(3 first);
 }
 #rightSidebar {
-	width: 100%;
-	float: right;
-	margin-left: gutter();
+	@include span(3 last);
 }
 
 .blockTitle {
@@ -450,13 +460,17 @@ ul.navMenu {
 /* Articles 
 ============================ */
 
-a.file {
-	@extend .button;
+.tocArticleGalleysPages {
+	text-align: end;
+	vertical-align: middle;
 }
-
+a.file {
+	@extend .roundedborder;
+	background-color: white;
+	padding: 0 .5em;
+}
 #articleTitle h3 {
 	background-color: initial;
-
 }
 
 /* Admin Pages 
@@ -464,11 +478,19 @@ a.file {
 .sectionBlock {
 	@include rhythm();
 }
+#selectSections select {
+	width: 50%;
+}
 
-.block h3 {
+table.alt-color {
+	tbody tr {
+		&:nth-child(even) {background-color: lighten($grey-light, 8%);}
+	}
+}
+/*.block h3 {
 	background-color: lighten($grey-light, 10%);
 	padding-left: 5px;
-}
+}*/
 
 table.info {
 	@include rhythm();
@@ -537,15 +559,13 @@ table.email {
 		border-bottom: 1px solid $grey-light;
 	}
 }	
-td > table {
-	@include adjust-font-size-to(12px);
-}
 
-.highlightReviewerNotNotified {background-color: $accent-yellow; &:before {content: "\00b9"; padding-right: 10px;} }
-.highlightNoDecision {background-color: $accent-bold; color: white; &:before {content: "\00b2"; padding-right: 10px;}}
-.highlightReviewerConfirmationOverdue, .highlightCopyediting {background-color: lighten($accent-bold, 25%);&:before {content: "\2020"; padding-right: 10px;} }
-.highlightRevisedCopyUploaded, .highlightLayoutEditing {background-color: lighten($accent-light, 5%); &:before {content: "\2666"; padding-right: 10px;}}
-.highlightReviewerCompletionOverdue, .higlightProofreading {background-color: $primary; &:before {content: "\25CA"; padding-right: 10px;}}
+
+.highlightReviewerNotNotified, .highlightCopyediting {background-color: $accent-bright; &:before {content: "\00b9"; padding: 0 4px;} }
+.highlightNoDecision {background-color: $accent-bold; color: white; &:before {content: "\00b2"; padding: 0 4px;}}
+.highlightReviewerConfirmationOverdue {background-color: $accent-contrast; &:before {content: "\2020"; padding: 0 4px;} }
+.highlightRevisedCopyUploaded, .highlightLayoutEditing {background-color: $accent-light; &:before {content: "\2666"; padding: 0 4px;}}
+.highlightReviewerCompletionOverdue, .higlightProofreading {background-color: $primary; color: white; &:before {content: "\25CA"; padding: 0 4px;}}
 
 #notes {
 	ul {
@@ -582,6 +602,7 @@ span.instruct {
 #setup {
 	.options {
 		@extend .button;
+		margin-top: 2em;
 	}
 
 	.pkp_controllers_grid table {
@@ -594,7 +615,9 @@ span.instruct {
 		}
 	}
 }
-
+td form {
+	margin: 0;
+}
 
 /* Author Submission Pages */
 

@@ -15,7 +15,7 @@
 
 <h3>{translate key="manager.setup.stepsToJournalSite"}</h3>
 
-<ol>
+<ol class="block">
 	<li>
 		<h4><a href="{url op="setup" path="1"}">{translate key="manager.setup.details"}</a></h4>
 		{translate key="manager.setup.details.description"}<br/>
@@ -42,6 +42,6 @@
 		&nbsp;
 	</li>
 </ol>
-
+</div>
 {include file="common/footer.tpl"}
 

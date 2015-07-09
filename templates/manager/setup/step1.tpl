@@ -46,12 +46,12 @@
 	</tr>
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="printIssn" key="manager.setup.printIssn"}</td>
-		<td width="80%" class="value"><input type="text" name="printIssn" id="printIssn" value="{$printIssn|escape}" size="8" maxlength="16" class="textField" /></td>
+		<td width="80%" class="value"><input type="text" name="printIssn" id="printIssn" value="{$printIssn|escape}" size="9" maxlength="16" class="textField" /></td>
 	</tr>
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="onlineIssn" key="manager.setup.onlineIssn"}</td>
 		<td width="80%" class="value">
-			<input type="text" name="onlineIssn" id="onlineIssn" value="{$onlineIssn|escape}" size="8" maxlength="16" class="textField" />
+			<input type="text" name="onlineIssn" id="onlineIssn" value="{$onlineIssn|escape}" size="9" maxlength="16" class="textField" />
 			<br />
 			<span class="instruct">{translate key="manager.setup.issnDescription"}</span>
 		</td>

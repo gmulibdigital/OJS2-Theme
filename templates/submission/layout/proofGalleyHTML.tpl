@@ -15,10 +15,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<title>{translate key=$pageTitle}</title>
-
+<!-- 
 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" /> -->
+
 	{foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
 	{/foreach}
@@ -33,7 +34,7 @@
 	{$additionalHeadData}
 </head>
 <body>
-	{$galley->getHTMLContents()}
+		{$galley->getHTMLContents()}
 </body>
 </html>
 

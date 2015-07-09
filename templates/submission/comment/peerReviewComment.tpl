@@ -21,7 +21,7 @@ window.opener.location.reload();
 // -->
 {/literal}
 </script>
-<div id="articleComments">
+<div id="articleComments" class="block">
 <table class="data" width="100%">
 {foreach from=$articleComments item=comment}
 <tr valign="top">
@@ -76,7 +76,7 @@ window.opener.location.reload();
 {/if}
 
 
-<div id="new">
+<div id="new" class="block">
 {include file="common/formErrors.tpl"}
 
 <table class="data" width="100%">
