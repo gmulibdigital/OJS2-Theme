@@ -13,6 +13,7 @@
 		<td colspan="8" class="headseparator">&nbsp;</td>
 	</tr>
 	<tr class="heading" valign="bottom">
+		<td width="1%"></td>
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%">{sort_search key="submissions.submitted" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>

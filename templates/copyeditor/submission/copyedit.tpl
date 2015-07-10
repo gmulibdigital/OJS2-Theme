@@ -8,30 +8,34 @@
  * Subtemplate defining the copyeditor's submission management table.
  *
  *}
-<div id="copyedit">
+<div id="copyedit" class="block">
 <h3>{translate key="submission.copyediting"}</h3>
 
 {if $currentJournal->getLocalizedSetting('copyeditInstructions') != ''}
 <p><a href="javascript:openHelp('{url op="instructions" path="copy"}')" class="action">{translate key="submission.copyedit.instructions"}</a></p>
 {/if}
 
-<table width="100%" class="data">
+<table width="100%" class="data single">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.copyeditor"}</td>
 		<td class="value" width="80%">{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
 	</tr>
 </table>
+<p><a class="action" href="{url op="viewMetadata" path=$submission->getId()}">{translate key="submission.reviewMetadata"}</a>
+			{if $metaCitations}<a class="action" href="{url op="submissionCitations" path=$submission->getId()}">{translate key="submission.citations"}</a>{/if}</p>
 
-<table width="100%" class="info">
-	<tr>
+<table width="100%" class="listing alt-color">
+	<thead>
+	<tr class="heading">
 		<td width="40%" colspan="2">
-			<a class="action" href="{url op="viewMetadata" path=$submission->getId()}">{translate key="submission.reviewMetadata"}</a>
-			{if $metaCitations}<a class="action" href="{url op="submissionCitations" path=$submission->getId()}">{translate key="submission.citations"}</a>{/if}
+			
 		</td>
-		<td width="20%" class="heading">{translate key="submission.request"}</td>
-		<td width="20%" class="heading">{translate key="submission.underway"}</td>
-		<td width="20%" class="heading">{translate key="submission.complete"}</td>
+		<td width="20%" >{translate key="submission.request"}</td>
+		<td width="20%" >{translate key="submission.underway"}</td>
+		<td width="20%" >{translate key="submission.complete"}</td>
 	</tr>
+	</thead>
+		<tbody>
 	<tr>
 		<td width="5%">1.</td>
 		<td width="35%">{translate key="submission.copyedit.initialCopyedit"}</td>
@@ -58,7 +62,7 @@
 			{else}
 				{translate key="common.none"}
 			{/if}
-			<br />
+			
 			<form method="post" action="{url op="uploadCopyeditVersion"}"  enctype="multipart/form-data">
 				<input type="hidden" name="articleId" value="{$submission->getId()}" />
 				<input type="hidden" name="copyeditStage" value="initial" />
@@ -67,9 +71,7 @@
 			</form>
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
+
 	<tr>
 		<td>2.</td>
 		{assign var="authorCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_AUTHOR')}
@@ -89,9 +91,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
+
 	<tr>
 		<td>3.</td>
 		{assign var="finalCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
@@ -130,8 +130,9 @@
 	<tr>
 		<td colspan="5" class="separator">&nbsp;</td>
 	</tr>
+</tbody>
 </table>
-
+<p>
 {translate key="submission.copyedit.copyeditComments"}
 {if $submission->getMostRecentCopyeditComment()}
 	{assign var="comment" value=$submission->getMostRecentCopyeditComment()}
@@ -139,4 +140,5 @@
 {else}
 	<a href="javascript:openComments('{url op="viewCopyeditComments" path=$submission->getId()}');" class="icon">{icon name="comment"}</a>{translate key="common.noComments"}
 {/if}
+</p>
 </div>

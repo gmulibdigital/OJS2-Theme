@@ -52,13 +52,13 @@
 	{if $canEdit}<li><a href="{url op="submissionEditing" path=$submission->getId()}">{translate key="submission.editing"}</a></li>{/if}
 	<li><a href="{url op="submissionHistory" path=$submission->getId()}">{translate key="submission.history"}</a></li>
 </ul>
-
-<ul class="menu">
+<div class="pseudoMenu">
+<ul>
 	<li><a href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.history.submissionEventLog"}</a></li>
 	<li><a href="{url op="submissionEmailLog" path=$submission->getId()}">{translate key="submission.history.submissionEmailLog"}</a></li>
 	<li class="current"><a href="{url op="submissionNotes" path=$submission->getId()}">{translate key="submission.history.submissionNotes"}</a></li>
 </ul>
-
+</div>
 {include file="sectionEditor/submission/summary.tpl"}
 
 <div class="separator"></div>
@@ -124,9 +124,9 @@
 <table width="100%" class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" valign="bottom">
-		<td width="5%">{translate key="common.date"}</td>
-		<td width="60%">{translate key="common.title"}</td>
-		<td width="25%">{translate key="submission.notes.attachedFile"}</td>
+		<td width="10%">{translate key="common.date"}</td>
+		<td width="45%">{translate key="common.title"}</td>
+		<td width="35%">{translate key="submission.notes.attachedFile"}</td>
 		<td width="10%" align="right">{translate key="common.action"}</td>
 	</tr>
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
@@ -141,7 +141,7 @@
 			{$note->getDateCreated()|date_format:$dateFormatTrunc}
 		</td>
 		<td><a class="action" href="javascript:toggleNote({$note->getId()})">{$note->getTitle()|escape}</a><div style="display: none" id="note{$note->getId()}">{$note->getNote()|strip_unsafe_html|nl2br}</div></td>
-		<td>{if $note->getFileId()}<a class="action" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
+		<td>{if $note->getFileId()}<a class="file" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
 		<td align="right"><a href="{url op="submissionNotes" path=$submission->getId()|to_array:"edit":$note->getId()}" class="action">{translate key="common.view"}</a>&nbsp;|&nbsp;<a href="{url op="removeSubmissionNote" articleId=$submission->getId() noteId=$note->getId() fileId=$note->getFileId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
 	<tr valign="top">
@@ -163,10 +163,12 @@
 {/if}
 </table>
 
+<div class="block">
 <a class="action" href="javascript:toggleNoteAll()"><div style="display:inline" id="expandNotes" name="expandNotes">{translate key="submission.notes.expandNotes"}</div><div style="display: none" id="collapseNotes" name="collapseNotes">{translate key="submission.notes.collapseNotes"}</div></a> |
 <a class="action" href="{url op="submissionNotes" path=$submission->getId()|to_array:"add"}">{translate key="submission.notes.addNewNote"}</a> |
 <a class="action" href="{url op="clearAllSubmissionNotes" articleId=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDeleteAll"}')">{translate key="submission.notes.clearAllNotes"}</a>
 {/if}
+</div>
 </div>
 {include file="common/footer.tpl"}
 

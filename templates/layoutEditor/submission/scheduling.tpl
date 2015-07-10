@@ -8,9 +8,9 @@
  * Subtemplate defining the scheduling view.
  *
  *}
-<div id="scheduling">
+<div id="scheduling" class="block">
 <h3>{translate key="submission.scheduling"}</h3>
-
+<p>
 {if $issue}
 	{assign var=issueName value=$issue->getIssueIdentification()}
 {else}
@@ -26,4 +26,5 @@
 		<a href="{url op="issueToc" path=$issue->getId()}" class="action">{translate key="issue.toc"}</a>
 	{/if}
 {/if}
+</p>
 </div>

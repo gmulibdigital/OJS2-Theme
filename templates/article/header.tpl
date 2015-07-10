@@ -69,23 +69,11 @@
 		{include file="common/minifiedScripts.tpl"}
 	{/if}
 
-	<!-- Add theme style sheet -->
-	<!-- <link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/style.css" type="text/css" /> -->
-
-	<!-- Add fonts style sheet -->
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-	<!-- Add JS -->
-	
-	
-	<!-- Add theme style sheet -->
-	<link rel="stylesheet" href="{$baseURL}/ojs/plugins/themes/mpg/css/screen.css" type="text/css" />
+	{include file="common/head.tpl"}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body id="pkp-{$pageTitle|replace:'.':'-'}">
+<body id="pkp-{$pageTitle|replace:'.':'-'}" class="article">
 
 <div id="container">
 {include file="common/navbar.tpl"}

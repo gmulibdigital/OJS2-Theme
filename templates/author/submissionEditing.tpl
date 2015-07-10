@@ -8,6 +8,7 @@
  * Author's submission editing.
  *
  *}
+ 
 {strip}
 {translate|assign:"pageTitleTranslated" key="submission.page.editing" id=$submission->getId()}
 {assign var="pageCrumbTitle" value="submission.editing"}

@@ -12,12 +12,12 @@
 {assign var=layoutFile value=$submission->getFileBySignoffType('SIGNOFF_LAYOUT')}
 {assign var=layoutEditor value=$submission->getUserBySignoffType('SIGNOFF_LAYOUT')}
 
-<div id="layout">
+<div id="layout" class="block">
 <h3>{translate key="submission.layout"}</h3>
 
 {if $useLayoutEditors}
 <div id="layoutEditors">
-<table class="data" width="100%">
+<table class="data single" width="100%">
 	<tr>
 		<td width="20%" class="label">{translate key="user.role.layoutEditor"}</td>
 		{if $layoutSignoff->getUserId()}<td width="20%" class="value">{$layoutEditor->getFullName()|escape}</td>{/if}

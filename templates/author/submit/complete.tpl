@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="submissionComplete">
+<div id="submissionComplete" class="block">
 <p>{translate key="author.submit.submissionComplete" journalTitle=$journal->getLocalizedTitle()}</p>
 
 {if $canExpedite}
@@ -23,8 +23,9 @@
 {if $paymentButtonsTemplate }
 	{include file=$paymentButtonsTemplate orientation="vertical"}
 {/if}
-
-<ul class="pseudoMenu"><li><a href="{url op="index"}">{translate key="author.track"}</a></li></ul>
+<div class="pseudoMenu">
+<ul><li><a href="{url op="index"}">{translate key="author.track"}</a></li></ul>
+</div>
 </div>
 
 {include file="common/footer.tpl"}

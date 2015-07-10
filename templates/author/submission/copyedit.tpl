@@ -8,7 +8,7 @@
  * Subtemplate defining the copyediting table.
  *
  *}
-<div id="copyedit">
+<div id="copyedit" class="block">
 <h3>{translate key="submission.copyediting"}</h3>
 
 {if $currentJournal->getLocalizedSetting('copyeditInstructions') != ''}
@@ -16,21 +16,26 @@
 {/if}
 
 {if $useCopyeditors}
-<table class="data" width="100%">
+<table class="data single" width="100%">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.copyeditor"}</td>
-		<td class="label" width="80%">{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
+		<td class="value" width="80%">{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
 	</tr>
 </table>
 {/if}
-
-<table width="100%" class="info">
-	<tr>
-		<td width="40%" colspan="2"><a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a></td>
-		<td width="20%" class="heading">{translate key="submission.request"}</td>
-		<td width="20%" class="heading">{translate key="submission.underway"}</td>
-		<td width="20%" class="heading">{translate key="submission.complete"}</td>
+<div class="block">
+	<a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a>
+</div>
+<table width="100%" class="alt-color">
+	<thead>
+	<tr class="heading">
+		<td width="40%" colspan="2"></td>
+		<td width="20%">{translate key="submission.request"}</td>
+		<td width="20%">{translate key="submission.underway"}</td>
+		<td width="20%">{translate key="submission.complete"}</td>
 	</tr>
+</thead>
+<tbody>
 	<tr>
 		<td width="5%">1.</td>
 		{assign var="copyeditInitialSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_INITIAL')}
@@ -49,9 +54,6 @@
 				{translate key="common.none"}
 			{/if}
 		</td>
-	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
 	</tr>
 	<tr>
 		<td>2.</td>
@@ -88,9 +90,7 @@
 			</form>
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
+
 	<tr>
 		<td>3.</td>
 		{assign var="copyeditFinalSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
@@ -113,13 +113,15 @@
 	<tr>
 		<td colspan="5" class="separator">&nbsp;</td>
 	</tr>
+</tbody>
 </table>
 
-{translate key="submission.copyedit.copyeditComments"}
+<p>{translate key="submission.copyedit.copyeditComments"}
+
 {if $submission->getMostRecentCopyeditComment()}
-	{assign var="comment" value=$submission->getMostRecentCopyeditComment()}
-	<a href="javascript:openComments('{url op="viewCopyeditComments" path=$submission->getId() anchor=$comment->getId()}');" class="icon">{icon name="comment"}</a>{$comment->getDatePosted()|date_format:$dateFormatShort}
+	{assign var="comment" value=$submission->getMostRecentCopyeditComment()} 
+	<a href="javascript:openComments('{url op="viewCopyeditComments" path=$submission->getId() anchor=$comment->getId()}');" class="icon">{icon name="comment"}</a>{$comment->getDatePosted()|date_format:$dateFormatShort} 
 {else}
 	<a href="javascript:openComments('{url op="viewCopyeditComments" path=$submission->getId()}');" class="icon">{icon name="comment"}</a>{translate key="common.noComments"}
-{/if}
+{/if}</p>
 </div>

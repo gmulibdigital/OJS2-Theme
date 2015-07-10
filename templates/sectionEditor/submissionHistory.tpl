@@ -102,9 +102,10 @@
 	</tr>
 {/if}
 </table>
-
+<p>
 <a href="{url op="submissionEventLog" path=$submission->getId()}" class="action">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
+</p>
 </div>
 <br /><br />
 
@@ -143,9 +144,10 @@
 	</tr>
 {/if}
 </table>
-
+<p>
 <a class="action" href="{url op="submissionEmailLog" path=$submission->getId()}">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a class="action" href="{url page="editor" op="clearsubmissionEmailLog" path=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.email.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
+</p>
 </div>
 <br /><br />
 
@@ -187,11 +189,12 @@
 	</tr>
 {/if}
 </table>
-
+<div class="block">
 <a class="action" href="{url op="submissionNotes" path=$submission->getId()}">{translate key="submission.notes.viewNotes"}</a> |
 <div style="display:inline" id="expandNotes"><a class="action" href="javascript:toggleNoteAll()">{translate key="submission.notes.expandNotes"}</a></div><div style="display: none" id="collapseNotes"><a class="action" href="javascript:toggleNoteAll()">{translate key="submission.notes.collapseNotes"}</a></div> |
 <a class="action" href="{url op="submissionNotes" path=$submission->getId()|to_array:"add"}">{translate key="submission.notes.addNewNote"}</a> |
 <a class="action" href="{url op="clearAllSubmissionNotes" articleId=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDeleteAll"}')">{translate key="submission.notes.clearAllNotes"}</a>
+</div>
 </div>
 {include file="common/footer.tpl"}
 

@@ -15,7 +15,7 @@
 
 <h3>{translate key="user.profile"}: {$user->getFullName()|escape}</h3>
 
-<table class="data" width="100%">
+<table class="listing" width="100%">
 <tr valign="top">
 	<td width="20%" class="label">{translate key="user.salutation"}:</td>
 	<td width="80%" class="value">{$user->getSalutation()|escape}</td>

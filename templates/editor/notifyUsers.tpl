@@ -44,7 +44,7 @@
 
 <div id="recipients">
 <h3>{translate key="email.recipients"}</h3>
-<table id="recipients" class="data" width="100%">
+<table id="recipients" class="listing checklist" width="100%">
 <tr valign="top">
 	<td><input type="radio" id="allUsers" name="whichUsers" value="allUsers"/></td>
 	<td class="label">
@@ -98,7 +98,7 @@
 
 <div id="issue">
 <h3>{translate key="issue.issue"}</h3>
-<table class="data" width="100%">
+<table class="data checklist" width="100%">
 <tr valign="top">
 	<td width="5%">
 		<input type="checkbox" name="includeToc" id="includeToc" value="1"/>

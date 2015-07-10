@@ -12,6 +12,7 @@
 <table width="100%" class="listing">
 	<tr><td colspan="7" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" valign="bottom">
+		<td width="1%"></td>
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_search key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -19,7 +20,7 @@
 		<td width="30%">{sort_search key="article.title" sort="title"}</td>
 		<td width="30%">
 			{translate key="submission.peerReview"}
-			<table width="100%">
+			<table width="100%" class="nested">
 				<tr valign="top">
 					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">{translate key="submission.ask"}</td>
 					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">{translate key="submission.due"}</td>

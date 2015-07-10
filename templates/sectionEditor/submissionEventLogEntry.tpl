@@ -21,18 +21,20 @@
 	<li><a href="{url op="submissionHistory" path=$submission->getId()}">{translate key="submission.history"}</a></li>
 </ul>
 
-<ul class="menu">
+<div class="pseudoMenu block">
+<ul>
 	<li><a href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.history.submissionEventLog"}</a></li>
 	<li><a href="{url op="submissionEmailLog" path=$submission->getId()}">{translate key="submission.history.submissionEmailLog"}</a></li>
 	<li><a href="{url op="submissionNotes" path=$submission->getId()}">{translate key="submission.history.submissionNotes"}</a></li>
 </ul>
+</div>
 
 {include file="sectionEditor/submission/summary.tpl"}
 
 <div class="separator"></div>
 <div id="submissionEventLog">
 <h3>{translate key="submission.history.submissionEventLog"}</h3>
-<table width="100%" class="data">
+<table width="100%" class="listing">
 	<tr valign="top">
 		<td width="20%" class="label">{translate key="common.id"}</td>
 		<td width="80%" class="value">{$logEntry->getId()}</td>
@@ -53,16 +55,16 @@
 		<td class="label">{translate key="common.event"}</td>
 		<td class="value">
 			<strong>{translate key=$logEntry->getEventTitle()}</strong>
-			<br /><br />
+			<br />
 			{$logEntry->getMessage()|strip_unsafe_html|nl2br}
 		</td>
 	</tr>
 </table>
 {if $isEditor}
-	<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')" class="action">{translate key="submission.event.deleteLogEntry"}</a><br/>
+	<p> <a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')" class="action">{translate key="submission.event.deleteLogEntry"}</a></p>
 {/if}
 </div>
-<a class="action" href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.event.backToEventLog"}</a>
+<p><a class="action" href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.event.backToEventLog"}</a></p>
 
 {include file="common/footer.tpl"}
 

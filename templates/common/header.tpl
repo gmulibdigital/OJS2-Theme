@@ -29,8 +29,10 @@
 	<!-- <link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
+	 -->
+	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/lib/jqueryUI/jqueryUI.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
- -->
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Base Jquery -->

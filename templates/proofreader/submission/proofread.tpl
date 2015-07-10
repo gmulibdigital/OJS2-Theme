@@ -11,24 +11,24 @@
 {assign var=proofSignoff value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
 {assign var=proofreader value=$submission->getUserBySignoffType('SIGNOFF_PROOFREADING_PROOFREADER')}
 
-<div id="proofread">
+<div id="proofread" class="block">
 <h3>{translate key="submission.proofreading"}</h3>
 
-<table width="100%" class="data">
+<table width="100%" class="data single">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.proofreader"}</td>
 		<td class="value" width="80%">{$proofreader->getFullName()|escape}</td>
 	</tr>
 </table>
-
+<p>
 <a href="{url op="viewMetadata" path=$proofSignoff->getAssocId()}" class="action" target="_new">{translate key="submission.reviewMetadata"}</a>
-
-<table width="100%" class="info">
-	<tr>
+<p>
+<table width="100%" class="listing">
+	<tr class="heading">
 		<td width="40%" colspan="2">&nbsp;</td>
-		<td width="20%" class="heading">{translate key="submission.request"}</td>
-		<td width="20%" class="heading">{translate key="submission.underway"}</td>
-		<td width="20%" class="heading">{translate key="submission.complete"}</td>
+		<td width="20%" >{translate key="submission.request"}</td>
+		<td width="20%">{translate key="submission.underway"}</td>
+		<td width="20%" >{translate key="submission.complete"}</td>
 	</tr>
 	<tr>
 		<td width="5%">1.</td>
@@ -67,7 +67,7 @@
 		<td colspan="5" class="separator">&nbsp;</td>
 	</tr>
 </table>
-
+</p>
 {translate key="submission.proofread.corrections"}
 {if $submission->getMostRecentProofreadComment()}
 	{assign var="comment" value=$submission->getMostRecentProofreadComment()}
@@ -80,5 +80,6 @@
 &nbsp;&nbsp;
 <a href="javascript:openHelp('{url op="instructions" path="proof"}')" class="action">{translate key="submission.proofread.instructions"}</a>
 {/if}
+</p>
 </div>
 

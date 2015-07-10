@@ -99,7 +99,7 @@
 
 {assign var=styleFile value=$galley->getStyleFile()}
 
-<table class="data" width="100%">
+<table class="listing" width="100%">
 {if $styleFile}
 <tr valign="top">
 	<td width="20%" class="label">{translate key="common.fileName"}</td>

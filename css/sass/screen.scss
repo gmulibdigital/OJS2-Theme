@@ -19,6 +19,7 @@ Structure
 -- Footer
 -- Issues
 -- Articles
+-- Popups
 
 */
 
@@ -81,6 +82,7 @@ ol {
 		padding: .5em 0;
 	}
 }
+
 
 /* Skip to Content 
 from http://codepen.io/joe-watkins/pen/rjhiK
@@ -160,7 +162,9 @@ input, select, textarea {
 
 form {
 	@include rhythm();
-
+}
+form.pkp_form {
+	margin: initial;
 }
 input {
 	padding: 2px;
@@ -171,7 +175,7 @@ table {
 
 	//@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);
 	width: 100%;
-
+	margin: 1em 0;
 	th {
 		font-family: Lato;
 		@include adjust-font-size-to(18px);
@@ -284,6 +288,10 @@ table {
 		text-align: center;
 	}
 }
+.selectMenu {
+	@include adjust-font-size-to(14px);
+}
+
 /* Navigation
 ============================= */
 nav {
@@ -385,6 +393,7 @@ ul.navMenu {
 	display: block;
 	padding: 5px;
 	background-color: lighten($grey-light, 10%);
+	margin-bottom: .5em;
 }
 
 #sidebarUser {
@@ -398,7 +407,6 @@ ul.navMenu {
 
 #main {
 	@include span(8);
-	padding-right: 1em;
 
 	img {
 		max-width: 600px;
@@ -473,7 +481,19 @@ a.file {
 	background-color: initial;
 }
 
-/* Admin Pages 
+.article {
+
+	#content {
+		@include rhythm();
+	}
+
+	#main h3 {
+		background-color: initial;
+		padding-left: 0;
+	}
+}
+
+/* Admin Pages  (home of the hacks)
 ============================ */
 .sectionBlock {
 	@include rhythm();
@@ -482,15 +502,16 @@ a.file {
 	width: 50%;
 }
 
-table.alt-color {
+table.alt-color {	
 	tbody tr {
 		&:nth-child(even) {background-color: lighten($grey-light, 8%);}
 	}
 }
-/*.block h3 {
-	background-color: lighten($grey-light, 10%);
-	padding-left: 5px;
-}*/
+table.alt-color-odd {
+	tbody tr {
+		&:nth-child(odd) {background-color: lighten($grey-light, 8%);}
+	}
+}
 
 table.info {
 	@include rhythm();
@@ -538,11 +559,28 @@ table.settings {
 		vertical-align: middle;
 	}
 }
+table.checklist {
+	td {
+		vertical-align: middle;
+	}
+}
 table.email {
 	tr {
 		&:nth-child(odd) {background-color: lighten($grey-light, 8%);}
 	}
 }
+table.listing span.instruct {
+	margin: 0;
+
+}
+table.nested {
+	@include adjust-font-size-to(14px);
+}
+table.single {
+	border-top: 2px solid $grey-light;
+	border-bottom: 2px solid $grey-light;
+/*	background-color: lighten($accent-bright, 50%);
+*/}
 
 #profile table tr {
 	border-bottom: 1px solid $grey-light;
@@ -619,6 +657,44 @@ td form {
 	margin: 0;
 }
 
+.refbacks .menu {
+	margin: 1em 0;
+}
+.endseparator {
+	display: none;
+}
+/*
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all {
+	background-color: white;
+	border: 2px solid $grey-bold;
+	padding: 5px;
+	form {
+		margin-top: 0;
+	}
+	h3 {
+		margin-top: 0;
+	}
+	li {
+		list-style-type: none;
+	}
+}*/
+.composite-ui {
+	@include adjust-font-size-to(14px);
+
+	div.pane div.help-message {
+		margin: 10px;
+		padding: 0;
+	}
+	div.two-pane table.pane_header {
+		margin-top: 0;
+	}
+}
+.composite-ui>.ui-tabs ul.main-tabs a {
+	font-size: 1.25em;
+}
+.pkp_controllers_grid {
+	h3 {background-color: initial;}
+}
 /* Author Submission Pages */
 
 .steplist {
@@ -642,12 +718,31 @@ td form {
 ============================ */
 .popup {
 	#header {
-		margin-top: 1em;
+		margin: .5em 0;
 		min-height: initial;
+		color: white;
+		text-align: right;
+		@include adjust-font-size-to(14px);
+		#headerTitle {
+			padding: 0;
+		}
 	}
 	#body {
 		width: 100%;
-		padding: 2em 3em;
+		padding: 2em;
+		margin-top: 0;
+	}
+	#main {
+		width: 100%;
+
+		h3 {
+			background-color: initial;
+			font-weight: 400;
+			padding: 0;
+		}
+	}
+	table {
+		margin-top: 0;
 	}	
 }
 

@@ -11,12 +11,12 @@
 {assign var=layoutFile value=$submission->getFileBySignoffType('SIGNOFF_LAYOUT')}
 {assign var=layoutEditor value=$submission->getUserBySignoffType('SIGNOFF_LAYOUT')}
 
-<div id="layout">
+<div id="layout" class="block">
 <h3>{translate key="submission.layout"}</h3>
 
 {if $useLayoutEditors}
 <div id="layoutEditors">
-<table width="100%" class="data">
+<table width="100%" class="data single">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.layoutEditor"}</td>
 		<td class="value" width="80%">{if $layoutSignoff->getUserId()}{$layoutEditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
@@ -25,10 +25,10 @@
 </div>
 {/if}
 
-<table width="100%" class="info">
-	<tr>
+<table width="100%" class="listing">
+	<tr class="heading">
 		<td width="40%" colspan="2">{translate key="submission.layout.galleyFormat"}</td>
-		<td width="60%" class="heading">{translate key="common.file"}</td>
+		<td width="60%">{translate key="common.file"}</td>
 	</tr>
 	{foreach name=galleys from=$submission->getGalleys() item=galley}
 	<tr>
@@ -41,12 +41,11 @@
 		<td colspan="3" class="nodata">{translate key="common.none"}</td>
 	</tr>
 	{/foreach}
-	<tr>
-		<td colspan="3" class="separator">&nbsp;</td>
-	</tr>
-	<tr>
+</table>
+<table class="listing">
+	<tr class='heading'>
 		<td colspan="2">{translate key="submission.supplementaryFiles"}</td>
-		<td class="heading">{translate key="common.file"}</td>
+		<td >{translate key="common.file"}</td>
 	</tr>
 	{foreach name=suppFiles from=$submission->getSuppFiles() item=suppFile}
 	<tr>
@@ -65,6 +64,7 @@
 </table>
 
 <div id="layoutComments">
+	<p>
 {translate key="submission.layout.layoutComments"}
 {if $submission->getMostRecentLayoutComment()}
 	{assign var="comment" value=$submission->getMostRecentLayoutComment()}
@@ -72,5 +72,6 @@
 {else}
 	<a href="javascript:openComments('{url op="viewLayoutComments" path=$submission->getId()}');" class="icon">{icon name="comment"}</a>{translate key="common.noComments"}
 {/if}
+</p>
 </div>
 </div>

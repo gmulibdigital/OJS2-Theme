@@ -133,7 +133,7 @@
 	</table>
 	</div>
 
-	<table width="100%" class="data table-borders">
+	<table width="100%" class="data table-borders ">
 	<tr valign="top">
 		<td class="label">{translate key="submission.reviewForm"}</td>
 		<td>

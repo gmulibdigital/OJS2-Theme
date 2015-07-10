@@ -31,7 +31,7 @@ function confirmSubmissionCheck() {
 // -->
 {/literal}
 </script>
-<div id="submissionToBeReviewed">
+<div id="submissionToBeReviewed" class="block">
 <h3>{translate key="reviewer.article.submissionToBeReviewed"}</h3>
 
 <table width="100%" class="data">
@@ -80,7 +80,7 @@ function confirmSubmissionCheck() {
 </table>
 </div>
 <div class="separator"></div>
-<div id="reviewSchedule">
+<div id="reviewSchedule" class="block">
 <h3>{translate key="reviewer.article.reviewSchedule"}</h3>
 <table width="100%" class="data">
 <tr valign="top">
@@ -103,14 +103,14 @@ function confirmSubmissionCheck() {
 </div>
 <div class="separator"></div>
 
-<div id="reviewSteps">
+<div id="reviewSteps" class="block">
 <h3>{translate key="reviewer.article.reviewSteps"}</h3>
 
 {include file="common/formErrors.tpl"}
 
 {assign var="currentStep" value=1}
 
-<table width="100%" class="data">
+<table width="100%" class="listing alt-color">
 <tr valign="top">
 	{assign var=editAssignments value=$submission->getEditAssignments}
 	{* FIXME: Should be able to assign primary editorial contact *}
@@ -127,9 +127,9 @@ function confirmSubmissionCheck() {
 			{url|assign:"declineUrl" op="confirmReview" reviewId=$reviewId declineReview=1}
 
 			{if !$submission->getCancelled()}
-				<a href="{$acceptUrl}">{translate key="reviewer.article.canDoReview"}</a> {icon name="mail" url=$acceptUrl}
+				<a href="{$acceptUrl}" class="action">{translate key="reviewer.article.canDoReview"}</a> {icon name="mail" url=$acceptUrl}
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="{$declineUrl}">{translate key="reviewer.article.cannotDoReview"}</a> {icon name="mail" url=$declineUrl}
+				<a href="{$declineUrl}" class="action">{translate key="reviewer.article.cannotDoReview"}</a> {icon name="mail" url=$declineUrl}
 			{else}
 				{translate key="reviewer.article.canDoReview"} {icon name="mail" disabled="disabled" url=$acceptUrl}
 				&nbsp;&nbsp;&nbsp;&nbsp;
@@ -140,17 +140,13 @@ function confirmSubmissionCheck() {
 		{/if}
 	</td>
 </tr>
-<tr>
-	<td colspan="2">&nbsp;</td>
-</tr>
+
 {if $journal->getLocalizedSetting('reviewGuidelines') != ''}
 <tr valign="top">
         <td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
 	<td><span class="instruct">{translate key="reviewer.article.consultGuidelines"}</span></td>
 </tr>
-<tr>
-	<td colspan="2">&nbsp;</td>
-</tr>
+
 {/if}
 <tr valign="top">
 	<td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
@@ -200,9 +196,7 @@ function confirmSubmissionCheck() {
 		</table>
 	</td>
 </tr>
-<tr>
-	<td colspan="2">&nbsp;</td>
-</tr>
+
 {if $currentJournal->getSetting('requireReviewerCompetingInterests')}
 	<tr valign="top">
 		<td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
@@ -218,9 +212,7 @@ function confirmSubmissionCheck() {
 				</form>
 			{/if}
 		</td>
-	<tr>
-		<td colspan="2">&nbsp;</td>
-	</tr>
+
 {/if}{* $currentJournal->getSetting('requireReviewerCompetingInterests') *}
 
 {if $reviewAssignment->getReviewFormId()}
@@ -232,7 +224,7 @@ function confirmSubmissionCheck() {
 		<td>&nbsp;</td>
 		<td>
 			{if $confirmedStatus and not $declined}
-				<a href="{url op="editReviewFormResponse" path=$reviewId|to_array:$reviewAssignment->getReviewFormId()}" class="icon">
+				<a href="{url op="editReviewFormResponse" path=$reviewId|to_array:$reviewAssignment->getReviewFormId()}" class="icon action">
 					{translate key="submission.reviewForm"}
 					{icon name="comment"}
 				</a>
@@ -242,9 +234,7 @@ function confirmSubmissionCheck() {
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="2">&nbsp;</td>
-	</tr>
+
 {else}{* $reviewAssignment->getReviewFormId() *}
 	<tr valign="top">
 		<td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
@@ -254,7 +244,7 @@ function confirmSubmissionCheck() {
 		<td>&nbsp;</td>
 		<td>
 			{if $confirmedStatus and not $declined}
-				<a href="javascript:openComments('{url op="viewPeerReviewComments" path=$articleId|to_array:$reviewId}');" class="icon">
+				<a href="javascript:openComments('{url op="viewPeerReviewComments" path=$articleId|to_array:$reviewId}');" class="icon action">
 					{translate key="submission.logType.review"}
 					{icon name="comment"}
 				</a>
@@ -264,9 +254,7 @@ function confirmSubmissionCheck() {
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="2">&nbsp;</td>
-	</tr>
+
 {/if}{* $reviewAssignment->getReviewFormId() *}
 <tr valign="top">
 	<td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
@@ -318,9 +306,7 @@ function confirmSubmissionCheck() {
 		{/if}
 	</td>
 </tr>
-<tr>
-	<td colspan="2">&nbsp;</td>
-</tr>
+
 <tr valign="top">
 	<td>{$currentStep|escape}.{assign var="currentStep" value=$currentStep+1}</td>
 	<td><span class="instruct">{translate key="reviewer.article.selectRecommendation"}</span></td>
@@ -354,7 +340,7 @@ function confirmSubmissionCheck() {
 </div>
 {if $journal->getLocalizedSetting('reviewGuidelines') != ''}
 <div class="separator"></div>
-<div id="reviewerGuidelines">
+<div id="reviewerGuidelines" class="block">
 <h3>{translate key="reviewer.article.reviewerGuidelines"}</h3>
 <p>{$journal->getLocalizedSetting('reviewGuidelines')|nl2br}</p>
 </div>

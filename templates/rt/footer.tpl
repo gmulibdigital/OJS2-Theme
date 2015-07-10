@@ -16,9 +16,5 @@
 
 {call_hook name="Templates::Rt::Footer::PageFooter"}
 </div>
-</div>
-</div>
-</div>
-</body>
-</html>
+{include file="common/footer.tpl"}
 

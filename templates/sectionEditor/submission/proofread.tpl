@@ -15,7 +15,7 @@
 <h3>{translate key="submission.proofreading"}</h3>
 
 {if $useProofreaders}
-<table class="data" width="100%">
+<table class="data single" width="100%">
 	<tr>
 		<td width="20%" class="label">{translate key="user.role.proofreader"}</td>
 		{if $proofSignoff->getUserId()}<td class="value" width="20%">{$proofreader->getFullName()|escape}</td>{/if}

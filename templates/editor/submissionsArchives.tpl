@@ -17,8 +17,8 @@
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="15%"><span class="disabled"></span>{sort_search key="submissions.submitted" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
-		<td width="25%">{sort_search key="article.authors" sort="authors"}</td>
-		<td width="30%">{sort_search key="article.title" sort="title"}</td>
+		<td width="20%">{sort_search key="article.authors" sort="authors"}</td>
+		<td width="35%">{sort_search key="article.title" sort="title"}</td>
 		<td width="20%" align="right">{sort_search key="common.status" sort="status"}</td>
 	</tr>
 	<tr>

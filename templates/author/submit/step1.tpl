@@ -117,7 +117,7 @@ function checkSubmissionChecklist() {
 			<div id="checklist" class="block">
 			<h3>{translate key="author.submit.submissionChecklist"}</h3>
 			<p>{translate key="author.submit.submissionChecklistDescription"}</p>
-			<table width="100%" class="data">
+			<table width="100%" class="alt-color sort checklist">
 		{/if}
 		<tr valign="top">
 			<td width="5%"><input type="checkbox" id="checklist-{$smarty.foreach.checklist.iteration}" name="checklist[]" value="{$checklistId|escape}"{if $articleId || $submissionChecklist} checked="checked"{/if} /></td>

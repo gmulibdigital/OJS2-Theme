@@ -29,7 +29,8 @@ function sortSearch(heading, direction) {
 {/literal}
 </script>
 
-<div id="search">
+<div id="search" class="block sort">
+	<h4 class="heading">Filter Submissions</h4>
 <form method="post" id="submit" action="{url op="index" path=$pageToDisplay}">
 	<select name="searchField" size="1" class="selectMenu">
 		{html_options_translate options=$fieldOptions selected=$searchField}

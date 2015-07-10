@@ -13,7 +13,7 @@
 	<tr><td class="headseparator" colspan="{if $statViews}7{else}6{/if}">&nbsp;</td></tr>
 	<tr valign="bottom" class="heading">
 		<td width="5%">{sort_heading key="common.id" sort="id"}</td>
-		<td width="15%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_heading key="submissions.submit" sort="submitDate"}</td>
+		<td width="10%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_heading key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_heading key="submissions.sec" sort="section"}</td>
 		<td width="20%">{sort_heading key="article.authors" sort="authors"}</td>
 		<td width="35%">{sort_heading key="article.title" sort="title"}</td>

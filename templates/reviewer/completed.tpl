@@ -8,7 +8,7 @@
  * Show reviewer's submission archive.
  *
  *}
-<div id="submissions">
+<div id="submissions" class="block">
 <table class="listing" width="100%">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" valign="bottom">

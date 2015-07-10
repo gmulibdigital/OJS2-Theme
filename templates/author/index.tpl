@@ -22,11 +22,15 @@
 
 {include file="author/$pageToDisplay.tpl"}
 <div id="submitStart" class="block">
-<h4>{translate key="author.submit.startHereTitle"}</h4>
-{url|assign:"submitUrl" op="submit"}
-{translate submitUrl=$submitUrl key="author.submit.startHereLink"}<br />
+<h3>{translate key="author.submit.startHereTitle"}</h3>
+<p>{url|assign:"submitUrl" op="submit"}
+{translate submitUrl=$submitUrl key="author.submit.startHereLink"}</p>
 </div>
-<br />
+<div class="block refbacks">
+
 {call_hook name="Templates::Author::Index::AdditionalItems"}
+
+
+
 {include file="common/footer.tpl"}
 

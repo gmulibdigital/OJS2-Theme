@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="submissions">
+<div id="submissions" class="block pseudoMenu">
 <h3>{translate key="article.submissions"}</h3>
 
 <ul>
@@ -22,7 +22,7 @@
 </ul>
 </div>
 
-<div id="issues">
+<div id="issues" class="block pseudoMenu">
 <h3>{translate key="editor.navigation.issues"}</h3>
 
 <ul>
