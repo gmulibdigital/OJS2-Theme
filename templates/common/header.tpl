@@ -118,6 +118,7 @@
 		</script>
 	{/if}{* hasSystemNotifications *}
 	<script type="text/javascript" src="{baseURL}/lib/pkp/js/lib/jquery/plugins/jquery.pnotify.js"></script>
+	
 	{include file="common/head.tpl"}
 	
 </head>
