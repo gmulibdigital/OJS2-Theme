@@ -1296,9 +1296,8 @@ td form {
   content: initial;
 }
 
-/* PopUp Windows 
-============================ */
-/* line 720, sass/screen.scss */
+/* PopUp Windows  */
+/* line 719, sass/screen.scss */
 .popup #header {
   margin: .5em 0;
   min-height: initial;
@@ -1307,29 +1306,89 @@ td form {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 726, sass/screen.scss */
+/* line 725, sass/screen.scss */
 .popup #header #headerTitle {
   padding: 0;
 }
-/* line 730, sass/screen.scss */
+/* line 729, sass/screen.scss */
 .popup #body {
   width: 100%;
   padding: 2em;
   margin-top: 0;
 }
-/* line 735, sass/screen.scss */
+/* line 734, sass/screen.scss */
 .popup #main {
   width: 100%;
 }
-/* line 738, sass/screen.scss */
+/* line 737, sass/screen.scss */
 .popup #main h3 {
   background-color: initial;
   font-weight: 400;
   padding: 0;
 }
-/* line 744, sass/screen.scss */
+/* line 743, sass/screen.scss */
 .popup table {
   margin-top: 0;
+}
+
+/* Comment Windows */
+/* line 749, sass/screen.scss */
+#articleComments table {
+  border: 1px solid #D1D3D5;
+}
+/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table thead th, #articleComments table thead tr.heading {
+  border-bottom: 1px solid #D1D3D5;
+}
+/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table tfoot th, #articleComments table tfoot tr.heading, #articleComments table tfoot td {
+  border-top: 1px solid #D1D3D5;
+}
+/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table th:first-child, #articleComments table tr.heading:first-child {
+  border-right: 1px solid #D1D3D5;
+}
+/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table th, #articleComments table tr.heading, #articleComments table td {
+  border-right: 1px solid #D1D3D5;
+  border-bottom: 1px solid #D1D3D5;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+/* line 22, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table th:last-child, #articleComments table tr.heading:last-child, #articleComments table td:last-child {
+  border-right-width: 0;
+}
+/* line 28, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table th.last, #articleComments table tr.last.heading, #articleComments table td.last {
+  border-right-width: 0;
+}
+/* line 33, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table tbody tr:last-child th, #articleComments table tbody tr:last-child tr.heading, #articleComments table tbody tr:last-child td, #articleComments table tfoot tr:last-child th, #articleComments table tfoot tr:last-child tr.heading, #articleComments table tfoot tr:last-child td {
+  border-bottom-width: 0;
+}
+/* line 37, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
+#articleComments table tbody tr.last th, #articleComments table tbody tr.last tr.heading, #articleComments table tbody tr.last td, #articleComments table tfoot tr.last th, #articleComments table tfoot tr.last tr.heading, #articleComments table tfoot tr.last td {
+  border-bottom-width: 0;
+}
+/* line 753, sass/screen.scss */
+#articleComments table .commentNote {
+  font-weight: 700;
+}
+/* line 756, sass/screen.scss */
+#articleComments table .comments {
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}
+
+/* line 760, sass/screen.scss */
+.commentTitle {
+  font-family: Lato, Trabuchet, sans-serif;
+  text-decoration: underline;
+  font-size: 1.0625em;
+  line-height: 1.41176em;
 }
 
 /* Mobile 

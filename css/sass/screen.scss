@@ -714,8 +714,7 @@ td form {
 	a.action {display: inline-block; &:before {content: initial;}}
 }
 
-/* PopUp Windows 
-============================ */
+/* PopUp Windows  */
 .popup {
 	#header {
 		margin: .5em 0;
@@ -745,6 +744,26 @@ td form {
 		margin-top: 0;
 	}	
 }
+
+/* Comment Windows */
+#articleComments table{
+	@include outer-table-borders(1px, $grey-light);
+	@include inner-table-borders(1px, $grey-light);
+
+	.commentNote {
+		font-weight: 700;
+	}
+	.comments {
+		@include rhythm();
+	}
+}
+.commentTitle {
+	font-family: $font-heading;
+	text-decoration: underline;
+	@include adjust-font-size-to(17px);
+	
+}
+
 
 /* Mobile 
 ============================ */
