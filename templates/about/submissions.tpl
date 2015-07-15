@@ -33,6 +33,7 @@
 		<div >
 			<p>{translate key="about.onlineSubmissions.haveAccount" journalTitle=$siteTitle|escape}</p>
 			<a href="{url page="login"}" class="action">{translate key="about.onlineSubmissions.login"}</a>
+			<a href="{url page="author" op="submit"}" class="action">Start New Submission</a>
 		</div>
 		
 		<div >			

@@ -378,6 +378,10 @@ ul.navMenu {
 	form {
 		margin: 0;
 	}
+
+	.block {
+		@extend .pseudoMenu;
+	}
 }
 
 #leftSidebar {
@@ -394,6 +398,11 @@ ul.navMenu {
 	padding: 5px;
 	background-color: lighten($grey-light, 10%);
 	margin-bottom: .5em;
+}
+.blockSubtitle {
+	@include adjust-font-size-to(18px);
+	display: block;
+	border-bottom: 3px double $grey-light;
 }
 
 #sidebarUser {
