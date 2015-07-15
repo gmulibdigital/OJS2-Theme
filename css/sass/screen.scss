@@ -672,21 +672,7 @@ td form {
 .endseparator {
 	display: none;
 }
-/*
-.ui-dialog.ui-widget.ui-widget-content.ui-corner-all {
-	background-color: white;
-	border: 2px solid $grey-bold;
-	padding: 5px;
-	form {
-		margin-top: 0;
-	}
-	h3 {
-		margin-top: 0;
-	}
-	li {
-		list-style-type: none;
-	}
-}*/
+
 .composite-ui {
 	@include adjust-font-size-to(14px);
 
@@ -773,6 +759,24 @@ td form {
 	
 }
 
+/* User */
+
+.fancyList {
+	ul {
+		padding: 0;
+		margin: .5em 0;
+		li {
+			list-style-type: none;
+			padding: 10px 0 5px 5px;
+			border-bottom: 1px solid $grey_light;
+			display: block;
+			&:before {
+					content: '\00BB';
+					padding-right: 5px;
+			}
+		}
+	}
+}
 
 /* Mobile 
 ============================ */

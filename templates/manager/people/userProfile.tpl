@@ -121,7 +121,7 @@
 </table>
 </div>
 <div class="separator"></div>
-<div id="enrollment>">
+<div id="enrollment>" class="block fancyList">
 <h4>{translate key="manager.people.enrollment"}</h4>
 
 {section name=role loop=$userRoles}

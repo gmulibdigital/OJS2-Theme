@@ -1239,73 +1239,58 @@ td form {
   display: none;
 }
 
-/*
-.ui-dialog.ui-widget.ui-widget-content.ui-corner-all {
-	background-color: white;
-	border: 2px solid $grey-bold;
-	padding: 5px;
-	form {
-		margin-top: 0;
-	}
-	h3 {
-		margin-top: 0;
-	}
-	li {
-		list-style-type: none;
-	}
-}*/
-/* line 690, sass/screen.scss */
+/* line 676, sass/screen.scss */
 .composite-ui {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 693, sass/screen.scss */
+/* line 679, sass/screen.scss */
 .composite-ui div.pane div.help-message {
   margin: 10px;
   padding: 0;
 }
-/* line 697, sass/screen.scss */
+/* line 683, sass/screen.scss */
 .composite-ui div.two-pane table.pane_header {
   margin-top: 0;
 }
 
-/* line 701, sass/screen.scss */
+/* line 687, sass/screen.scss */
 .composite-ui > .ui-tabs ul.main-tabs a {
   font-size: 1.25em;
 }
 
-/* line 705, sass/screen.scss */
+/* line 691, sass/screen.scss */
 .pkp_controllers_grid h3 {
   background-color: initial;
 }
 
 /* Author Submission Pages */
-/* line 709, sass/screen.scss */
+/* line 695, sass/screen.scss */
 .steplist {
   padding: 0;
 }
-/* line 712, sass/screen.scss */
+/* line 698, sass/screen.scss */
 .steplist li {
   list-style-type: none;
 }
 
-/* line 717, sass/screen.scss */
+/* line 703, sass/screen.scss */
 .pseudoMenu .current, #sidebar .block .current, #sidebarUser .current {
   background-color: #D1D3D5;
 }
 
 /* Plugin Management */
-/* line 723, sass/screen.scss */
+/* line 709, sass/screen.scss */
 #plugins a.action {
   display: inline-block;
 }
-/* line 723, sass/screen.scss */
+/* line 709, sass/screen.scss */
 #plugins a.action:before {
   content: initial;
 }
 
 /* PopUp Windows  */
-/* line 728, sass/screen.scss */
+/* line 714, sass/screen.scss */
 .popup #header {
   margin: .5em 0;
   min-height: initial;
@@ -1314,33 +1299,33 @@ td form {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 734, sass/screen.scss */
+/* line 720, sass/screen.scss */
 .popup #header #headerTitle {
   padding: 0;
 }
-/* line 738, sass/screen.scss */
+/* line 724, sass/screen.scss */
 .popup #body {
   width: 100%;
   padding: 2em;
   margin-top: 0;
 }
-/* line 743, sass/screen.scss */
+/* line 729, sass/screen.scss */
 .popup #main {
   width: 100%;
 }
-/* line 746, sass/screen.scss */
+/* line 732, sass/screen.scss */
 .popup #main h3 {
   background-color: initial;
   font-weight: 400;
   padding: 0;
 }
-/* line 752, sass/screen.scss */
+/* line 738, sass/screen.scss */
 .popup table {
   margin-top: 0;
 }
 
 /* Comment Windows */
-/* line 758, sass/screen.scss */
+/* line 744, sass/screen.scss */
 #articleComments table {
   border: 1px solid #D1D3D5;
 }
@@ -1379,11 +1364,11 @@ td form {
 #articleComments table tbody tr.last th, #articleComments table tbody tr.last tr.heading, #articleComments table tbody tr.last td, #articleComments table tfoot tr.last th, #articleComments table tfoot tr.last tr.heading, #articleComments table tfoot tr.last td {
   border-bottom-width: 0;
 }
-/* line 762, sass/screen.scss */
+/* line 748, sass/screen.scss */
 #articleComments table .commentNote {
   font-weight: 700;
 }
-/* line 765, sass/screen.scss */
+/* line 751, sass/screen.scss */
 #articleComments table .comments {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1391,12 +1376,31 @@ td form {
   margin-bottom: 1.5em;
 }
 
-/* line 769, sass/screen.scss */
+/* line 755, sass/screen.scss */
 .commentTitle {
   font-family: Lato, Trabuchet, sans-serif;
   text-decoration: underline;
   font-size: 1.0625em;
   line-height: 1.41176em;
+}
+
+/* User */
+/* line 765, sass/screen.scss */
+.fancyList ul {
+  padding: 0;
+  margin: .5em 0;
+}
+/* line 768, sass/screen.scss */
+.fancyList ul li {
+  list-style-type: none;
+  padding: 10px 0 5px 5px;
+  border-bottom: 1px solid #D1D3D5;
+  display: block;
+}
+/* line 773, sass/screen.scss */
+.fancyList ul li:before {
+  content: '\00BB';
+  padding-right: 5px;
 }
 
 /* Mobile 
