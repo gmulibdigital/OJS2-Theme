@@ -7,8 +7,9 @@
  *
  * Common site header.
  *}
-
- <!-- Add Favicon -->
+<!-- Add View Port -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add Favicon -->
 
 <link rel="icon" type="img/ico" href="{$baseURL}/plugins/themes/mpg/img/favicon.ico" />
 
