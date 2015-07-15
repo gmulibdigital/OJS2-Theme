@@ -10,6 +10,10 @@
 	@include span(12 no-gutter);
 	padding-right: 0;
 }
+#main img {
+	max-width:250px;
+	height: auto;
+}
 
 #sidebar {
 	display: none;

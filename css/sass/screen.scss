@@ -423,6 +423,13 @@ ul.navMenu {
 	}
 }
 
+/* Announcements */
+
+.details td {
+	@include margin-trailer();
+	border-bottom: 1px solid $grey-light;
+}
+
 /* Footer 
 ============================ */
 
@@ -471,7 +478,10 @@ ul.navMenu {
 /* Issues
 ============================ */
 .tocTitle {
-	@extend h4;
+	@extend h5;
+}
+.issueTitle {
+	background-color: initial;
 }
 
 /* Articles 
@@ -708,6 +718,22 @@ td form {
 #plugins {
 	a.action {display: inline-block; &:before {content: initial;}}
 }
+.pluginList {
+	ul {
+		padding: 0;
+		margin: .5em 0;
+		li {
+			list-style-type: none;
+			padding: 10px 0 5px 5px;
+			border-bottom: 1px solid $grey_light;
+
+			p:before {
+					content: '\00BB';
+					padding-right: 5px;
+			}
+		}
+	}
+}
 
 /* PopUp Windows  */
 .popup {
@@ -769,13 +795,16 @@ td form {
 			list-style-type: none;
 			padding: 10px 0 5px 5px;
 			border-bottom: 1px solid $grey_light;
-			display: block;
 			&:before {
 					content: '\00BB';
 					padding-right: 5px;
 			}
 		}
 	}
+}
+
+#signinForm {
+	@extend .fancyList;
 }
 
 /* Mobile 

@@ -10,8 +10,9 @@
 {strip}
 {include file="common/header.tpl"}
 {/strip}
-<div class="pseudoMenu">
+
 {if $mainPage}
+<div class="pseudoMenu">
 	<p>{translate key="manager.plugins.description"}</p>
 
 	<ul id="plugins" >
@@ -28,7 +29,9 @@
 			<li><b><a href="{url op="managePlugins" path=install}">{translate key="manager.plugins.install"}</a></b></li>
 		</ul>
 	{/if}
+</div>
 {else}
+<div class="pluginList">
 	{foreach from=$plugins item=plugin}
 		{if $plugin->getCategory() != $category}
 			{assign var=category value=$plugin->getCategory()}
@@ -68,7 +71,8 @@
 			{/if}
 		{/foreach}
 	</ul>
+	</div>
 {/if}
-</div>
+
 {include file="common/footer.tpl"}
 

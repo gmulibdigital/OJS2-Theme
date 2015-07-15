@@ -45,7 +45,7 @@
 {if $issue && $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
 	{* Display the table of contents or cover page of the current issue. *}
 	<br />
-	<h3><a href="{url page="issue" op="current"}">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></h3>
+	<h3 class="issueTitle"><a href="{url page="issue" op="current"}">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></h3>
 	{include file="issue/view.tpl"}
 {/if}
 

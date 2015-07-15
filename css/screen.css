@@ -1,6 +1,6 @@
 /* line 5, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, .tocTitle, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, .tocTitle, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -258,7 +258,7 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 
 /* Headings */
 /* line 108, sass/screen.scss */
-h1, h2, h3, h4, .tocTitle, h5, h6 {
+h1, h2, h3, h4, h5, .tocTitle, h6 {
   font-family: Lato, Trabuchet, sans-serif;
 }
 
@@ -270,7 +270,7 @@ h1 {
 }
 
 /* line 115, sass/screen.scss */
-h2, h3, h4, .tocTitle, h5, h6 {
+h2, h3, h4, h5, .tocTitle, h6 {
   font-family: Lato, Trebuchet, sans-serif;
   line-height: 1.8em;
 }
@@ -292,7 +292,7 @@ h3 {
 }
 
 /* line 131, sass/screen.scss */
-h4, .tocTitle {
+h4 {
   font-size: 1.5em;
   font-weight: 400;
 }
@@ -778,9 +778,16 @@ ul.navMenu li:last-child {
   height: auto;
 }
 
+/* Announcements */
+/* line 428, sass/screen.scss */
+.details td {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #D1D3D5;
+}
+
 /* Footer 
 ============================ */
-/* line 429, sass/screen.scss */
+/* line 436, sass/screen.scss */
 #pageFooter {
   clear: both;
   text-align: center;
@@ -789,14 +796,14 @@ ul.navMenu li:last-child {
   padding-top: 1.4375em;
   background-color: #dee0e1;
 }
-/* line 435, sass/screen.scss */
+/* line 442, sass/screen.scss */
 #pageFooter #social {
   font-size: 2.25em;
   line-height: 1.33333em;
   display: inline-block;
   line-height: 1em;
 }
-/* line 439, sass/screen.scss */
+/* line 446, sass/screen.scss */
 #pageFooter #social ul {
   margin: 0;
   padding: 0;
@@ -804,7 +811,7 @@ ul.navMenu li:last-child {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 443, sass/screen.scss */
+/* line 450, sass/screen.scss */
 #pageFooter #social li {
   padding: 0;
   list-style-image: none;
@@ -827,12 +834,12 @@ ul.navMenu li:last-child {
 #pageFooter #social li.last {
   padding-right: 0;
 }
-/* line 447, sass/screen.scss */
+/* line 454, sass/screen.scss */
 #pageFooter #social li i {
   padding-right: 5px;
 }
 
-/* line 453, sass/screen.scss */
+/* line 460, sass/screen.scss */
 #standardFooter {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -840,14 +847,14 @@ ul.navMenu li:last-child {
   font-weight: 400;
   font-size: .9em;
 }
-/* line 458, sass/screen.scss */
+/* line 465, sass/screen.scss */
 #standardFooter a img {
   max-width: 350px;
 }
 
 /* Search 
 ============================ */
-/* line 465, sass/screen.scss */
+/* line 472, sass/screen.scss */
 #results table {
   border: 1px solid #87908F;
   margin-top: 1.5em;
@@ -893,33 +900,38 @@ ul.navMenu li:last-child {
 
 /* Issues
 ============================ */
+/* line 483, sass/screen.scss */
+.issueTitle {
+  background-color: initial;
+}
+
 /* Articles 
 ============================ */
-/* line 480, sass/screen.scss */
+/* line 490, sass/screen.scss */
 .tocArticleGalleysPages {
   text-align: end;
   vertical-align: middle;
 }
 
-/* line 484, sass/screen.scss */
+/* line 494, sass/screen.scss */
 a.file {
   background-color: white;
   padding: 0 .5em;
 }
 
-/* line 489, sass/screen.scss */
+/* line 499, sass/screen.scss */
 #articleTitle h3 {
   background-color: initial;
 }
 
-/* line 495, sass/screen.scss */
+/* line 505, sass/screen.scss */
 .article #content {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
 }
-/* line 499, sass/screen.scss */
+/* line 509, sass/screen.scss */
 .article #main h3 {
   background-color: initial;
   padding-left: 0;
@@ -927,7 +939,7 @@ a.file {
 
 /* Admin Pages  (home of the hacks)
 ============================ */
-/* line 507, sass/screen.scss */
+/* line 517, sass/screen.scss */
 .sectionBlock {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -935,22 +947,22 @@ a.file {
   margin-bottom: 1.5em;
 }
 
-/* line 510, sass/screen.scss */
+/* line 520, sass/screen.scss */
 #selectSections select {
   width: 50%;
 }
 
-/* line 516, sass/screen.scss */
+/* line 526, sass/screen.scss */
 table.alt-color tbody tr:nth-child(even) {
   background-color: #e6e7e8;
 }
 
-/* line 521, sass/screen.scss */
+/* line 531, sass/screen.scss */
 table.alt-color-odd tbody tr:nth-child(odd) {
   background-color: #e6e7e8;
 }
 
-/* line 525, sass/screen.scss */
+/* line 535, sass/screen.scss */
 table.info {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -974,52 +986,52 @@ table.info th.numeric,
 table.info tr.numeric.heading {
   text-align: right;
 }
-/* line 528, sass/screen.scss */
+/* line 538, sass/screen.scss */
 table.info .tableHeading {
   font-family: Lato;
   font-size: 1.125em;
   line-height: 1.33333em;
   background-color: #dee0e1;
 }
-/* line 533, sass/screen.scss */
+/* line 543, sass/screen.scss */
 table.info a {
   display: inline-block;
 }
-/* line 536, sass/screen.scss */
+/* line 546, sass/screen.scss */
 table.info tr {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 539, sass/screen.scss */
+/* line 549, sass/screen.scss */
 table.info tr:last-child {
   border-bottom: none;
 }
-/* line 543, sass/screen.scss */
+/* line 553, sass/screen.scss */
 table.info td:first-child {
   text-align: left;
 }
-/* line 546, sass/screen.scss */
+/* line 556, sass/screen.scss */
 table.info td {
   text-align: center;
 }
 
-/* line 553, sass/screen.scss */
+/* line 563, sass/screen.scss */
 table.listing .heading a, #setup .pkp_controllers_grid table.listing th a, #setup .pkp_controllers_grid table.listing tr.heading a {
   color: #000;
 }
-/* line 554, sass/screen.scss */
+/* line 564, sass/screen.scss */
 table.listing tr {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 556, sass/screen.scss */
+/* line 566, sass/screen.scss */
 table.listing tr:last-child {
   border-bottom: none;
 }
-/* line 560, sass/screen.scss */
+/* line 570, sass/screen.scss */
 table.listing td {
   text-align: left;
 }
 
-/* line 563, sass/screen.scss */
+/* line 573, sass/screen.scss */
 table.settings {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1039,33 +1051,33 @@ table.settings tfoot th, table.settings tfoot tr.heading, table.settings tfoot t
 table.settings th:first-child, table.settings tr.heading:first-child {
   border-right: 1px solid #D1D3D5;
 }
-/* line 567, sass/screen.scss */
+/* line 577, sass/screen.scss */
 table.settings td.label {
   vertical-align: middle;
 }
 
-/* line 572, sass/screen.scss */
+/* line 582, sass/screen.scss */
 table.checklist td {
   vertical-align: middle;
 }
 
-/* line 578, sass/screen.scss */
+/* line 588, sass/screen.scss */
 table.email tr:nth-child(odd) {
   background-color: #e6e7e8;
 }
 
-/* line 581, sass/screen.scss */
+/* line 591, sass/screen.scss */
 table.listing span.instruct {
   margin: 0;
 }
 
-/* line 585, sass/screen.scss */
+/* line 595, sass/screen.scss */
 table.nested {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
 
-/* line 588, sass/screen.scss */
+/* line 598, sass/screen.scss */
 table.single {
   border-top: 2px solid #D1D3D5;
   border-bottom: 2px solid #D1D3D5;
@@ -1073,114 +1085,114 @@ table.single {
   */
 }
 
-/* line 594, sass/screen.scss */
+/* line 604, sass/screen.scss */
 #profile table tr {
   border-bottom: 1px solid #D1D3D5;
 }
 
-/* line 599, sass/screen.scss */
-#systemConfiguration h4, #systemConfiguration .tocTitle {
+/* line 609, sass/screen.scss */
+#systemConfiguration h4 {
   text-transform: capitalize;
   margin-top: 1em;
   padding: .25em;
   background-color: #ececed;
 }
-/* line 605, sass/screen.scss */
+/* line 615, sass/screen.scss */
 #systemConfiguration table tr {
   border-bottom: 1px solid #D1D3D5;
 }
 
-/* line 611, sass/screen.scss */
+/* line 621, sass/screen.scss */
 .highlightReviewerNotNotified, .highlightCopyediting {
   background-color: #266BA8;
 }
-/* line 611, sass/screen.scss */
+/* line 621, sass/screen.scss */
 .highlightReviewerNotNotified:before, .highlightCopyediting:before {
   content: "\00b9";
   padding: 0 4px;
 }
 
-/* line 612, sass/screen.scss */
+/* line 622, sass/screen.scss */
 .highlightNoDecision {
   background-color: #07355E;
   color: white;
 }
-/* line 612, sass/screen.scss */
+/* line 622, sass/screen.scss */
 .highlightNoDecision:before {
   content: "\00b2";
   padding: 0 4px;
 }
 
-/* line 613, sass/screen.scss */
+/* line 623, sass/screen.scss */
 .highlightReviewerConfirmationOverdue {
   background-color: #FF6C3E;
 }
-/* line 613, sass/screen.scss */
+/* line 623, sass/screen.scss */
 .highlightReviewerConfirmationOverdue:before {
   content: "\2020";
   padding: 0 4px;
 }
 
-/* line 614, sass/screen.scss */
+/* line 624, sass/screen.scss */
 .highlightRevisedCopyUploaded, .highlightLayoutEditing {
   background-color: #1EB568;
 }
-/* line 614, sass/screen.scss */
+/* line 624, sass/screen.scss */
 .highlightRevisedCopyUploaded:before, .highlightLayoutEditing:before {
   content: "\2666";
   padding: 0 4px;
 }
 
-/* line 615, sass/screen.scss */
+/* line 625, sass/screen.scss */
 .highlightReviewerCompletionOverdue, .higlightProofreading {
   background-color: #006633;
   color: white;
 }
-/* line 615, sass/screen.scss */
+/* line 625, sass/screen.scss */
 .highlightReviewerCompletionOverdue:before, .higlightProofreading:before {
   content: "\25CA";
   padding: 0 4px;
 }
 
-/* line 618, sass/screen.scss */
+/* line 628, sass/screen.scss */
 #notes ul {
   padding: 0;
 }
-/* line 622, sass/screen.scss */
+/* line 632, sass/screen.scss */
 #notes ul li {
   padding: .5em;
   list-style-type: none;
 }
 
-/* line 628, sass/screen.scss */
+/* line 638, sass/screen.scss */
 span.instruct {
   display: block;
   margin: .5em 0;
 }
 
-/* line 633, sass/screen.scss */
+/* line 643, sass/screen.scss */
 #assignBlocksToSidebars {
   border: 1px solid #D1D3D5;
 }
-/* line 636, sass/screen.scss */
+/* line 646, sass/screen.scss */
 #assignBlocksToSidebars .heading, #assignBlocksToSidebars #setup .pkp_controllers_grid table th, #setup .pkp_controllers_grid table #assignBlocksToSidebars th, #assignBlocksToSidebars #setup .pkp_controllers_grid table tr.heading, #setup .pkp_controllers_grid table #assignBlocksToSidebars tr.heading {
   text-align: center;
   border: 1px solid #87908F;
 }
-/* line 640, sass/screen.scss */
+/* line 650, sass/screen.scss */
 #assignBlocksToSidebars input {
   padding: 2px 0;
 }
-/* line 644, sass/screen.scss */
+/* line 654, sass/screen.scss */
 #assignBlocksToSidebars td.centerButton {
   vertical-align: middle !important;
 }
 
-/* line 650, sass/screen.scss */
+/* line 660, sass/screen.scss */
 #setup .options {
   margin-top: 2em;
 }
-/* line 655, sass/screen.scss */
+/* line 665, sass/screen.scss */
 #setup .pkp_controllers_grid table {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1224,73 +1236,90 @@ span.instruct {
   border-right: 1px solid #87908F;
 }
 
-/* line 665, sass/screen.scss */
+/* line 675, sass/screen.scss */
 td form {
   margin: 0;
 }
 
-/* line 669, sass/screen.scss */
+/* line 679, sass/screen.scss */
 .refbacks .menu {
   margin: 1em 0;
 }
 
-/* line 672, sass/screen.scss */
+/* line 682, sass/screen.scss */
 .endseparator {
   display: none;
 }
 
-/* line 676, sass/screen.scss */
+/* line 686, sass/screen.scss */
 .composite-ui {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 679, sass/screen.scss */
+/* line 689, sass/screen.scss */
 .composite-ui div.pane div.help-message {
   margin: 10px;
   padding: 0;
 }
-/* line 683, sass/screen.scss */
+/* line 693, sass/screen.scss */
 .composite-ui div.two-pane table.pane_header {
   margin-top: 0;
 }
 
-/* line 687, sass/screen.scss */
+/* line 697, sass/screen.scss */
 .composite-ui > .ui-tabs ul.main-tabs a {
   font-size: 1.25em;
 }
 
-/* line 691, sass/screen.scss */
+/* line 701, sass/screen.scss */
 .pkp_controllers_grid h3 {
   background-color: initial;
 }
 
 /* Author Submission Pages */
-/* line 695, sass/screen.scss */
+/* line 705, sass/screen.scss */
 .steplist {
   padding: 0;
 }
-/* line 698, sass/screen.scss */
+/* line 708, sass/screen.scss */
 .steplist li {
   list-style-type: none;
 }
 
-/* line 703, sass/screen.scss */
+/* line 713, sass/screen.scss */
 .pseudoMenu .current, #sidebar .block .current, #sidebarUser .current {
   background-color: #D1D3D5;
 }
 
 /* Plugin Management */
-/* line 709, sass/screen.scss */
+/* line 719, sass/screen.scss */
 #plugins a.action {
   display: inline-block;
 }
-/* line 709, sass/screen.scss */
+/* line 719, sass/screen.scss */
 #plugins a.action:before {
   content: initial;
 }
 
+/* line 722, sass/screen.scss */
+.pluginList ul {
+  padding: 0;
+  margin: .5em 0;
+}
+/* line 725, sass/screen.scss */
+.pluginList ul li {
+  list-style-type: none;
+  padding: 10px 0 5px 5px;
+  border-bottom: 1px solid #D1D3D5;
+}
+/* line 730, sass/screen.scss */
+.pluginList ul li p:before {
+  content: '\00BB';
+  padding-right: 5px;
+}
+
 /* PopUp Windows  */
-/* line 714, sass/screen.scss */
+/* line 740, sass/screen.scss */
 .popup #header {
   margin: .5em 0;
   min-height: initial;
@@ -1299,33 +1328,33 @@ td form {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 720, sass/screen.scss */
+/* line 746, sass/screen.scss */
 .popup #header #headerTitle {
   padding: 0;
 }
-/* line 724, sass/screen.scss */
+/* line 750, sass/screen.scss */
 .popup #body {
   width: 100%;
   padding: 2em;
   margin-top: 0;
 }
-/* line 729, sass/screen.scss */
+/* line 755, sass/screen.scss */
 .popup #main {
   width: 100%;
 }
-/* line 732, sass/screen.scss */
+/* line 758, sass/screen.scss */
 .popup #main h3 {
   background-color: initial;
   font-weight: 400;
   padding: 0;
 }
-/* line 738, sass/screen.scss */
+/* line 764, sass/screen.scss */
 .popup table {
   margin-top: 0;
 }
 
 /* Comment Windows */
-/* line 744, sass/screen.scss */
+/* line 770, sass/screen.scss */
 #articleComments table {
   border: 1px solid #D1D3D5;
 }
@@ -1364,11 +1393,11 @@ td form {
 #articleComments table tbody tr.last th, #articleComments table tbody tr.last tr.heading, #articleComments table tbody tr.last td, #articleComments table tfoot tr.last th, #articleComments table tfoot tr.last tr.heading, #articleComments table tfoot tr.last td {
   border-bottom-width: 0;
 }
-/* line 748, sass/screen.scss */
+/* line 774, sass/screen.scss */
 #articleComments table .commentNote {
   font-weight: 700;
 }
-/* line 751, sass/screen.scss */
+/* line 777, sass/screen.scss */
 #articleComments table .comments {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1376,7 +1405,7 @@ td form {
   margin-bottom: 1.5em;
 }
 
-/* line 755, sass/screen.scss */
+/* line 781, sass/screen.scss */
 .commentTitle {
   font-family: Lato, Trabuchet, sans-serif;
   text-decoration: underline;
@@ -1385,20 +1414,19 @@ td form {
 }
 
 /* User */
-/* line 765, sass/screen.scss */
-.fancyList ul {
+/* line 791, sass/screen.scss */
+.fancyList ul, #signinForm ul {
   padding: 0;
   margin: .5em 0;
 }
-/* line 768, sass/screen.scss */
-.fancyList ul li {
+/* line 794, sass/screen.scss */
+.fancyList ul li, #signinForm ul li {
   list-style-type: none;
   padding: 10px 0 5px 5px;
   border-bottom: 1px solid #D1D3D5;
-  display: block;
 }
-/* line 773, sass/screen.scss */
-.fancyList ul li:before {
+/* line 798, sass/screen.scss */
+.fancyList ul li:before, #signinForm ul li:before {
   content: '\00BB';
   padding-right: 5px;
 }
@@ -1503,7 +1531,13 @@ td form {
     padding-right: 0;
   }
 
-  /* line 14, sass/_screen_max600.scss */
+  /* line 13, sass/_screen_max600.scss */
+  #main img {
+    max-width: 250px;
+    height: auto;
+  }
+
+  /* line 18, sass/_screen_max600.scss */
   #sidebar {
     display: none;
   }
