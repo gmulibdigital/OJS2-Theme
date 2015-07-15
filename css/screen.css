@@ -1541,4 +1541,9 @@ td form {
   #sidebar {
     display: none;
   }
+
+  /* line 22, sass/_screen_max600.scss */
+  #standardFooter a img {
+    max-width: 250px;
+  }
 }
