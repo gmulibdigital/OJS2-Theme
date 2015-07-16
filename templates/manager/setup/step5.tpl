@@ -351,7 +351,7 @@ function prepBlockFields() {
 
 <p>{translate key="manager.setup.alternateHeaderDescription"}</p>
 
-<p><textarea name="journalPageHeader[{$formLocale|escape}]" id="journalPageHeader" rows="12" cols="60" class="textArea">{$journalPageHeader[$formLocale]|escape}</textarea></p>
+<p><textarea name="journalPageHeader[{$formLocale|escape}]" rows="12" cols="60" class="textArea">{$journalPageHeader[$formLocale]|escape}</textarea></p>
 </div>
 </div>
 <div class="separator"></div>
@@ -361,7 +361,7 @@ function prepBlockFields() {
 
 <p>{translate key="manager.setup.journalPageFooterDescription"}</p>
 
-<p><textarea name="journalPageFooter[{$formLocale|escape}]" id="journalPageFooter" rows="12" cols="60" class="textArea">{$journalPageFooter[$formLocale]|escape}</textarea></p>
+<p><textarea name="journalPageFooter[{$formLocale|escape}]" rows="12" cols="60">{$journalPageFooter[$formLocale]|escape}</textarea></p>
 </div>
 
 <div class="separator"></div>
