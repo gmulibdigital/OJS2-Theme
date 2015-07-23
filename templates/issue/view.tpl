@@ -35,7 +35,7 @@
 {elseif $issue}
 	<div id="issueDescription" class="block">{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}</div>
 	{if $issueGalleys}
-		<h3>{translate key="issue.fullIssue"}</h3>
+		<h3 class="issue">{translate key="issue.fullIssue"}</h3>
 		{if (!$subscriptionRequired || $issue->getAccessStatus() == $smarty.const.ISSUE_ACCESS_OPEN || $subscribedUser || $subscribedDomain || ($subscriptionExpiryPartial && $issueExpiryPartial))}
 			{assign var=hasAccess value=1}
 		{else}
@@ -73,7 +73,7 @@
 		</table>
 		<br />
 	{/if}
-	<h3>{translate key="issue.toc"}</h3>
+	<h3 class="issue">{translate key="issue.toc"}</h3>
 	{include file="issue/issue.tpl"}
 {else}
 	{translate key="current.noCurrentIssueDesc"}

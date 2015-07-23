@@ -107,11 +107,11 @@
 {/if}
 
 <div id="results">
-	<table width="100%" class="listing">
+	<table width="100%">
 		<tr class="heading" valign="bottom">
-			{if !$currentJournal}<td width="20%">{translate key="journal.journal"}</td>{/if}
-			<td width="{if !$currentJournal}20%{else}40%{/if}">{translate key="issue.issue"}</td>
-			<td width="60%" colspan="2">{translate key="article.title"}</td>
+			{if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if}
+			<th width="{if !$currentJournal}20%{else}40%{/if}">{translate key="issue.issue"}</th>
+			<th width="60%" colspan="2">{translate key="article.title"}</th>
 		</tr>
 
 		{iterate from=results item=result}
@@ -163,7 +163,6 @@
 				</td>
 			</tr>
 			{call_hook name="Templates::Search::SearchResults::AdditionalArticleInfo" articleId=$publishedArticle->getId() numCols=$numCols|escape}
-			<tr><td colspan="{$numCols|escape}" class="{if $results->eof()}end{/if}separator">&nbsp;</td></tr>
 		{/iterate}
 		{if $results->wasEmpty()}
 			<tr>

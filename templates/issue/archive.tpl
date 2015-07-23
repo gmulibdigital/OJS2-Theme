@@ -24,7 +24,7 @@
 			<div class="separator" style="clear:left;"></div>
 		{/if}
 		<div style="float: left; width: 100%;">
-		<h3>{$issue->getYear()|escape}</h3>
+		<h3 class="issue">{$issue->getYear()|escape}</h3>
 		{assign var=lastYear value=$issue->getYear()}
 	{/if}
 

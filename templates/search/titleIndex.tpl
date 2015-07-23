@@ -13,8 +13,6 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br />
-
 {if $currentJournal}
 	{assign var=numCols value=3}
 {else}
@@ -22,14 +20,12 @@
 {/if}
 
 <div id="results">
-<table width="100%" class="listing">
-<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
-	{if !$currentJournal}<td width="20%">{translate key="journal.journal"}</td>{/if}
-	<td width="20%">{translate key="issue.issue"}</td>
-	<td width="{if !$currentJournal}60%{else}80%{/if}" colspan="2">{translate key="article.title"}</td>
+<table width="100%">
+<tr valign="bottom">
+	{if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if}
+	<th width="{if !$currentJournal}20%{else}40%{/if}">{translate key="issue.issue"}</th>
+	<th width="60%" colspan="2">{translate key="article.title"}</th>
 </tr>
-<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
 
 {iterate from=results item=result}
 {assign var=publishedArticle value=$result.publishedArticle}
@@ -40,12 +36,11 @@
 <tr valign="top">
 	{if !$currentJournal}<td><a href="{url journal=$journal->getPath()}">{$journal->getLocalizedTitle()|escape}</a></td>{/if}
 	<td>{if $issueAvailable}<a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)}">{/if}{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}{if $issueAvailable}</a>{/if}</td>
-	<td width="35%">{$article->getLocalizedTitle()|strip_unsafe_html}</td>
-	<td width="25%" align="right">
+	<td width="30%">{$article->getLocalizedTitle()|strip_unsafe_html}</td>
+	<td width="30%" align="right">
 			<a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}" class="file">{if $article->getLocalizedAbstract()}{translate key="article.abstract"}{else}{translate key="article.details"}{/if}</a>
 		{if $issueAvailable}
 		{foreach from=$publishedArticle->getGalleys() item=galley name=galleyList}
-			&nbsp;
 			<a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)|to_array:$galley->getBestGalleyId($journal)}" class="file">{$galley->getGalleyLabel()|escape}</a>
 		{/foreach}
 		{/if}
@@ -58,13 +53,11 @@
 		{/foreach}
 	</td>
 </tr>
-<tr><td colspan="{$numCols|escape}" class="{if $results->eof()}end{/if}separator">&nbsp;</td></tr>
 {/iterate}
 {if $results->wasEmpty()}
 <tr>
 <td colspan="{$numCols|escape}" class="nodata">{translate key="search.noResults"}</td>
 </tr>
-<tr><td colspan="{$numCols|escape}" class="endseparator">&nbsp;</td></tr>
 {else}
 	<tr>
 		<td {if !$currentJournal}colspan="2" {/if}align="left">{page_info iterator=$results}</td>

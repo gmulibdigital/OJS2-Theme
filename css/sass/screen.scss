@@ -126,7 +126,6 @@ h3 {
 	font-weight: 700;
 	padding-left: 5px;
 	background-color: lighten($grey-light, 10%);
-	margin-top: 1em;
 }
 h4 {
 	font-size: 1.5em;
@@ -471,9 +470,14 @@ ul.navMenu {
 /* Search 
 ============================ */
 #results table {
-	@include inner-table-borders(1px, $grey-light);
 	@include outer-table-borders(1px, $grey-bold);
 	@include rhythm();
+	th:first-child {
+		border-right: none;
+	}
+	tr {
+		&:nth-child(odd) {border-bottom: 1px solid $grey-light;}
+	}
 }
 
 /* Issues
@@ -487,16 +491,24 @@ ul.navMenu {
 
 /* Articles 
 ============================ */
-
-.tocArticleGalleysPages {
-	text-align: end;
-	vertical-align: middle;
-}
 a.file {
 	@extend .roundedborder;
 	background-color: white;
 	padding: 0 .5em;
+} 
+.tocArticleGalleysPages {
+	text-align: end;
+	vertical-align: middle;
 }
+
+.tocPages, .tocAuthors {
+	padding-top: .5em;
+}
+.tocCoverImage a.file {
+	padding: 0;
+	border: none;
+}
+
 #articleTitle h3 {
 	background-color: initial;
 }
@@ -519,6 +531,15 @@ a.file {
 		content: '\00BB';
 		padding-right: 5px;
 	}
+}
+
+h3.issue {
+	background: none;
+	padding-left: 0;
+
+}
+#pdfDownloadLinkContainer {
+	padding-bottom: .5em;
 }
 
 /* Admin Pages  (home of the hacks)
