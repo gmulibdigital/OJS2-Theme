@@ -1515,6 +1515,22 @@ td form {
     display: block;
     color: white;
   }
+  /* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+  #mobileNav .menu li a:visited {
+    color: white;
+  }
+  /* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+  #mobileNav .menu li a:focus {
+    color: #1EB568;
+  }
+  /* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+  #mobileNav .menu li a:hover {
+    color: #1EB568;
+  }
+  /* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+  #mobileNav .menu li a:active {
+    color: #266BA8;
+  }
   /* line 53, sass/_screen_max1060.scss */
   #mobileNav .menu li #searchbar {
     display: block;

@@ -47,7 +47,7 @@
 
 			a {
 				display: block;
-				color: white;
+				@include link-colors(white, $accent-light, $accent-bright, white, $accent-light);
 			}
 
 			#searchbar {
