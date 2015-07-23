@@ -1,3 +1,40 @@
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+ /* Adapted from Eric Meyer, Going to Print (http://alistapart.com/article/goingtoprint) */
+
+@media print {
+
+	body {
+		background: white;
+		font-size: 12pt;
+	}
+	nav {
+		display: none;
+	}
+
+	#body {
+		width: auto;
+		margin: 0 5%;
+		padding: 0;
+		border: 0;
+		float: none !important;
+		color: black;
+		background: transparent;
+	}
+
+	a:link, a:visited {
+		color: #520;
+		background: transparent;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
+	#body a:link:after,
+	#body a:visited:after {
+		content: " (" attr(href) ") ";
+		font-size: 90%;
+	}
+
+}

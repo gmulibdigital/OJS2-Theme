@@ -19,4 +19,5 @@
 
 <!-- Add theme style sheet -->
 <link rel="stylesheet" href="{$baseURL}/plugins/themes/mpg/css/screen.css" type="text/css" />
+<link href="{$baseURL}/plugins/themes/mpg/css/print.css" media="print" rel="stylesheet" type="text/css" />
 

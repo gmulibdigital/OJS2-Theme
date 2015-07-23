@@ -18,10 +18,12 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 
-	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/articleView.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/styles/articleView.css" type="text/css" /> -->
+
+	{include file="common/head.tpl"}
 
 	{foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
@@ -36,7 +38,7 @@
 
 	{$additionalHeadData}
 </head>
-<body id="pkp-{$pageTitle|replace:'.':'-'}">
+<body id="pkp-{$pageTitle|replace:'.':'-'}" class="popup">
 
 <div id="container">
 
