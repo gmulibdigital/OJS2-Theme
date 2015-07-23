@@ -126,6 +126,7 @@ h3 {
 	font-weight: 700;
 	padding-left: 5px;
 	background-color: lighten($grey-light, 10%);
+	margin-top: 1em;
 }
 h4 {
 	font-size: 1.5em;
@@ -489,6 +490,10 @@ ul.navMenu {
 	background-color: initial;
 }
 
+.tocArticle {
+	@include outer-table-borders(1px, $grey-bold);
+}
+
 /* Articles 
 ============================ */
 a.file {
@@ -496,7 +501,7 @@ a.file {
 	background-color: white;
 	padding: 0 .5em;
 } 
-.tocArticleGalleysPages {
+.tocArticleGalleysPages, .tocGalleys {
 	text-align: end;
 	vertical-align: middle;
 }
