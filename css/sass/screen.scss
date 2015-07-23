@@ -245,6 +245,7 @@ table {
 		background-color: $accent-bold;
 		@include box-shadow();
 		@include border-radius (4px);
+		text-align:center;
 		&:hover, &:focus {
 			background-color: $accent-bright;
 		}
@@ -509,6 +510,14 @@ a.file {
 	#main h3 {
 		background-color: initial;
 		padding-left: 0;
+	}
+}
+
+.list {
+	border-bottom: 1px solid $grey-light;
+	h4:before {
+		content: '\00BB';
+		padding-right: 5px;
 	}
 }
 
