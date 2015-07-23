@@ -490,10 +490,6 @@ ul.navMenu {
 	background-color: initial;
 }
 
-.tocArticle {
-	@include outer-table-borders(1px, $grey-bold);
-}
-
 /* Articles 
 ============================ */
 a.file {
