@@ -26,10 +26,10 @@
 	<meta name="generator" content="{$applicationName} {$currentVersionString|escape}" />
 	{$metaCustomHeaders}
 	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
-	<!-- <link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" /> -->
+	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />-->
+	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" /> 
 
 	<!-- Base Jquery -->
 	{if $allowCDN}<script type="text/javascript" src="//www.google.com/jsapi"></script>
@@ -56,12 +56,6 @@
 	{if $leftSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/leftSidebar.css" type="text/css" />{/if}
 	{if $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/rightSidebar.css" type="text/css" />{/if}
 	{if $leftSidebarCode && $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/bothSidebars.css" type="text/css" /> {/if}-->
-
-	{include file="common/head.tpl"}
-
-	{foreach from=$stylesheets item=cssUrl}
-		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach}
 
 	<!-- Default global locale keys for JavaScript -->
 	{include file="common/jsLocaleKeys.tpl" }
@@ -119,6 +113,20 @@
 			{rdelim});
 		</script>
 	{/if}{* hasSystemNotifications *}
+
+	{foreach from=$stylesheets name="testUrl" item=cssUrl}
+		{if $cssUrl == "$baseUrl/styles/ojs.css"}
+			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
+		{/if}
+	{/foreach}
+
+	{include file="common/head.tpl"}
+
+	{foreach from=$stylesheets name="testUrl" item=cssUrl}
+		{if $cssUrl != "$baseUrl/styles/ojs.css"}
+			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
+		{/if}
+	{/foreach}
 
 	{$additionalHeadData}
 </head>
