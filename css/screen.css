@@ -566,9 +566,9 @@ table td {
   padding: .5em 0 .25em;
 }
 
-/* line 278, sass/screen.scss */
-.pseudoMenu a, #sidebar .block a, #sidebarUser a {
-  display: block;
+/* line 275, sass/screen.scss */
+.pseudoMenu, #sidebar .block, #sidebarUser {
+  /*a {display:block;}*/
 }
 
 /* line 280, sass/screen.scss */
