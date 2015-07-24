@@ -41,9 +41,11 @@ body {
 	font-family: "PT Sans", Helvetica, sans-serif;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+	background-color: lighten($grey-light, 5%);
 	figure {
 		display: inline-block;
 	}
+
 }
 
 em {
@@ -71,6 +73,7 @@ ol {
 }
 #container {
 	background-color: white;
+	overflow: auto;
 }
 #body{
 	overflow: auto;
