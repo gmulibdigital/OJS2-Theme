@@ -1458,6 +1458,16 @@ td form {
   padding-right: 5px;
 }
 
+/* line 852, sass/screen.scss */
+#interests .ui-widget-content.ui-autocomplete-input {
+  width: 99%;
+}
+
+/* line 856, sass/screen.scss */
+.tagit-close .ui-icon.ui-icon-close {
+  display: none;
+}
+
 /* Mobile 
 ============================ */
 @media screen and (max-width: 1060px) {
