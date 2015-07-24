@@ -392,6 +392,9 @@ ul.navMenu {
 		display: inline-block;
 		vertical-align: top;
 	}
+	.block h3 {
+		@extend .blockTitle;
+	}
 }
 
 #leftSidebar {
