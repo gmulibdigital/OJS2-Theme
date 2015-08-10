@@ -195,7 +195,7 @@ blockquote {
 
 /* line 63, sass/screen.scss */
 ul {
-  padding-left: 1em;
+  padding-left: 2em;
   list-style-type: disc;
 }
 
