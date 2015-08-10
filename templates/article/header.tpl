@@ -25,11 +25,11 @@
 	{include file="article/googlescholar.tpl"}
 	{call_hook name="Templates::Article::Header::Metadata"}
 
-<!-- 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/pkp.css" type="text/css" />
+<!-- 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" /> -->
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/articleView.css" type="text/css" /> -->
+<!-- 	<link rel="stylesheet" href="{$baseUrl}/styles/articleView.css" type="text/css" /> -->
 	{if $journalRt && $journalRt->getEnabled()}
 		<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/rtEmbedded.css" type="text/css" />
 	{/if}
@@ -40,12 +40,6 @@
 	{if $leftSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/leftSidebar.css" type="text/css" />{/if}
 	{if $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/rightSidebar.css" type="text/css" />{/if}
 	{if $leftSidebarCode && $rightSidebarCode}<link rel="stylesheet" href="{$baseUrl}/styles/bothSidebars.css" type="text/css" />{/if} -->
-
-	{foreach from=$stylesheets item=cssUrl}
-		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach}
-
-	{include file="common/head.tpl"}
 
 	<!-- Base Jquery -->
 	{if $allowCDN}<script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -70,6 +64,20 @@
 	{else}
 		{include file="common/minifiedScripts.tpl"}
 	{/if}
+
+	{foreach from=$stylesheets name="testUrl" item=cssUrl}
+		{if $cssUrl == "$baseUrl/styles/ojs.css"}
+			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
+		{/if}
+	{/foreach}
+
+	{include file="common/head.tpl"}
+
+	{foreach from=$stylesheets name="testUrl" item=cssUrl}
+		{if $cssUrl != "$baseUrl/styles/ojs.css"}
+			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
+		{/if}
+	{/foreach}
 
 	{$additionalHeadData}
 </head>

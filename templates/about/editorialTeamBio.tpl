@@ -24,9 +24,9 @@
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/rt.css" type="text/css" /> -->
 
-<!-- 	{foreach from=$stylesheets item=cssUrl}
+	{foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach} -->
+	{/foreach}
 
 	{include file="common/head.tpl"}
 
