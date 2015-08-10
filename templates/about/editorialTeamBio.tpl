@@ -24,11 +24,11 @@
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/rt.css" type="text/css" /> -->
 
+	{include file="common/head.tpl"}
+
 	{foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
 	{/foreach}
-
-	{include file="common/head.tpl"}
 
 	<!-- Compiled scripts -->
 	{if $useMinifiedJavaScript}
