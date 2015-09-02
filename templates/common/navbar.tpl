@@ -43,8 +43,6 @@
 			<li id="announcements"><a href="{url page="announcement"}">{translate key="announcement.announcements"}</a></li>
 		{/if}{* enableAnnouncements *}
 
-			<li id="submitButton"><a href="{url page="about" op="submissions"}">Submit</a></li>
-
 		{call_hook name="Templates::Common::Header::Navbar::CurrentJournal"}
 
 		{foreach from=$navMenuItems item=navItem key=navItemKey}
