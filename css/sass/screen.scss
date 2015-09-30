@@ -667,6 +667,18 @@ table.single {
 .highlightRevisedCopyUploaded, .highlightLayoutEditing {background-color: $accent-light; &:before {content: "\2666"; padding: 0 4px;}}
 .highlightReviewerCompletionOverdue, .higlightProofreading {background-color: $primary; color: white; &:before {content: "\25CA"; padding: 0 4px;}}
 
+.highlightCopyediting a, 
+	.highlightLayoutEditing a,
+	.highlightNoDecision a,
+	.highlightReviewerCompletionOverdue a,
+	.highlightRevisedCopyUploaded a,
+	.highlightReviewerConfirmationOverdue a,
+	.highlightReviewerNotNotified a,
+	.higlightProofreading a {
+		background-color: initial;
+		border-color: initial;
+	}
+
 #notes {
 	ul {
 		padding:0;

@@ -1,4 +1,3 @@
-/* line 5, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, .tocTitle, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,50 +19,41 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, table tr.heading, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/language/susy/_box-sizing.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -78,7 +68,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 =================== */
 /* Mixins
 ==================== */
-/* line 52, sass/_base.scss */
 .roundedborder, input, select, textarea, a.file {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -86,7 +75,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #07355E;
 }
 
-/* line 57, sass/_base.scss */
 .button, .action,
 .toggleExtras-inactive,
 .toggleExtras-active, #setup .options {
@@ -99,7 +87,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 300;
   margin-right: 1px;
 }
-/* line 63, sass/_base.scss */
 .button:hover, .action:hover,
 .toggleExtras-inactive:hover,
 .toggleExtras-active:hover, #setup .options:hover, .button:focus, .action:focus,
@@ -108,19 +95,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #3185d0;
 }
 
-/* line 70, sass/_base.scss */
 .adminMenu ul, .pseudoMenu ul, #sidebar .block ul, #sidebarUser ul, table.listing ul {
   padding: 0;
   margin: .5em 0;
 }
-/* line 73, sass/_base.scss */
 .adminMenu ul li, .pseudoMenu ul li, #sidebar .block ul li, #sidebarUser ul li, table.listing ul li {
   list-style-type: none;
   padding: 10px 0 5px 5px;
   border-bottom: 1px solid #D1D3D5;
   display: block;
 }
-/* line 80, sass/_base.scss */
 .adminMenu ul li a:before, .pseudoMenu ul li a:before, #sidebar .block ul li a:before, #sidebarUser ul li a:before, table.listing ul li a:before {
   content: '\00BB';
   padding-right: 5px;
@@ -151,71 +135,58 @@ Structure
 /* General HTML Elements 
 ============================= */
 /* apply a natural box layout model to all elements, but allowing components to change */
-/* line 31, sass/screen.scss */
 html {
   box-sizing: content-box;
 }
-/* line 106, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html html {
   font-size: 100%;
   line-height: 1.5em;
 }
 
-/* line 36, sass/screen.scss */
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-/* line 40, sass/screen.scss */
 body {
   font-family: "PT Sans", Helvetica, sans-serif;
   font-size: 16px;
   line-height: 24px;
   background-color: #dee0e1;
 }
-/* line 45, sass/screen.scss */
 body figure {
   display: inline-block;
 }
 
-/* line 51, sass/screen.scss */
 em {
   font-style: italic;
 }
 
-/* line 55, sass/screen.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 59, sass/screen.scss */
 blockquote {
   padding: 1em 1em 1em 2em;
 }
 
-/* line 63, sass/screen.scss */
 ul {
   padding-left: 2em;
   list-style-type: disc;
 }
 
-/* line 67, sass/screen.scss */
 ol {
   list-style-type: decimal;
   list-style-position: inside;
 }
-/* line 70, sass/screen.scss */
 ol li {
   padding: 5px 0;
 }
 
-/* line 74, sass/screen.scss */
 #container {
   background-color: white;
   overflow: auto;
 }
 
-/* line 78, sass/screen.scss */
 #body {
   overflow: auto;
   max-width: 1080px;
@@ -227,13 +198,11 @@ ol li {
   margin-bottom: 1.5em;
   padding: 0 10px;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
 #body:after {
   content: " ";
   display: block;
   clear: both;
 }
-/* line 84, sass/screen.scss */
 #body p {
   padding: .5em 0;
 }
@@ -241,7 +210,6 @@ ol li {
 /* Skip to Content 
 from http://codepen.io/joe-watkins/pen/rjhiK
 */
-/* line 94, sass/screen.scss */
 #skip-to-content {
   padding: 1em;
   position: absolute;
@@ -251,7 +219,6 @@ from http://codepen.io/joe-watkins/pen/rjhiK
   color: white;
 }
 
-/* line 103, sass/screen.scss */
 #skip-to-content:focus {
   position: absolute;
   top: 0;
@@ -259,32 +226,27 @@ from http://codepen.io/joe-watkins/pen/rjhiK
 }
 
 /* Headings */
-/* line 111, sass/screen.scss */
 h1, h2, h3, h4, h5, .tocTitle, h6 {
   font-family: Lato, Trabuchet, sans-serif;
 }
 
-/* line 114, sass/screen.scss */
 h1 {
   font-weight: 700;
   font-size: 2.625em;
   line-height: 1.14286em;
 }
 
-/* line 118, sass/screen.scss */
 h2, h3, h4, h5, .tocTitle, h6 {
   font-family: Lato, Trebuchet, sans-serif;
   line-height: 1.8em;
 }
 
-/* line 122, sass/screen.scss */
 h2 {
   font-size: 2em;
   font-weight: 700;
   padding: .5em 0;
 }
 
-/* line 127, sass/screen.scss */
 h3 {
   font-size: 1.75em;
   font-weight: 700;
@@ -293,112 +255,89 @@ h3 {
   margin-top: 1em;
 }
 
-/* line 134, sass/screen.scss */
 h4 {
   font-size: 1.5em;
   font-weight: 400;
   margin-top: .5em;
 }
 
-/* line 139, sass/screen.scss */
 h5, .tocTitle {
   font-size: 1.25em;
 }
 
 /* Links */
-/* line 144, sass/screen.scss */
 a {
   text-decoration: none;
   color: #0e6bbd;
 }
-/* line 4, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_hover-link.scss */
 a:hover, a:focus {
   text-decoration: underline;
 }
-/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a:visited {
   color: #266BA8;
 }
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a:focus {
   color: #07355E;
 }
-/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a:hover {
   color: #1EB568;
 }
-/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a:active {
   color: #primary;
 }
 
-/* line 148, sass/screen.scss */
 nav a {
   color: white;
 }
-/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 nav a:visited {
   color: white;
 }
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 nav a:focus {
   color: #1EB568;
 }
-/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 nav a:hover {
   color: #1EB568;
 }
-/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 nav a:active {
   color: #266BA8;
 }
 
-/* line 151, sass/screen.scss */
 #pageFooter a {
   color: #1EB568;
 }
-/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 #pageFooter a:visited {
   color: #17894f;
 }
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 #pageFooter a:focus {
   color: #266BA8;
 }
-/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 #pageFooter a:hover {
   color: #266BA8;
 }
-/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 #pageFooter a:active {
   color: #006633;
 }
 
-/* line 154, sass/screen.scss */
 a.action, .button, .action,
 .toggleExtras-inactive,
 .toggleExtras-active, #setup .options, .options a {
   color: white;
 }
-/* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a.action:visited, .button:visited, .action:visited,
 .toggleExtras-inactive:visited,
 .toggleExtras-active:visited, #setup .options:visited, .options a:visited {
   color: white;
 }
-/* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a.action:focus, .button:focus, .action:focus,
 .toggleExtras-inactive:focus,
 .toggleExtras-active:focus, #setup .options:focus, .options a:focus {
   color: white;
 }
-/* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a.action:hover, .button:hover, .action:hover,
 .toggleExtras-inactive:hover,
 .toggleExtras-active:hover, #setup .options:hover, .options a:hover {
   color: white;
 }
-/* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
 a.action:active, .button:active, .action:active,
 .toggleExtras-inactive:active,
 .toggleExtras-active:active, #setup .options:active, .options a:active {
@@ -406,7 +345,6 @@ a.action:active, .button:active, .action:active,
 }
 
 /* Forms */
-/* line 159, sass/screen.scss */
 input, select, textarea {
   font-family: "PT Sans", Helvetica, sans-serif;
   margin: 0 .05em 0 0;
@@ -414,12 +352,10 @@ input, select, textarea {
   line-height: 1.5em;
 }
 
-/* line 166, sass/screen.scss */
 .label {
   width: auto;
 }
 
-/* line 170, sass/screen.scss */
 form {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -427,23 +363,19 @@ form {
   margin-bottom: 1.5em;
 }
 
-/* line 173, sass/screen.scss */
 form.pkp_form {
   margin: initial;
 }
 
-/* line 176, sass/screen.scss */
 input {
   padding: 2px;
 }
 
 /* Tables */
-/* line 181, sass/screen.scss */
 table {
   width: 100%;
   margin: 1em 0;
 }
-/* line 186, sass/screen.scss */
 table th, table tr.heading {
   font-family: Lato;
   font-size: 1.125em;
@@ -453,24 +385,20 @@ table th, table tr.heading {
   text-transform: capitalize;
   padding: .5em .25em;
 }
-/* line 194, sass/screen.scss */
 table tr {
   margin: .5em 0;
 }
-/* line 200, sass/screen.scss */
 table td {
   padding: .5em .25em;
   vertical-align: top;
 }
 
-/* line 210, sass/screen.scss */
 .table-borders tr {
   border-bottom: 1px solid #D1D3D5;
 }
 
 /* Global Classes 
 ============================= */
-/* line 217, sass/screen.scss */
 .menu {
   margin: 0;
   padding: 0;
@@ -480,7 +408,6 @@ table td {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 222, sass/screen.scss */
 .menu li {
   list-style-image: none;
   list-style-type: none;
@@ -491,31 +418,25 @@ table td {
   padding-right: 1em;
   border-right: 2px solid #D1D3D5;
 }
-/* line 49, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .menu li:first-child {
   padding-left: 0;
 }
-/* line 50, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .menu li:last-child {
   padding-right: 0;
 }
-/* line 52, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .menu li.last {
   padding-right: 0;
 }
-/* line 226, sass/screen.scss */
 .menu li:last-child {
   border-right: none;
 }
 
-/* line 231, sass/screen.scss */
 .callout {
   font-size: 1.125em;
   line-height: 1.33333em;
   font-weight: 700;
 }
 
-/* line 236, sass/screen.scss */
 .block {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -525,7 +446,6 @@ table td {
   clear: both;
 }
 
-/* line 248, sass/screen.scss */
 .largeButton a {
   color: white !important;
   display: block;
@@ -539,59 +459,48 @@ table td {
   border-radius: 4px;
   text-align: center;
 }
-/* line 256, sass/screen.scss */
 .largeButton a:hover, .largeButton a:focus {
   background-color: #266BA8;
 }
 
-/* line 260, sass/screen.scss */
 .headseparator {
   display: none;
 }
 
-/* line 264, sass/screen.scss */
 .TOC {
   border: 1px solid #D1D3D5;
   padding: 5px;
 }
-/* line 267, sass/screen.scss */
 .TOC:nth-child(odd) {
   background-color: #ececed;
 }
 
-/* line 271, sass/screen.scss */
 .pseudoHeading {
   font-size: 1.25em;
   line-height: 1.2em;
   padding: .5em 0 .25em;
 }
 
-/* line 275, sass/screen.scss */
 .pseudoMenu, #sidebar .block, #sidebarUser {
   /*a {display:block;}*/
 }
 
-/* line 280, sass/screen.scss */
 .label {
   font-weight: 700;
 }
 
-/* line 283, sass/screen.scss */
 .separator {
   display: none;
 }
 
-/* line 286, sass/screen.scss */
 .sort {
   border: 1px solid #D1D3D5;
 }
-/* line 288, sass/screen.scss */
 .sort form {
   padding: .25em;
   margin: .25em 0;
 }
 
-/* line 290, sass/screen.scss */
 .heading, #setup .pkp_controllers_grid table th, #setup .pkp_controllers_grid table tr.heading {
   font-family: Lato;
   font-size: 1.125em;
@@ -599,12 +508,10 @@ table td {
   background-color: #dee0e1;
   padding: .25em;
 }
-/* line 295, sass/screen.scss */
 .heading td:last-child, #setup .pkp_controllers_grid table th td:last-child, #setup .pkp_controllers_grid table tr.heading td:last-child {
   text-align: center;
 }
 
-/* line 299, sass/screen.scss */
 .selectMenu {
   font-size: 0.875em;
   line-height: 1.71429em;
@@ -612,7 +519,6 @@ table td {
 
 /* Navigation
 ============================= */
-/* line 305, sass/screen.scss */
 nav {
   width: 100%;
   background-color: #272822;
@@ -620,12 +526,10 @@ nav {
   padding: .5em 0;
 }
 
-/* line 311, sass/screen.scss */
 #mobileNav {
   display: none;
 }
 
-/* line 314, sass/screen.scss */
 #navbar {
   max-width: 1080px;
   margin-left: auto;
@@ -633,49 +537,41 @@ nav {
   padding: 0 10px;
   display: block;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
 #navbar:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 319, sass/screen.scss */
 ul.navMenu {
   width: 74.57627%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 322, sass/screen.scss */
 ul.navMenu li {
   border-right: 3px solid black;
   font-family: Lato, Trabuchet, sans-serif;
   font-weight: 300;
   letter-spacing: .05em;
 }
-/* line 327, sass/screen.scss */
 ul.navMenu li:last-child {
   border: none;
 }
 
-/* line 333, sass/screen.scss */
 #searchbar {
   width: 23.72881%;
   float: right;
   margin-right: 0;
   text-align: right;
 }
-/* line 336, sass/screen.scss */
 #searchbar form {
   margin: 0;
 }
-/* line 338, sass/screen.scss */
 #searchbar form input {
   padding: 2px 6px;
   margin: 0;
 }
 
-/* line 345, sass/screen.scss */
 #breadcrumb {
   font-size: 0.875em;
   line-height: 1.71429em;
@@ -686,7 +582,6 @@ ul.navMenu li:last-child {
 
 /* Header
 ============================= */
-/* line 354, sass/screen.scss */
 #header {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -695,22 +590,18 @@ ul.navMenu li:last-child {
   min-height: 150px;
   text-align: center;
 }
-/* line 358, sass/screen.scss */
 #header h1, #header img {
   vertical-align: middle;
   display: inline-block;
 }
 
-/* line 363, sass/screen.scss */
 #headerTitle {
   padding: 1em;
 }
-/* line 365, sass/screen.scss */
 #headerTitle figure {
   max-width: 1080px;
   margin: 1.69492%;
 }
-/* line 368, sass/screen.scss */
 #headerTitle figure img {
   width: 100%;
   height: auto;
@@ -718,43 +609,35 @@ ul.navMenu li:last-child {
 
 /* Sidebars 
 ============================= */
-/* line 377, sass/screen.scss */
 #sidebar {
   height: 100%;
 }
-/* line 380, sass/screen.scss */
 #sidebar #submit-button {
   margin-bottom: 1.5em;
 }
-/* line 383, sass/screen.scss */
 #sidebar form {
   margin: 0;
 }
-/* line 391, sass/screen.scss */
 #sidebar .block .articleToolItem a {
   display: inline-block;
   vertical-align: top;
 }
-/* line 395, sass/screen.scss */
 #sidebar .block h3 {
   font-weight: 400;
 }
 
-/* line 401, sass/screen.scss */
 #leftSidebar {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 404, sass/screen.scss */
 #rightSidebar {
   width: 23.72881%;
   float: right;
   margin-right: 0;
 }
 
-/* line 408, sass/screen.scss */
 .blockTitle, #sidebar .block h3 {
   font-family: Lato, Trabuchet, sans-serif;
   font-size: 1.25em;
@@ -765,7 +648,6 @@ ul.navMenu li:last-child {
   margin-bottom: .5em;
 }
 
-/* line 416, sass/screen.scss */
 .blockSubtitle {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -773,27 +655,23 @@ ul.navMenu li:last-child {
   border-bottom: 3px double #D1D3D5;
 }
 
-/* line 425, sass/screen.scss */
 #sidebarFontSize {
   display: none;
 }
 
 /* Main 
 ============================ */
-/* line 431, sass/screen.scss */
 #main {
   width: 66.10169%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 434, sass/screen.scss */
 #main img {
   max-width: 600px;
   height: auto;
 }
 
 /* Announcements */
-/* line 442, sass/screen.scss */
 .details td {
   margin-bottom: 1.5em;
   border-bottom: 1px solid #D1D3D5;
@@ -801,7 +679,6 @@ ul.navMenu li:last-child {
 
 /* Footer 
 ============================ */
-/* line 450, sass/screen.scss */
 #pageFooter {
   clear: both;
   text-align: center;
@@ -810,14 +687,12 @@ ul.navMenu li:last-child {
   padding-top: 1.4375em;
   background-color: #dee0e1;
 }
-/* line 456, sass/screen.scss */
 #pageFooter #social {
   font-size: 2.25em;
   line-height: 1.33333em;
   display: inline-block;
   line-height: 1em;
 }
-/* line 460, sass/screen.scss */
 #pageFooter #social ul {
   margin: 0;
   padding: 0;
@@ -825,7 +700,6 @@ ul.navMenu li:last-child {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 464, sass/screen.scss */
 #pageFooter #social li {
   padding: 0;
   list-style-image: none;
@@ -836,24 +710,19 @@ ul.navMenu li:last-child {
   padding-left: 4px;
   padding-right: 4px;
 }
-/* line 49, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #pageFooter #social li:first-child {
   padding-left: 0;
 }
-/* line 50, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #pageFooter #social li:last-child {
   padding-right: 0;
 }
-/* line 52, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 #pageFooter #social li.last {
   padding-right: 0;
 }
-/* line 468, sass/screen.scss */
 #pageFooter #social li i {
   padding-right: 5px;
 }
 
-/* line 474, sass/screen.scss */
 #standardFooter {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -861,14 +730,12 @@ ul.navMenu li:last-child {
   font-weight: 400;
   font-size: .9em;
 }
-/* line 479, sass/screen.scss */
 #standardFooter a img {
   max-width: 350px;
 }
 
 /* Search 
 ============================ */
-/* line 486, sass/screen.scss */
 #results table {
   border: 1px solid #87908F;
   margin-top: 1.5em;
@@ -876,23 +743,18 @@ ul.navMenu li:last-child {
   padding-bottom: 0em;
   margin-bottom: 1.5em;
 }
-/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #results table thead th, #results table thead tr.heading {
   border-bottom: 1px solid #87908F;
 }
-/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #results table tfoot th, #results table tfoot tr.heading, #results table tfoot td {
   border-top: 1px solid #87908F;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #results table th:first-child, #results table tr.heading:first-child {
   border-right: 1px solid #87908F;
 }
-/* line 489, sass/screen.scss */
 #results table th:first-child, #results table tr.heading:first-child {
   border-right: none;
 }
-/* line 493, sass/screen.scss */
 #results table tr:nth-child(odd) {
   border-bottom: 1px solid #D1D3D5;
 }
@@ -901,72 +763,60 @@ ul.navMenu li:last-child {
 ============================ */
 /* Articles 
 ============================ */
-/* line 506, sass/screen.scss */
 a.file {
   background-color: white;
   padding: 0 .5em;
 }
 
-/* line 511, sass/screen.scss */
 .tocArticleGalleysPages, .tocGalleys {
   text-align: end;
   vertical-align: middle;
 }
 
-/* line 516, sass/screen.scss */
 .tocPages, .tocAuthors {
   padding-top: .5em;
 }
 
-/* line 519, sass/screen.scss */
 .tocCoverImage a.file {
   padding: 0;
   border: none;
 }
 
-/* line 524, sass/screen.scss */
 #articleTitle h3 {
   background-color: initial;
 }
 
-/* line 530, sass/screen.scss */
 .article #content {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
 }
-/* line 534, sass/screen.scss */
 .article #main h3 {
   background-color: initial;
   padding-left: 0;
 }
 
-/* line 540, sass/screen.scss */
 .list {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 542, sass/screen.scss */
 .list h4:before {
   content: '\00BB';
   padding-right: 5px;
 }
 
-/* line 548, sass/screen.scss */
 h3.issue {
   background: none;
   padding-left: 0;
   border-bottom: 1px solid #D1D3D5;
 }
 
-/* line 554, sass/screen.scss */
 #pdfDownloadLinkContainer {
   padding-bottom: .5em;
 }
 
 /* Admin Pages  (home of the hacks)
 ============================ */
-/* line 560, sass/screen.scss */
 .sectionBlock {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -974,91 +824,73 @@ h3.issue {
   margin-bottom: 1.5em;
 }
 
-/* line 563, sass/screen.scss */
 #selectSections select {
   width: 50%;
 }
 
-/* line 569, sass/screen.scss */
 table.alt-color tbody tr:nth-child(even) {
   background-color: #e6e7e8;
 }
 
-/* line 574, sass/screen.scss */
 table.alt-color-odd tbody tr:nth-child(odd) {
   background-color: #e6e7e8;
 }
 
-/* line 578, sass/screen.scss */
 table.info {
   margin-top: 1.5em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 1.5em;
 }
-/* line 2, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_scaffolding.scss */
 table.info th, table.info tr.heading {
   text-align: center;
   font-weight: bold;
 }
-/* line 5, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_scaffolding.scss */
 table.info td,
 table.info th,
 table.info tr.heading {
   padding: 2px;
 }
-/* line 8, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_scaffolding.scss */
 table.info td.numeric,
 table.info th.numeric,
 table.info tr.numeric.heading {
   text-align: right;
 }
-/* line 581, sass/screen.scss */
 table.info .tableHeading {
   font-family: Lato;
   font-size: 1.125em;
   line-height: 1.33333em;
   background-color: #dee0e1;
 }
-/* line 586, sass/screen.scss */
 table.info a {
   display: inline-block;
 }
-/* line 589, sass/screen.scss */
 table.info tr {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 592, sass/screen.scss */
 table.info tr:last-child {
   border-bottom: none;
 }
-/* line 596, sass/screen.scss */
 table.info td:first-child {
   text-align: left;
 }
-/* line 599, sass/screen.scss */
 table.info td {
   text-align: center;
 }
 
-/* line 606, sass/screen.scss */
 table.listing .heading a, #setup .pkp_controllers_grid table.listing th a, #setup .pkp_controllers_grid table.listing tr.heading a {
   color: #000;
 }
-/* line 607, sass/screen.scss */
 table.listing tr {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 609, sass/screen.scss */
 table.listing tr:last-child {
   border-bottom: none;
 }
-/* line 613, sass/screen.scss */
 table.listing td {
   text-align: left;
 }
 
-/* line 616, sass/screen.scss */
 table.settings {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1066,45 +898,36 @@ table.settings {
   margin-bottom: 1.5em;
   border: 1px solid #D1D3D5;
 }
-/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 table.settings thead th, table.settings thead tr.heading {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 table.settings tfoot th, table.settings tfoot tr.heading, table.settings tfoot td {
   border-top: 1px solid #D1D3D5;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 table.settings th:first-child, table.settings tr.heading:first-child {
   border-right: 1px solid #D1D3D5;
 }
-/* line 620, sass/screen.scss */
 table.settings td.label {
   vertical-align: middle;
 }
 
-/* line 625, sass/screen.scss */
 table.checklist td {
   vertical-align: middle;
 }
 
-/* line 631, sass/screen.scss */
 table.email tr:nth-child(odd) {
   background-color: #e6e7e8;
 }
 
-/* line 634, sass/screen.scss */
 table.listing span.instruct {
   margin: 0;
 }
 
-/* line 638, sass/screen.scss */
 table.nested {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
 
-/* line 641, sass/screen.scss */
 table.single {
   border-top: 2px solid #D1D3D5;
   border-bottom: 2px solid #D1D3D5;
@@ -1112,114 +935,104 @@ table.single {
   */
 }
 
-/* line 647, sass/screen.scss */
 #profile table tr {
   border-bottom: 1px solid #D1D3D5;
 }
 
-/* line 652, sass/screen.scss */
 #systemConfiguration h4 {
   text-transform: capitalize;
   margin-top: 1em;
   padding: .25em;
   background-color: #ececed;
 }
-/* line 658, sass/screen.scss */
 #systemConfiguration table tr {
   border-bottom: 1px solid #D1D3D5;
 }
 
-/* line 664, sass/screen.scss */
 .highlightReviewerNotNotified, .highlightCopyediting {
   background-color: #266BA8;
 }
-/* line 664, sass/screen.scss */
 .highlightReviewerNotNotified:before, .highlightCopyediting:before {
   content: "\00b9";
   padding: 0 4px;
 }
 
-/* line 665, sass/screen.scss */
 .highlightNoDecision {
   background-color: #07355E;
   color: white;
 }
-/* line 665, sass/screen.scss */
 .highlightNoDecision:before {
   content: "\00b2";
   padding: 0 4px;
 }
 
-/* line 666, sass/screen.scss */
 .highlightReviewerConfirmationOverdue {
   background-color: #FF6C3E;
 }
-/* line 666, sass/screen.scss */
 .highlightReviewerConfirmationOverdue:before {
   content: "\2020";
   padding: 0 4px;
 }
 
-/* line 667, sass/screen.scss */
 .highlightRevisedCopyUploaded, .highlightLayoutEditing {
   background-color: #1EB568;
 }
-/* line 667, sass/screen.scss */
 .highlightRevisedCopyUploaded:before, .highlightLayoutEditing:before {
   content: "\2666";
   padding: 0 4px;
 }
 
-/* line 668, sass/screen.scss */
 .highlightReviewerCompletionOverdue, .higlightProofreading {
   background-color: #006633;
   color: white;
 }
-/* line 668, sass/screen.scss */
 .highlightReviewerCompletionOverdue:before, .higlightProofreading:before {
   content: "\25CA";
   padding: 0 4px;
 }
 
-/* line 671, sass/screen.scss */
+.highlightCopyediting a,
+.highlightLayoutEditing a,
+.highlightNoDecision a,
+.highlightReviewerCompletionOverdue a,
+.highlightRevisedCopyUploaded a,
+.highlightReviewerConfirmationOverdue a,
+.highlightReviewerNotNotified a,
+.higlightProofreading a {
+  background-color: initial;
+  border-color: initial;
+}
+
 #notes ul {
   padding: 0;
 }
-/* line 675, sass/screen.scss */
 #notes ul li {
   padding: .5em;
   list-style-type: none;
 }
 
-/* line 681, sass/screen.scss */
 span.instruct {
   display: block;
   margin: .5em 0;
 }
 
-/* line 686, sass/screen.scss */
 #assignBlocksToSidebars {
   border: 1px solid #D1D3D5;
 }
-/* line 689, sass/screen.scss */
 #assignBlocksToSidebars .heading, #assignBlocksToSidebars #setup .pkp_controllers_grid table th, #setup .pkp_controllers_grid table #assignBlocksToSidebars th, #assignBlocksToSidebars #setup .pkp_controllers_grid table tr.heading, #setup .pkp_controllers_grid table #assignBlocksToSidebars tr.heading {
   text-align: center;
   border: 1px solid #87908F;
 }
-/* line 693, sass/screen.scss */
 #assignBlocksToSidebars input {
   padding: 2px 0;
 }
-/* line 697, sass/screen.scss */
 #assignBlocksToSidebars td.centerButton {
   vertical-align: middle !important;
 }
 
-/* line 703, sass/screen.scss */
 #setup .options {
   margin-top: 2em;
 }
-/* line 708, sass/screen.scss */
 #setup .pkp_controllers_grid table {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1227,126 +1040,101 @@ span.instruct {
   margin-bottom: 1.5em;
   border: 1px solid #87908F;
 }
-/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table th, #setup .pkp_controllers_grid table tr.heading, #setup .pkp_controllers_grid table td {
   border-right: 1px solid #D1D3D5;
   border-bottom: 1px solid #D1D3D5;
   border-left-width: 0;
   border-top-width: 0;
 }
-/* line 22, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table th:last-child, #setup .pkp_controllers_grid table tr.heading:last-child, #setup .pkp_controllers_grid table td:last-child {
   border-right-width: 0;
 }
-/* line 28, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table th.last, #setup .pkp_controllers_grid table tr.last.heading, #setup .pkp_controllers_grid table td.last {
   border-right-width: 0;
 }
-/* line 33, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table tbody tr:last-child th, #setup .pkp_controllers_grid table tbody tr:last-child tr.heading, #setup .pkp_controllers_grid table tbody tr:last-child td, #setup .pkp_controllers_grid table tfoot tr:last-child th, #setup .pkp_controllers_grid table tfoot tr:last-child tr.heading, #setup .pkp_controllers_grid table tfoot tr:last-child td {
   border-bottom-width: 0;
 }
-/* line 37, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table tbody tr.last th, #setup .pkp_controllers_grid table tbody tr.last tr.heading, #setup .pkp_controllers_grid table tbody tr.last td, #setup .pkp_controllers_grid table tfoot tr.last th, #setup .pkp_controllers_grid table tfoot tr.last tr.heading, #setup .pkp_controllers_grid table tfoot tr.last td {
   border-bottom-width: 0;
 }
-/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table thead th, #setup .pkp_controllers_grid table thead tr.heading {
   border-bottom: 1px solid #87908F;
 }
-/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table tfoot th, #setup .pkp_controllers_grid table tfoot tr.heading, #setup .pkp_controllers_grid table tfoot td {
   border-top: 1px solid #87908F;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #setup .pkp_controllers_grid table th:first-child, #setup .pkp_controllers_grid table tr.heading:first-child {
   border-right: 1px solid #87908F;
 }
 
-/* line 718, sass/screen.scss */
 td form {
   margin: 0;
 }
 
-/* line 722, sass/screen.scss */
 .refbacks .menu {
   margin: 1em 0;
 }
 
-/* line 725, sass/screen.scss */
 .endseparator {
   display: none;
 }
 
-/* line 729, sass/screen.scss */
 .composite-ui {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 732, sass/screen.scss */
 .composite-ui div.pane div.help-message {
   margin: 10px;
   padding: 0;
 }
-/* line 736, sass/screen.scss */
 .composite-ui div.two-pane table.pane_header {
   margin-top: 0;
 }
 
-/* line 740, sass/screen.scss */
 .composite-ui > .ui-tabs ul.main-tabs a {
   font-size: 1.25em;
 }
 
-/* line 744, sass/screen.scss */
 .pkp_controllers_grid h3 {
   background-color: initial;
 }
 
 /* Author Submission Pages */
-/* line 748, sass/screen.scss */
 .steplist {
   padding: 0;
 }
-/* line 751, sass/screen.scss */
 .steplist li {
   list-style-type: none;
 }
 
-/* line 756, sass/screen.scss */
 .pseudoMenu .current, #sidebar .block .current, #sidebarUser .current {
   background-color: #D1D3D5;
 }
 
 /* Plugin Management */
-/* line 762, sass/screen.scss */
 #plugins a.action {
   display: inline-block;
 }
-/* line 762, sass/screen.scss */
 #plugins a.action:before {
   content: initial;
 }
 
-/* line 765, sass/screen.scss */
 .pluginList ul {
   padding: 0;
   margin: .5em 0;
 }
-/* line 768, sass/screen.scss */
 .pluginList ul li {
   list-style-type: none;
   padding: 10px 0 5px 5px;
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 773, sass/screen.scss */
 .pluginList ul li p:before {
   content: '\00BB';
   padding-right: 5px;
 }
 
 /* PopUp Windows  */
-/* line 783, sass/screen.scss */
 .popup #header {
   margin: .5em 0;
   min-height: initial;
@@ -1355,76 +1143,60 @@ td form {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 789, sass/screen.scss */
 .popup #header #headerTitle {
   padding: 0;
 }
-/* line 793, sass/screen.scss */
 .popup #body {
   width: 100%;
   padding: 2em;
   margin-top: 0;
 }
-/* line 798, sass/screen.scss */
 .popup #main {
   width: 100%;
 }
-/* line 801, sass/screen.scss */
 .popup #main h3 {
   background-color: initial;
   font-weight: 400;
   padding: 0;
 }
-/* line 807, sass/screen.scss */
 .popup table {
   margin-top: 0;
 }
 
 /* Comment Windows */
-/* line 813, sass/screen.scss */
 #articleComments table {
   border: 1px solid #D1D3D5;
 }
-/* line 6, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table thead th, #articleComments table thead tr.heading {
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 9, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table tfoot th, #articleComments table tfoot tr.heading, #articleComments table tfoot td {
   border-top: 1px solid #D1D3D5;
 }
-/* line 12, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table th:first-child, #articleComments table tr.heading:first-child {
   border-right: 1px solid #D1D3D5;
 }
-/* line 16, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table th, #articleComments table tr.heading, #articleComments table td {
   border-right: 1px solid #D1D3D5;
   border-bottom: 1px solid #D1D3D5;
   border-left-width: 0;
   border-top-width: 0;
 }
-/* line 22, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table th:last-child, #articleComments table tr.heading:last-child, #articleComments table td:last-child {
   border-right-width: 0;
 }
-/* line 28, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table th.last, #articleComments table tr.last.heading, #articleComments table td.last {
   border-right-width: 0;
 }
-/* line 33, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table tbody tr:last-child th, #articleComments table tbody tr:last-child tr.heading, #articleComments table tbody tr:last-child td, #articleComments table tfoot tr:last-child th, #articleComments table tfoot tr:last-child tr.heading, #articleComments table tfoot tr:last-child td {
   border-bottom-width: 0;
 }
-/* line 37, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/tables/_borders.scss */
 #articleComments table tbody tr.last th, #articleComments table tbody tr.last tr.heading, #articleComments table tbody tr.last td, #articleComments table tfoot tr.last th, #articleComments table tfoot tr.last tr.heading, #articleComments table tfoot tr.last td {
   border-bottom-width: 0;
 }
-/* line 817, sass/screen.scss */
 #articleComments table .commentNote {
   font-weight: 700;
 }
-/* line 820, sass/screen.scss */
 #articleComments table .comments {
   margin-top: 1.5em;
   padding-top: 0em;
@@ -1432,7 +1204,6 @@ td form {
   margin-bottom: 1.5em;
 }
 
-/* line 824, sass/screen.scss */
 .commentTitle {
   font-family: Lato, Trabuchet, sans-serif;
   text-decoration: underline;
@@ -1441,29 +1212,24 @@ td form {
 }
 
 /* User */
-/* line 834, sass/screen.scss */
 .fancyList ul, #signinForm ul {
   padding: 0;
   margin: .5em 0;
 }
-/* line 837, sass/screen.scss */
 .fancyList ul li, #signinForm ul li {
   list-style-type: none;
   padding: 10px 0 5px 5px;
   border-bottom: 1px solid #D1D3D5;
 }
-/* line 841, sass/screen.scss */
 .fancyList ul li:before, #signinForm ul li:before {
   content: '\00BB';
   padding-right: 5px;
 }
 
-/* line 852, sass/screen.scss */
 #interests .ui-widget-content.ui-autocomplete-input {
   width: 99%;
 }
 
-/* line 856, sass/screen.scss */
 .tagit-close .ui-icon.ui-icon-close {
   display: none;
 }
@@ -1474,23 +1240,19 @@ td form {
   /* Changes:
   - Collapse Top Menu
   */
-  /* line 5, sass/_screen_max1060.scss */
   #fullNav {
     display: none;
   }
 
-  /* line 8, sass/_screen_max1060.scss */
   #mobileNav {
     display: block;
     /*
     Top black bar that holds the toggle button
     */
   }
-  /* line 10, sass/_screen_max1060.scss */
   #mobileNav .navicon {
     display: none;
   }
-  /* line 17, sass/_screen_max1060.scss */
   #mobileNav a.navicon {
     display: inline-block;
     float: left;
@@ -1502,7 +1264,6 @@ td form {
     font-size: 0;
     text-align: right;
   }
-  /* line 29, sass/_screen_max1060.scss */
   #mobileNav .menu {
     display: none;
     width: 100%;
@@ -1510,7 +1271,6 @@ td form {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 33, sass/_screen_max1060.scss */
   #mobileNav .menu li {
     clear: both;
     display: block;
@@ -1522,32 +1282,25 @@ td form {
     margin: 2px 0;
     padding: 6px 0 6px 8px;
   }
-  /* line 44, sass/_screen_max1060.scss */
   #mobileNav .menu li:last-child {
     border: none;
   }
-  /* line 48, sass/_screen_max1060.scss */
   #mobileNav .menu li a {
     display: block;
     color: white;
   }
-  /* line 18, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
   #mobileNav .menu li a:visited {
     color: white;
   }
-  /* line 21, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
   #mobileNav .menu li a:focus {
     color: #1EB568;
   }
-  /* line 24, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
   #mobileNav .menu li a:hover {
     color: #1EB568;
   }
-  /* line 27, ../vendor/bundle/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
   #mobileNav .menu li a:active {
     color: #266BA8;
   }
-  /* line 53, sass/_screen_max1060.scss */
   #mobileNav .menu li #searchbar {
     display: block;
     width: 100%;
@@ -1555,17 +1308,14 @@ td form {
     text-align: center;
   }
 
-  /* line 64, sass/_screen_max1060.scss */
   #header {
     margin-top: 50px;
   }
 
-  /* line 69, sass/_screen_max1060.scss */
   #body {
     padding: 0 4%;
   }
 
-  /* line 73, sass/_screen_max1060.scss */
   #main img {
     max-width: 350px;
     height: auto;
@@ -1576,7 +1326,6 @@ td form {
   - Collapse sidebar using javascript
   - Main div spans full width
   */
-  /* line 9, sass/_screen_max600.scss */
   #main {
     width: 100%;
     float: left;
@@ -1585,18 +1334,15 @@ td form {
     padding-right: 0;
   }
 
-  /* line 13, sass/_screen_max600.scss */
   #main img {
     max-width: 250px;
     height: auto;
   }
 
-  /* line 18, sass/_screen_max600.scss */
   #sidebar {
     display: none;
   }
 
-  /* line 22, sass/_screen_max600.scss */
   #standardFooter a img {
     max-width: 250px;
   }
