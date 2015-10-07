@@ -18,11 +18,11 @@
 <script type="text/javascript"><!--{literal}
 	$(document).ready(function(){
 		if ($.browser.webkit) { // PDFObject does not correctly work with safari's built-in PDF viewer
-			var embedCode = "<object id='pdfObject' type='application/pdf' data='{/literal}{$pdfUrl|escape:'javascript'}{literal}' width='99%' height='99%'><div id='pluginMissing'>{/literal}{$noPluginText|escape:'javascript'}{literal}</div></object>";
+			var embedCode = "<object id='pdfObject' type='application/pdf' data='{/literal}{$pdfUrl|escape:'javascript'}{literal}'><div id='pluginMissing'>{/literal}{$noPluginText|escape:'javascript'}{literal}</div></object>";
 			$("#inlinePdf").html(embedCode);
 			if($("#pluginMissing").is(":hidden")) {
 				$('#fullscreenShow').show();
-				$("#inlinePdf").resizable({ containment: 'parent', handles: 'se' });
+				//$("#inlinePdf").resizable({ containment: 'parent', handles: 'se' });
 			} else { // Chrome Mac hides the embed object, obscuring the text.  Reinsert.
 				$("#inlinePdf").html('{/literal}<div id="pluginMissing">{$noPluginText|escape:"javascript"}</div>{literal}');
 			}

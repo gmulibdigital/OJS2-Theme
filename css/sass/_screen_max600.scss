@@ -18,6 +18,10 @@
 #sidebar {
 	display: none;
 }
+
+#pdfObject, #pdfCanvasContainer iframe {
+	min-height: 400px !important;
+}
 #standardFooter {
 	a img {
 		max-width: 250px;

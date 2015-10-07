@@ -815,6 +815,11 @@ h3.issue {
   padding-bottom: .5em;
 }
 
+#pdfObject, #pdfCanvasContainer iframe {
+  width: 100%;
+  min-height: 700px !important;
+}
+
 /* Admin Pages  (home of the hacks)
 ============================ */
 .sectionBlock {
@@ -1341,6 +1346,10 @@ td form {
 
   #sidebar {
     display: none;
+  }
+
+  #pdfObject, #pdfCanvasContainer iframe {
+    min-height: 400px !important;
   }
 
   #standardFooter a img {

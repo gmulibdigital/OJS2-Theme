@@ -555,6 +555,11 @@ h3.issue {
 	padding-bottom: .5em;
 }
 
+#pdfObject, #pdfCanvasContainer iframe {
+	width:100%;
+	min-height: 700px !important;
+}
+
 /* Admin Pages  (home of the hacks)
 ============================ */
 .sectionBlock {
