@@ -499,8 +499,24 @@ ul.navMenu {
 .tocTitle {
 	@extend h5;
 }
-
-
+#issues .list {
+	padding: 1em 0;
+	/*border-bottom: none;*/
+}
+#issues .list .issueCoverImage  {
+	display:inline-block;
+}
+#issues .list .issueCoverImage img {
+	max-width: 150px;
+}
+#issues .list h4 {
+	margin-top: 1em;
+	display: inline-block;
+	vertical-align: top;
+	&:before {
+		content: initial;
+	}
+}
 /* Articles 
 ============================ */
 a.file {

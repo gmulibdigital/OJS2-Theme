@@ -761,6 +761,28 @@ ul.navMenu li:last-child {
 
 /* Issues
 ============================ */
+#issues .list {
+  padding: 1em 0;
+  /*border-bottom: none;*/
+}
+
+#issues .list .issueCoverImage {
+  display: inline-block;
+}
+
+#issues .list .issueCoverImage img {
+  max-width: 150px;
+}
+
+#issues .list h4 {
+  margin-top: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+#issues .list h4:before {
+  content: initial;
+}
+
 /* Articles 
 ============================ */
 a.file {
@@ -1354,5 +1376,9 @@ td form {
 
   #standardFooter a img {
     max-width: 250px;
+  }
+
+  .list .issueCoverImage img {
+    max-width: 100%;
   }
 }
