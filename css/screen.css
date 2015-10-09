@@ -769,6 +769,9 @@ ul.navMenu li:last-child {
   display: inline-block;
   max-width: 35%;
 }
+#issues .list .issueCoverImage img {
+  width: 100%;
+}
 #issues .list .issueDescriptionImage {
   padding: .5em;
   vertical-align: top;
