@@ -502,21 +502,21 @@ ul.navMenu {
 #issues .list {
 	padding: 1em 0;
 	/*border-bottom: none;*/
-}
-#issues .list .issueCoverImage  {
-	display:inline-block;
-}
-#issues .list .issueCoverImage img {
-	max-width: 150px;
-}
-#issues .list h4 {
-	margin-top: 1em;
-	display: inline-block;
-	vertical-align: top;
-	&:before {
+	.issueCoverImage  {
+		display:inline-block;
+		max-width: 35%;
+	}
+	.issueDescriptionImage {
+		padding: .5em;
+		vertical-align: top;
+		display: inline-block;
+		max-width: 65%;
+	}
+	h4:before {
 		content: initial;
 	}
 }
+
 /* Articles 
 ============================ */
 a.file {

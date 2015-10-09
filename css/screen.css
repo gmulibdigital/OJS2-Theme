@@ -765,19 +765,15 @@ ul.navMenu li:last-child {
   padding: 1em 0;
   /*border-bottom: none;*/
 }
-
 #issues .list .issueCoverImage {
   display: inline-block;
+  max-width: 35%;
 }
-
-#issues .list .issueCoverImage img {
-  max-width: 150px;
-}
-
-#issues .list h4 {
-  margin-top: 1em;
-  display: inline-block;
+#issues .list .issueDescriptionImage {
+  padding: .5em;
   vertical-align: top;
+  display: inline-block;
+  max-width: 65%;
 }
 #issues .list h4:before {
   content: initial;
@@ -1378,7 +1374,7 @@ td form {
     max-width: 250px;
   }
 
-  .list .issueCoverImage img {
+  #issues .list .issueCoverImage, #issues .list .issueDescriptionImage {
     max-width: 100%;
   }
 }

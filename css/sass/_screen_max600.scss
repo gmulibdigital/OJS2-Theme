@@ -28,6 +28,7 @@
 	}
 }
 
-.list .issueCoverImage img {
+#issues .list .issueCoverImage, #issues .list .issueDescriptionImage {
 	max-width: 100%;
 }
+
