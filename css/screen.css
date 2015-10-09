@@ -767,7 +767,7 @@ ul.navMenu li:last-child {
 }
 #issues .list .issueCoverImage {
   display: inline-block;
-  max-width: 35%;
+  max-width: 30%;
 }
 #issues .list .issueCoverImage img {
   width: 100%;
@@ -776,7 +776,7 @@ ul.navMenu li:last-child {
   padding: .5em;
   vertical-align: top;
   display: inline-block;
-  max-width: 65%;
+  max-width: 69%;
 }
 #issues .list h4:before {
   content: initial;
