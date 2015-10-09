@@ -771,6 +771,7 @@ ul.navMenu li:last-child {
 }
 #issues .list .issueCoverImage img {
   width: 100%;
+  border: 1px solid #D1D3D5;
 }
 #issues .list .issueDescriptionImage {
   padding: .5em;
