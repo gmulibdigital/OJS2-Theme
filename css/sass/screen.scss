@@ -505,6 +505,10 @@ ul.navMenu {
 	.issueCoverImage  {
 		display:inline-block;
 		max-width: 35%;
+
+		img {
+			width: 100%;
+		}
 	}
 	.issueDescriptionImage {
 		padding: .5em;
