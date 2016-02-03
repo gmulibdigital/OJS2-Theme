@@ -16,8 +16,8 @@
  *
  */
 
-require_once('MPGThemePlugin.inc.php');
+require_once('MPGConferenceThemePlugin.inc.php');
 
-return new MPGThemePlugin();
+return new MPGConferenceThemePlugin();
 
 ?>

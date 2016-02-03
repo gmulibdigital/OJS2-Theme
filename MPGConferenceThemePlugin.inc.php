@@ -15,22 +15,22 @@
 
 import('classes.plugins.ThemePlugin');
 
-class MPGThemePlugin extends ThemePlugin {
+class MPGConferenceThemePlugin extends ThemePlugin {
 	/**
 	 * Get the name of this plugin. The name must be unique within
 	 * its category.
 	 * @return String name of plugin
 	 */
 	function getName() {
-		return 'MPGThemePlugin';
+		return 'MPGConferenceThemePlugin';
 	}
 
 	function getDisplayName() {
-		return 'Mason Publishing Theme';
+		return 'Mason Publishing Conference Theme';
 	}
 
 	function getDescription() {
-		return 'mpg layout';
+		return 'mpg conference layout';
 	}
 
 	function getLocaleFilename($locale) {
@@ -44,11 +44,11 @@ class MPGThemePlugin extends ThemePlugin {
 										. DIRECTORY_SEPARATOR 
 										. 'themes' 
 										. DIRECTORY_SEPARATOR 
-										. 'mpg' 
+										. 'mpg-conference' 
 										. DIRECTORY_SEPARATOR 
 										. 'templates';   
 											      
-		$templateMgr->compile_id = 'mpgTheme';
+		$templateMgr->compile_id = 'mpgConferenceTheme';
 	}
 }
 
