@@ -4,6 +4,6 @@
 </div>
 {else}
 <div id="submit-button" class="largeButton">
-	<a href="{url page="about" op="submissions"}">Submit an Article</em></a>
+	<a href="{url page="about" op="submissions"}">Submit a Proposal</em></a>
 </div>
 {/if}
