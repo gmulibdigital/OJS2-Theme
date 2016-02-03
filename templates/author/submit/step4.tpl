@@ -29,7 +29,9 @@ function confirmForgottenUpload() {
 <input type="hidden" name="articleId" value="{$articleId|escape}" />
 {include file="common/formErrors.tpl"}
 
-<p>{translate key="author.submit.supplementaryFilesInstructions"}</p>
+<p>This <strong>optional</strong> step allows Supplementary Files to be added to a submission. Use this step only if there are additional files that you think the editors need in order to evaluate your proposal.</p>
+
+<p>To continue without uploading any supplementary files, select "Save and continue" at the bottom of the page.</p>
 
 <table class="listing" width="100%">
 <tr>
@@ -37,9 +39,9 @@ function confirmForgottenUpload() {
 </tr>
 <tr class="heading" valign="bottom">
 	<td width="5%">{translate key="common.id"}</td>
-	<td width="40%">{translate key="common.title"}</td>
+	<td width="25%">{translate key="common.title"}</td>
 	<td width="25%">{translate key="common.originalFileName"}</td>
-	<td width="15%" class="nowrap">{translate key="common.dateUploaded"}</td>
+	<td width="20%" class="nowrap">{translate key="common.dateUploaded"}</td>
 	<td width="15%" align="right">{translate key="common.action"}</td>
 </tr>
 <tr>

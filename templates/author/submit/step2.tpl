@@ -15,7 +15,18 @@
 <input type="hidden" name="articleId" value="{$articleId|escape}" />
 {include file="common/formErrors.tpl"}
 
-<div id="uploadInstructions" class="block">{translate key="author.submit.uploadInstructions"}</div>
+<div id="uploadInstructions" class="block">
+<p>To upload a proposal, complete the following steps.
+<ul>
+	<li>On this page, click Browse (or Choose File) which opens a Choose File window for locating the file on the hard drive of your computer.</li>
+<li>Locate the file you wish to submit and highlight it.</li>
+<li>Click Open on the Choose File window, which places the name of the file on this page.</li>
+<li>Click Upload on this page, which uploads the file from the computer to the journal's web site and renames it following the journal's conventions.</li>
+<li>Once the submission is uploaded, click Save and Continue at the bottom of this page.</li>
+</ul>
+</p>
+
+</div>
 
 {if $journalSettings.supportPhone}
 	{assign var="howToKeyName" value="author.submit.howToSubmit"}
@@ -32,20 +43,20 @@
 <table class="data" width="100%">
 {if $submissionFile}
 <tr valign="top">
-	<td width="20%" class="label">{translate key="common.fileName"}</td>
-	<td width="80%" class="value"><a href="{url op="download" path=$articleId|to_array:$submissionFile->getFileId()}">{$submissionFile->getFileName()|escape}</a></td>
+	<td width="30%" class="label">{translate key="common.fileName"}</td>
+	<td width="70%" class="value"><a href="{url op="download" path=$articleId|to_array:$submissionFile->getFileId()}">{$submissionFile->getFileName()|escape}</a></td>
 </tr>
 <tr valign="top">
-	<td width="20%" class="label">{translate key="common.originalFileName"}</td>
-	<td width="80%" class="value">{$submissionFile->getOriginalFileName()|escape}</td>
+	<td width="30%" class="label">{translate key="common.originalFileName"}</td>
+	<td width="70%" class="value">{$submissionFile->getOriginalFileName()|escape}</td>
 </tr>
 <tr valign="top">
-	<td width="20%" class="label">{translate key="common.fileSize"}</td>
-	<td width="80%" class="value">{$submissionFile->getNiceFileSize()}</td>
+	<td width="30%" class="label">{translate key="common.fileSize"}</td>
+	<td width="70%" class="value">{$submissionFile->getNiceFileSize()}</td>
 </tr>
 <tr valign="top">
-	<td width="20%" class="label">{translate key="common.dateUploaded"}</td>
-	<td width="80%" class="value">{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</td>
+	<td width="30%" class="label">{translate key="common.dateUploaded"}</td>
+	<td width="70%" class="value">{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</td>
 </tr>
 {else}
 <tr valign="top">

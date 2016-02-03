@@ -11,7 +11,7 @@
 {assign var="pageTitle" value="author.submit.step5"}
 {include file="author/submit/submitHeader.tpl"}
 
-<p>{translate key="author.submit.confirmationDescription" journalTitle=$journal->getLocalizedTitle()}</p>
+<p>To submit your proposal, click "Finish Submission." The submission's principal contact will receive an acknowledgement by email and will be able to view the submission's progress through the editorial process by logging in to this web site. Thank you for your submission.</p>
 
 <form method="post" action="{url op="saveSubmit" path=$submitStep}">
 <input type="hidden" name="articleId" value="{$articleId|escape}" />
