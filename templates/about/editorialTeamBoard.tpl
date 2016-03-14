@@ -16,17 +16,17 @@
 {call_hook name="Templates::About::EditorialTeam::Information"}
 
 {foreach from=$groups item=group}
-<div id="group">
-	<h4>{$group->getLocalizedTitle()}</h4>
+<div id="group" class="pseudoMenu">
+	<h3>{$group->getLocalizedTitle()}</h3>
 	{assign var=groupId value=$group->getId()}
 	{assign var=members value=$teamInfo[$groupId]}
 
-	<ol class="editorialTeam">
+	<ul class="editorialTeam">
 		{foreach from=$members item=member}
 			{assign var=user value=$member->getUser()}
 			<div class="member"><li><a href="javascript:openRTWindow('{url op="editorialTeamBio" path=$user->getId()}')">{$user->getFullName()|escape}</a>{if $user->getLocalizedAffiliation()}, {$user->getLocalizedAffiliation()|escape}{/if}{if $user->getCountry()}{assign var=countryCode value=$user->getCountry()}{assign var=country value=$countries.$countryCode}, {$country|escape}{/if}</li></div>
 		{/foreach}{* $members *}
-	</ol>
+	</ul>
 </div>
 {/foreach}{* $groups *}
 
