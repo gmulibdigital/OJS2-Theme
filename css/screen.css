@@ -659,6 +659,15 @@ ul.navMenu li:last-child {
   display: none;
 }
 
+#sidebarRTAuthorBios .authorBio {
+  padding: 1em 0;
+  border-bottom: 1px solid #D1D3D5;
+}
+
+.authorBio p {
+  padding: 0 0 .25em 0;
+}
+
 /* Main 
 ============================ */
 #main {
