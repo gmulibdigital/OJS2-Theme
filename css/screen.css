@@ -17,8 +17,7 @@ time, mark, audio, video {
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
-  text-align: justify;
-}
+  }
 
 html {
   line-height: 1;
@@ -206,6 +205,7 @@ ol li {
 }
 #body p {
   padding: .5em 0;
+  text-align: justify;
 }
 
 /* Skip to Content 
