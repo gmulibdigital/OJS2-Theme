@@ -238,7 +238,10 @@ table {
 	height: 100%;
 	clear: both;
 }
-
+.inline-block {
+	display:inline-block;
+	@include rhythm();
+}
 .action, 
 	.toggleExtras-inactive,
 	.toggleExtras-active {
@@ -551,8 +554,16 @@ a.file {
 	border: none;
 }
 
+.altmetric-embed {
+	display:inline-block;
+	@include rhythm();
+}
+.right {
+	float:right;
+}
 #articleTitle h3 {
 	background-color: initial;
+	margin-top: 0;
 }
 
 .article {

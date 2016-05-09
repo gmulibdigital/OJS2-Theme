@@ -63,7 +63,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="{$baseUrl}/plugins/themes/mpg/js/menu.js"></script>
-
+<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 {/strip}
 
 
