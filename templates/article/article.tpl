@@ -122,6 +122,8 @@
 <div class="block share">
 	<a class="twitter-share-button" href="https://twitter.com/share" data-text="{$article->getLocalizedTitle()|strip_unsafe_html}" data-url="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}" data-size="large">Tweet</a>
 </div>
+{else}
+	<a class="twitter-share-button" href="https://twitter.com/share" data-text="{$article->getLocalizedTitle()|strip_unsafe_html}" data-size="large">Tweet</a>
 {/if}
 
 {call_hook name="Templates::Article::MoreInfo"}
