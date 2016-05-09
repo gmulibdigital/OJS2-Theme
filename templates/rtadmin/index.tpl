@@ -36,7 +36,7 @@
 </ul>
 </div>
 
-<div id="rtAdminSharing" class="block pseudoMenu>
+<div id="rtAdminSharing" class="block pseudoMenu">
 <h3>{translate key="rt.admin.sharing"}</h3>
 <ul>
 	<li><a href="{url op="sharingSettings"}">{translate key="rt.admin.configureSharing"}</a></li>
