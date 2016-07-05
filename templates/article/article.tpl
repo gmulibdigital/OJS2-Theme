@@ -43,7 +43,7 @@
 		</div>
 	{/if}
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
-	<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" class="altmetric-embed right"></div>
+	<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" class="altmetric-embed right" data-doi=""></div>
 	<div id="articleTitle" class="inline-block"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
 	</div>
