@@ -561,9 +561,12 @@ a.file {
 .right {
 	float:right;
 }
-#articleTitle h3 {
-	background-color: initial;
-	margin-top: 0;
+#articleTitle {
+	float:left;
+	h3 {
+		background-color: initial;
+		margin-top: 0;
+	}
 }
 
 .article {
