@@ -23,6 +23,14 @@
 		{include file="article/pdfViewer.tpl"}
 	{/if}
 {else}
+
+{foreach from=$pubIdPlugins item=pubIdPlugin}
+	{if $issue->getPublished()}
+		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject)}
+	{else}
+		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject, true)}{* Preview rather than assign a pubId *}
+	{/if}
+{/foreach}
 	<div id="topBar">
 		{if is_a($article, 'PublishedArticle')}{assign var=galleys value=$article->getGalleys()}{/if}
 		{if $galleys && $subscriptionRequired && $showGalleyLinks}
@@ -44,9 +52,9 @@
 	{/if}
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
 	{if $pubId}
-		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{$pubId|escape}"class="altmetric-embed right" ></div>
+		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="false" data-doi="{$pubId|escape}" class="altmetric-embed right" ></div>
 	{else}
-		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-doi=""class="altmetric-embed right" ></div>
+		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="false" data-doi="" class="altmetric-embed right" ></div>
 	{/if}
 	<div id="articleTitle" class="inline-block"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
@@ -110,16 +118,9 @@
 	{/if}
 {/if}
 <div class="block">
-{foreach from=$pubIdPlugins item=pubIdPlugin}
-	{if $issue->getPublished()}
-		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject)}
-	{else}
-		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject, true)}{* Preview rather than assign a pubId *}
-	{/if}
-	{if $pubId}
-		{$pubIdPlugin->getPubIdDisplayType()|escape}: {if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}</a>{else}{$pubId|escape}{/if}
-	{/if}
-{/foreach}
+{if $pubId}
+	{$pubIdPlugin->getPubIdDisplayType()|escape}: {if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}</a>{else}{$pubId|escape}{/if}
+{/if}
 </div>
 
 {if $pubId}
