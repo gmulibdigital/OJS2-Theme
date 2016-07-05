@@ -52,9 +52,9 @@
 	{/if}
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
 	{if $pubId}
-		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="false" data-doi="{$pubId|escape}" class="altmetric-embed right" ></div>
+		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{$pubId|escape}" class="altmetric-embed right" ></div>
 	{else}
-		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="false" data-doi="" class="altmetric-embed right" ></div>
+		<div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-doi="" class="altmetric-embed right" ></div>
 	{/if}
 	<div id="articleTitle" class="inline-block"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
