@@ -835,6 +835,7 @@ a.file {
 
 #articleTitle {
   float: left;
+  width: 90%;
 }
 #articleTitle h3 {
   background-color: initial;
