@@ -58,7 +58,9 @@
 {/if}
 {call_hook name="Templates::Common::Footer::PageFooter"}
 	<div id="standardFooter">
-		<p>ISSN: {$issn}</p>
+		{if $issn}
+			<p>ISSN: {$issn}</p>
+		{/if}
 		<p>Hosted by <a href="http://publishing.gmu.edu">Mason Publishing</a>, part of the <a href="http://library.gmu.edu">George Mason University Libraries</a>.</p>
 	</div>
 </div>
