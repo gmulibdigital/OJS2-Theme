@@ -238,7 +238,10 @@ table {
 	height: 100%;
 	clear: both;
 }
-
+.inline-block {
+	display:inline-block;
+	@include rhythm();
+}
 .action, 
 	.toggleExtras-inactive,
 	.toggleExtras-active {
@@ -425,6 +428,15 @@ ul.navMenu {
 #sidebarFontSize {
 	display: none;
 }
+
+#sidebarRTAuthorBios .authorBio {
+	padding: 1em 0;
+	border-bottom: 1px solid #D1D3D5;
+}
+
+.authorBio p {
+	padding: 0 0 .25em 0;
+}
 /* Main 
 ============================ */
 
@@ -542,8 +554,20 @@ a.file {
 	border: none;
 }
 
-#articleTitle h3 {
-	background-color: initial;
+.altmetric-embed {
+	display:inline-block;
+	@include rhythm();
+}
+.right {
+	float:right;
+}
+#articleTitle {
+	float: left;
+	width: 90%;
+	h3 {
+		background-color: initial;
+		margin-top: 0;
+	}
 }
 
 .article {

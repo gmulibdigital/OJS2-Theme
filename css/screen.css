@@ -446,6 +446,14 @@ table td {
   clear: both;
 }
 
+.inline-block {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}
+
 .largeButton a {
   color: white !important;
   display: block;
@@ -659,6 +667,15 @@ ul.navMenu li:last-child {
   display: none;
 }
 
+#sidebarRTAuthorBios .authorBio {
+  padding: 1em 0;
+  border-bottom: 1px solid #D1D3D5;
+}
+
+.authorBio p {
+  padding: 0 0 .25em 0;
+}
+
 /* Main 
 ============================ */
 #main {
@@ -804,8 +821,25 @@ a.file {
   border: none;
 }
 
+.altmetric-embed {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.5em;
+}
+
+.right {
+  float: right;
+}
+
+#articleTitle {
+  float: left;
+  width: 90%;
+}
 #articleTitle h3 {
   background-color: initial;
+  margin-top: 0;
 }
 
 .article #content {

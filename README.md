@@ -10,6 +10,8 @@ A big "Thank you!" to [Carleton University Libraries](https://github.com/cu-libr
 
 To install the mpg theme, upload the theme folder to the plugins/themes directory of your OJS installation. You will then be able to select the Mason Publishing Theme from the dropdown list of available themes.
 
+**Update: You will need to rename the theme folder to `mpg` in order for the theme to install properly.**
+
 ## Changing Color Scheme within the OJS interface
 
 For simple customizations of the theme, upload a CSS style sheet in Journal Setup, Step 5.6. 
