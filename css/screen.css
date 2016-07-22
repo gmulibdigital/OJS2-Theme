@@ -373,6 +373,7 @@ input {
 
 /* Tables */
 table {
+  /*@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);*/
   width: 100%;
   margin: 1em 0;
 }
@@ -772,8 +773,11 @@ ul.navMenu li:last-child {
 #results table th:first-child, #results table tr.heading:first-child {
   border-right: none;
 }
-#results table tr:nth-child(odd) {
+#results table tbody tr {
   border-bottom: 1px solid #D1D3D5;
+}
+#results table tbody tr:nth-child(even) {
+  background-color: #ececed;
 }
 
 /* Issues

@@ -180,7 +180,7 @@ input {
 /* Tables */
 table {
 
-	//@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);
+	/*@include alternating-rows-and-columns( lighten($grey-light, 20%), lighten($grey-light, 10%), #000000);*/
 	width: 100%;
 	margin: 1em 0;
 	th {
@@ -501,8 +501,11 @@ ul.navMenu {
 	th:first-child {
 		border-right: none;
 	}
-	tr {
-		&:nth-child(odd) {border-bottom: 1px solid $grey-light;}
+	tbody tr {
+		border-bottom: 1px solid $grey-light;
+		&:nth-child(even) {
+			background-color:lighten($grey-light, 10%);
+		}
 	}
 }
 
