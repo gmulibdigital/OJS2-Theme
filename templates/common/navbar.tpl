@@ -36,7 +36,7 @@
 
 		{if $currentJournal && $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
 			
-			<li id="archives"><a href="{url page="issue" op="archive"}">Browse</a></li>
+			<li id="archives"><a href="{url page="issue" op="archive"}">{translate key="navigation.categories.browse"}</a></li>
 		{/if}
 
 		{if $enableAnnouncements}
