@@ -26,7 +26,7 @@
 				<td class="value">
 					{capture assign="queryFilter"}{call_hook name="Templates::Search::SearchResults::FilterInput" filterName="query" filterValue=$query}{/capture}
 					{if empty($queryFilter)}
-						<input type="text" id="query" name="query" size="40" maxlength="255" value="{$query|escape}" class="textField" />
+						<input type="text" id="query" name="query" maxlength="255" value="{$query|escape}" class="textField" />
 					{else}
 						{$queryFilter}
 					{/if}
@@ -198,7 +198,7 @@
 	{literal}
 	$(document).ready(function() 
 	    { 
-	        $("#searchResults").tablesorter(); 
+	        $("#searchResults").tablesorter({sortList: [[0,1], [1,0]]}); 
 	    } 
 	); 
 	{/literal}
