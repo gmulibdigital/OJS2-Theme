@@ -62,7 +62,7 @@
 	{if $article->getLocalizedAbstract()}
 		<div id="articleAbstract" class="block">
 		<h4>{translate key="article.abstract"}</h4>
-		<div>{$article->getLocalizedAbstract()|nl2br}</div>
+		<div>{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}</div>
 		</div>
 	{/if}
 
