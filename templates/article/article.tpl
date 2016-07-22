@@ -59,6 +59,11 @@
 	<div id="articleTitle" class="inline-block"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
 	</div>
+
+	<div id="sessionInfo" class="block">
+		<h4>Session Information</h4> 
+		<p><strong>Year</strong>: {$article->getDatePublished()|date_format:"%Y"} | <strong>Time</strong>: {$article->getSectionTitle()|strip_tags|escape} | <strong>Location</strong>: {$article->getPages()|escape}</p>
+	</div>
 	{if $article->getLocalizedAbstract()}
 		<div id="articleAbstract" class="block">
 		<h4>{translate key="article.abstract"}</h4>
