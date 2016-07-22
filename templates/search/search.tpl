@@ -107,13 +107,16 @@
 {/if}
 
 <div id="results">
-	<table width="100%">
-		<tr class="heading" valign="bottom">
-			{if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if}
-			<th width="{if !$currentJournal}20%{else}40%{/if}">{translate key="issue.issue"}</th>
-			<th width="60%" colspan="2">{translate key="article.title"}</th>
-		</tr>
-
+	<table width="100%" class="tablesorter" id="searchResults">
+		<thead>
+			<tr class="heading" valign="bottom">
+				{if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if}
+				<th class="header" width="30%">{translate key="issue.issue"}</th>
+				<th class="header" width="40%">{translate key="article.title"}</th>
+				<th class="header" width="30%">{translate key="article.authors"}</th>
+			</tr>
+		</thead>
+		<tbody>
 		{iterate from=results item=result}
 			{assign var=publishedArticle value=$result.publishedArticle}
 			{assign var=article value=$result.article}
@@ -126,8 +129,8 @@
 					<td><a href="{url journal=$journal->getPath()}">{$journal->getLocalizedTitle()|escape}</a></td>
 				{/if}
 				<td><a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)}">{$issue->getIssueIdentification()|escape}</a></td>
-				<td width="30%">{$article->getLocalizedTitle()|strip_unsafe_html}</td>
-				<td width="30%" align="right">
+				<td width="30%"><a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}">{$article->getLocalizedTitle()|strip_unsafe_html}</a>
+					<br />
 					{if $publishedArticle->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN|| $issueAvailable}
 						{assign var=hasAccess value=1}
 					{else}
@@ -154,9 +157,7 @@
 					{/if}
 					{call_hook name="Templates::Search::SearchResults::AdditionalArticleLinks" articleId=$publishedArticle->getId()}
 				</td>
-			</tr>
-			<tr>
-				<td colspan="{$numCols|escape}" style="padding-left: 30px;font-style: italic;">
+				<td colspan="{$numCols|escape}" style="font-style: italic;">
 					{foreach from=$article->getAuthors() item=authorItem name=authorList}
 						{$authorItem->getFullName()|escape}{if !$smarty.foreach.authorList.last},{/if}
 					{/foreach}
@@ -174,12 +175,14 @@
 					{/if}
 				</td>
 			</tr>
-		{else}
-			<tr>
-				<td {if !$currentJournal}colspan="2" {/if}align="left">{page_info iterator=$results}</td>
-				<td colspan="2" align="right">{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText suppFiles=$suppFiles discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}</td>
-			</tr>
 		{/if}
+		</tbody>
+	</table>
+	<table>
+		<tr>
+			<td {if !$currentJournal}colspan="2" {/if}align="left">{page_info iterator=$results}</td>
+			<td colspan="2" align="right">{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText suppFiles=$suppFiles discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}</td>
+		</tr>
 	</table>
 
 	{capture assign="syntaxInstructions"}{call_hook name="Templates::Search::SearchResults::SyntaxInstructions"}{/capture}
@@ -190,6 +193,17 @@
 			{$syntaxInstructions}
 		{/if}
 </div>
+
+<script>
+	{literal}
+	$(document).ready(function() 
+	    { 
+	        $("#searchResults").tablesorter(); 
+	    } 
+	); 
+	{/literal}
+</script>
+
 
 {include file="common/footer.tpl"}
 

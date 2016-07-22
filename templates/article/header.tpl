@@ -78,7 +78,6 @@
 			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
 		{/if}
 	{/foreach}
-
 	{$additionalHeadData}
 </head>
 <body id="pkp-{$pageTitle|replace:'.':'-'}" class="article">

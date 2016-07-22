@@ -41,7 +41,6 @@
 <script type="text/javascript" src="{$baseUrl}/plugins/themes/mpg/js/menu.js"></script>
 </div>
 
-
 {get_debug_info}
 {if $enableDebugStats}{include file=$pqpTemplate}{/if}
 
