@@ -110,9 +110,9 @@
 	<table width="100%" class="tablesorter" id="searchResults">
 		<thead>
 			<tr class="heading" valign="bottom">
-				{if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if}
-				<th class="header" width="30%">{translate key="issue.issue"}</th>
-				<th class="header" width="40%">{translate key="article.title"}</th>
+				<!-- {if !$currentJournal}<th width="20%">{translate key="journal.journal"}</th>{/if} -->
+				<th class="header" width="25%">{translate key="issue.issue"}</th>
+				<th class="header" width="45%">{translate key="article.title"}</th>
 				<th class="header" width="30%">{translate key="article.authors"}</th>
 			</tr>
 		</thead>
@@ -129,7 +129,7 @@
 					<td><a href="{url journal=$journal->getPath()}">{$journal->getLocalizedTitle()|escape}</a></td>
 				{/if}
 				<td><a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)}">{$issue->getIssueIdentification()|escape}</a></td>
-				<td width="30%"><a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}">{$article->getLocalizedTitle()|strip_unsafe_html}</a>
+				<td><a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}">{$article->getLocalizedTitle()|strip_unsafe_html}</a>
 					<br />
 					{if $publishedArticle->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN|| $issueAvailable}
 						{assign var=hasAccess value=1}
