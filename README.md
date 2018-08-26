@@ -80,7 +80,7 @@ Please use the Github issues to report any bugs. Pull requests are welcome!
 
 
 ## PKP Software License:
-This software is released under the the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
+This software is released under the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
 
 See the file [COPYING](https://github.com/pkp/ojs/blob/master/docs/COPYING) included with this distribution for the terms of this license.
 
