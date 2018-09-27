@@ -57,6 +57,7 @@
 	{$pageFooter}
 {/if}
 {call_hook name="Templates::Common::Footer::PageFooter"}
+{call_hook name="Templates::Article::Footer::PageFooter"}
 	<div id="standardFooter">
 		{if $issn}
 			<p>ISSN: {$issn}</p>
