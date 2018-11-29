@@ -1,6 +1,6 @@
-# Mason Publishing Group Theme for OJS
+# Mason Publishing Group Theme for OJS 2.x
 
-*Currently in Beta*
+*No longer being updated as we've transitioned to OJS3*
 
 Responsive and modern theme for OJS journals, created for journals published by the Mason Publishing Group, part of the George Mason University Libraries. The theme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
