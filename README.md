@@ -1,6 +1,6 @@
 # Mason Publishing Group Theme for OJS 2.x
 
-*No longer being updated as we've transitioned to OJS3*
+### *No longer being updated as we've transitioned to OJS3*
 
 Responsive and modern theme for OJS journals, created for journals published by the Mason Publishing Group, part of the George Mason University Libraries. The theme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
@@ -76,8 +76,7 @@ The template files provide a copy the standard page templates in the OJS base di
 
 ## Questions or Contributions
 
-Please use the Github issues to report any bugs. Pull requests are welcome!
-
+This repository is no longer being updated as of December 2018.
 
 ## PKP Software License:
 This software is released under the the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
