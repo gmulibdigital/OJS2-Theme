@@ -79,7 +79,7 @@ The template files provide a copy the standard page templates in the OJS base di
 This repository is no longer being updated as of December 2018.
 
 ## PKP Software License:
-This software is released under the the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
+This software is released under the [GNU General Public License](https://github.com/pkp/ojs/blob/master/docs/COPYING).
 
 See the file [COPYING](https://github.com/pkp/ojs/blob/master/docs/COPYING) included with this distribution for the terms of this license.
 
